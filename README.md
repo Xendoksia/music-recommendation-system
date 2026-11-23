@@ -118,7 +118,7 @@ python -m venv .venv
 .venv/Scripts/kaggle kernels output <user>/listenbrainz-train -p kaggle/train/output
 
 # Local comparison, from a Playlist Tracker data folder
-set PLAYLIST_TRACKER_DATA=path\to\data   # optional, defaults to %APPDATA%\Playlist Tracker
+export PLAYLIST_TRACKER_DATA="path/to/data"   # optional, defaults to %APPDATA%\Playlist Tracker
 .venv/Scripts/python -m src.deezer_fetch
 .venv/Scripts/python -m src.compare
 ```
