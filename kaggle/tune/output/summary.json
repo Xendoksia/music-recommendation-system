@@ -1,0 +1,249 @@
+{
+ "current": {
+  "beta": 0.5,
+  "shrink": 0.0,
+  "seeds": 10,
+  "related": 20,
+  "decay": 0.5
+ },
+ "best": {
+  "beta": 0.4,
+  "shrink": 100.0,
+  "seeds": 30,
+  "related": 50,
+  "decay": 0.75
+ },
+ "test_current": {
+  "stage": "test",
+  "split": "test",
+  "users": 8518,
+  "params": {
+   "beta": 0.5,
+   "shrink": 0.0,
+   "seeds": 10,
+   "related": 20,
+   "decay": 0.5
+  },
+  "recall@12": 0.0691,
+  "hit@12": 0.7913,
+  "ndcg@12": 0.3159,
+  "recall@20": 0.0925,
+  "hit@20": 0.8326,
+  "ndcg@20": 0.2889,
+  "eval_seconds": 9
+ },
+ "test_best": {
+  "stage": "test",
+  "split": "test",
+  "users": 8518,
+  "params": {
+   "beta": 0.4,
+   "shrink": 100.0,
+   "seeds": 30,
+   "related": 50,
+   "decay": 0.75
+  },
+  "recall@12": 0.0762,
+  "hit@12": 0.8125,
+  "ndcg@12": 0.3811,
+  "recall@20": 0.1042,
+  "hit@20": 0.8508,
+  "ndcg@20": 0.347,
+  "eval_seconds": 46
+ },
+ "pool": 400,
+ "top_stage_a": [
+  {
+   "stage": "A",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 500.0,
+    "seeds": 10,
+    "related": 20,
+    "decay": 0.5
+   },
+   "recall@12": 0.077,
+   "hit@12": 0.8075,
+   "ndcg@12": 0.341,
+   "recall@20": 0.1015,
+   "hit@20": 0.851,
+   "ndcg@20": 0.3101,
+   "eval_seconds": 2
+  },
+  {
+   "stage": "A",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 100.0,
+    "seeds": 10,
+    "related": 20,
+    "decay": 0.5
+   },
+   "recall@12": 0.0769,
+   "hit@12": 0.8085,
+   "ndcg@12": 0.3404,
+   "recall@20": 0.1021,
+   "hit@20": 0.854,
+   "ndcg@20": 0.3095,
+   "eval_seconds": 2
+  },
+  {
+   "stage": "A",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 20.0,
+    "seeds": 10,
+    "related": 20,
+    "decay": 0.5
+   },
+   "recall@12": 0.077,
+   "hit@12": 0.8075,
+   "ndcg@12": 0.3391,
+   "recall@20": 0.1012,
+   "hit@20": 0.85,
+   "ndcg@20": 0.3088,
+   "eval_seconds": 2
+  },
+  {
+   "stage": "A",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 0.0,
+    "seeds": 10,
+    "related": 20,
+    "decay": 0.5
+   },
+   "recall@12": 0.0759,
+   "hit@12": 0.806,
+   "ndcg@12": 0.3378,
+   "recall@20": 0.1011,
+   "hit@20": 0.8485,
+   "ndcg@20": 0.3081,
+   "eval_seconds": 2
+  },
+  {
+   "stage": "A",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.45,
+    "shrink": 500.0,
+    "seeds": 10,
+    "related": 20,
+    "decay": 0.5
+   },
+   "recall@12": 0.0761,
+   "hit@12": 0.8065,
+   "ndcg@12": 0.3372,
+   "recall@20": 0.0989,
+   "hit@20": 0.8425,
+   "ndcg@20": 0.3069,
+   "eval_seconds": 2
+  }
+ ],
+ "top_stage_b": [
+  {
+   "stage": "B",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 500.0,
+    "seeds": 30,
+    "related": 50,
+    "decay": 0.75
+   },
+   "recall@12": 0.0796,
+   "hit@12": 0.815,
+   "ndcg@12": 0.3852,
+   "recall@20": 0.1097,
+   "hit@20": 0.8575,
+   "ndcg@20": 0.3519,
+   "eval_seconds": 11
+  },
+  {
+   "stage": "B",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 500.0,
+    "seeds": 30,
+    "related": 30,
+    "decay": 0.75
+   },
+   "recall@12": 0.0829,
+   "hit@12": 0.8205,
+   "ndcg@12": 0.3834,
+   "recall@20": 0.1112,
+   "hit@20": 0.8645,
+   "ndcg@20": 0.3494,
+   "eval_seconds": 7
+  },
+  {
+   "stage": "B",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 500.0,
+    "seeds": 30,
+    "related": 20,
+    "decay": 0.75
+   },
+   "recall@12": 0.0842,
+   "hit@12": 0.8235,
+   "ndcg@12": 0.3793,
+   "recall@20": 0.1114,
+   "hit@20": 0.868,
+   "ndcg@20": 0.3442,
+   "eval_seconds": 4
+  },
+  {
+   "stage": "B",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 500.0,
+    "seeds": 30,
+    "related": 30,
+    "decay": 0.5
+   },
+   "recall@12": 0.0808,
+   "hit@12": 0.8195,
+   "ndcg@12": 0.3756,
+   "recall@20": 0.1064,
+   "hit@20": 0.862,
+   "ndcg@20": 0.3389,
+   "eval_seconds": 7
+  },
+  {
+   "stage": "B",
+   "split": "val",
+   "users": 2000,
+   "params": {
+    "beta": 0.4,
+    "shrink": 500.0,
+    "seeds": 20,
+    "related": 50,
+    "decay": 0.75
+   },
+   "recall@12": 0.078,
+   "hit@12": 0.808,
+   "ndcg@12": 0.3756,
+   "recall@20": 0.1066,
+   "hit@20": 0.8515,
+   "ndcg@20": 0.3407,
+   "eval_seconds": 8
+  }
+ ]
+}

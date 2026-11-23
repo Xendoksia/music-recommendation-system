@@ -1,6 +1,6 @@
 # Müzik öneri modeli: yol haritası
 
-Son güncelleme: 2026-11-23 · Durum: **Parça 0–4 bitti, ayar taraması (4b) Kaggle'da sürüyor, sırada şarkı önerisi, Parça 5 en sonda**
+Son güncelleme: 2026-11-23 · Durum: **Parça 0–4 ve ayar taraması bitti, sırada şarkı önerisi, Parça 5 en sonda**
 
 ## Amaç
 Playlist Tracker uygulamasındaki "Senin için" önerileri şu an Deezer'ın benzer sanatçı listesine dayanıyor
@@ -226,4 +226,14 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
      okunacak. Ardından kullanıcının 270 şarkısının kapsamı ölçülecek (karar kapısı). Kapsam yeterliyse şarkı
      knn'i ve item2vec eğitilip "önerilen sanatçının en popüler şarkıları" yöntemiyle karşılaştırılacak.
   3. Parça 5 (uygulamaya taşıma): sanatçı ve, işe yararsa, şarkı modeli birlikte taşınacak.
-- **Sıradaki:** Ayar taramasının sonuçları.
+- 2026-11-23, **ayar taraması bitti** (`reports/ayar.md`). İlk çalıştırmada asimetrik cosine formülünün üsleri
+  yanlıştı ve β = 0,5 cosine vermiyordu. Hata düzeltildi, kernel artık β = 0,5'in implicit'in cosine komşularını
+  verdiğini kontrol ediyor (%100 tuttu) ve şu anki ayar Parça 3'ün sonucunu birebir tekrarlıyor.
+  - En iyi ayar: β = 0,4, shrinkage 100, 30 başlangıç, 50 benzer, SEED_DECAY 0,75. Test kullanıcılarında
+    NDCG@12 0,316'dan 0,381'e (%21), hit@12 0,791'den 0,812'ye çıktı. Popülerlik cezası işe yaramadı ve en
+    iyisi cosine'den biraz popüler yöne kaymış ayar oldu. Kazancın çoğu uygulamanın puanlama ayarlarından geldi.
+  - Kullanıcının verisinde ayarlı knn ilk 12'de Deezer'ı açıkça geçiyor (15'e 3, p = 0,008). Eski knn'den farkı
+    anlamlı değil (11'e 5, p = 0,21). Yeni puanlama ayarları kullanıcının verisinde ek kazanç vermedi, zamana göre
+    ölçümde biraz kötüleştirdi ve önerilerin ortanca dinleyici sayısını 3.456'dan 8.725'e çıkardı (Nirvana, Foo
+    Fighters gibi çok bilinen adlar geliyor).
+- **Sıradaki:** Hangi ayarın kullanılacağına kullanıcı karar verecek. Ardından şarkı önerisi gelecek.
