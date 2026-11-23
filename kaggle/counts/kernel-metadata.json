@@ -1,0 +1,13 @@
+{
+  "id": "xendoksia/listenbrainz-artist-counts",
+  "title": "ListenBrainz artist counts",
+  "code_file": "counts.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": ["xendoksia/listenbrainz-prep"]
+}

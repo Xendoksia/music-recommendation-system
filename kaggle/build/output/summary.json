@@ -1,0 +1,36 @@
+{
+ "settings": {
+  "min_artist_users": 10,
+  "min_user_artists": 5,
+  "val_share": 0.1,
+  "test_share": 0.1,
+  "hide_share": 0.2,
+  "session_gap": 1800,
+  "seed": 42
+ },
+ "merge": {
+  "name_keys": 3682537,
+  "joined_mbid_artist": 1070664,
+  "joined_first_credit": 211620
+ },
+ "matrix": {
+  "users": 85183,
+  "artists": 276112,
+  "pairs": 37214047,
+  "density": 0.001582
+ },
+ "split": {
+  "train_users": 68147,
+  "val_users": 8518,
+  "test_users": 8518,
+  "train_pairs": 35733331,
+  "hidden_pairs": 1480716
+ },
+ "listen_users_in_statistics": 31726,
+ "sessions": {
+  "sessions": 966552,
+  "items": 12503026,
+  "mean_length": 12.9,
+  "artists_seen": 211376
+ }
+}

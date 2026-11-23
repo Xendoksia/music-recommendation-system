@@ -1,0 +1,335 @@
+{
+ "incremental_dirs": 31,
+ "incremental_first_last": [
+  "../",
+  "listenbrainz-dump-2805-20261123-000002-incremental/"
+ ],
+ "incremental_sample": {
+  "folder": "listenbrainz-dump-2804-20261123-000003-incremental/",
+  "file": "listenbrainz-spark-dump-2804-20261123-000003-incremental.tar",
+  "bytes": 895498240,
+  "download_seconds": 11.2
+ },
+ "parquet": {
+  "member": "listenbrainz-spark-dump-2804-20261123-000003-incremental/0.parquet",
+  "rows": 2216740,
+  "schema": "listened_at: timestamp[ns] not null\ncreated: timestamp[ns] not null\nuser_id: int64 not null\nrecording_msid: string not null\nartist_name: string not null\nartist_credit_id: int64\nrelease_name: string\nrelease_mbid: string\nrecording_name: string not null\nrecording_mbid: string\nartist_credit_mbids: list<element: string>\n  child 0, element: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1471",
+  "sample": [
+   {
+    "listened_at": "2026-11-21 22:31:09",
+    "created": "2026-11-22 00:00:02.985000",
+    "user_id": 171989,
+    "recording_msid": "ce02c52f-0f9d-4c53-ad06-1dde3db882e9",
+    "artist_name": "GOT7",
+    "artist_credit_id": null,
+    "release_name": "Just Right",
+    "release_mbid": null,
+    "recording_name": "Just Right",
+    "recording_mbid": null,
+    "artist_credit_mbids": null
+   },
+   {
+    "listened_at": "2026-11-21 22:31:31",
+    "created": "2026-11-22 00:00:03.201000",
+    "user_id": 138798,
+    "recording_msid": "a25ce4cd-154c-49fe-9fa8-95dde770cd8a",
+    "artist_name": "Agust D",
+    "artist_credit_id": 3576100,
+    "release_name": "D\u2010DAY",
+    "release_mbid": "a44bdae7-959e-4f9f-820d-3358021793db",
+    "recording_name": "\ud574\uae08",
+    "recording_mbid": "079a54bb-1a59-4e40-8456-7695b644d059",
+    "artist_credit_mbids": [
+     "f09d2950-e3c6-47b2-b21c-2bad2cd3f616"
+    ]
+   },
+   {
+    "listened_at": "2026-11-21 22:31:55",
+    "created": "2026-11-22 00:00:03.496000",
+    "user_id": 248444,
+    "recording_msid": "e00f5267-15fe-4b85-a849-bfafb756cf0e",
+    "artist_name": "femtanyl",
+    "artist_credit_id": 3730860,
+    "release_name": "MAN BITES DOG",
+    "release_mbid": "fc0b1591-4985-40df-94f4-e01f297bf2d7",
+    "recording_name": "BODY THE PISTOL",
+    "recording_mbid": "b8e14192-e347-47d5-8733-a6da28f2b6e5",
+    "artist_credit_mbids": [
+     "eb3c021d-e056-42d6-8fad-064205a90527"
+    ]
+   }
+  ]
+ },
+ "incremental_members": [
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/SCHEMA_SEQUENCE",
+   "bytes": 1
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/START_TIMESTAMP",
+   "bytes": 32
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/END_TIMESTAMP",
+   "bytes": 32
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/COPYING",
+   "bytes": 6390
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/0.parquet",
+   "bytes": 98421078
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/1.parquet",
+   "bytes": 88594798
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/2.parquet",
+   "bytes": 101232441
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/3.parquet",
+   "bytes": 93402163
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/4.parquet",
+   "bytes": 103477076
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/5.parquet",
+   "bytes": 76868162
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/6.parquet",
+   "bytes": 90017105
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/7.parquet",
+   "bytes": 80550298
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/8.parquet",
+   "bytes": 87352096
+  },
+  {
+   "name": "listenbrainz-spark-dump-2804-20261123-000003-incremental/9.parquet",
+   "bytes": 75548089
+  }
+ ],
+ "incremental_member_count": 14,
+ "stats_file": "listenbrainz-dump-2789-20261115-000003-full/listenbrainz-statistics-dump-20261115-000003.tar.zst",
+ "stats_seconds": 407.4,
+ "stats_member_count": 50,
+ "stats_members": [
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/SCHEMA_SEQUENCE",
+   "bytes": 1
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/TIMESTAMP",
+   "bytes": 32
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/COPYING",
+   "bytes": 6390
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump",
+   "bytes": 0
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics",
+   "bytes": 0
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_all_time.jsonl",
+   "bytes": 4210268943
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_half_yearly.jsonl",
+   "bytes": 1766129719
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_month.jsonl",
+   "bytes": 861141471
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_quarter.jsonl",
+   "bytes": 1338993065
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_this_month.jsonl",
+   "bytes": 764960037
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_this_week.jsonl",
+   "bytes": 175612497
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_this_year.jsonl",
+   "bytes": 2088633016
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_week.jsonl",
+   "bytes": 338301977
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_year.jsonl",
+   "bytes": 1873920679
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_all_time.jsonl",
+   "bytes": 441110920
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_half_yearly.jsonl",
+   "bytes": 204838631
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_month.jsonl",
+   "bytes": 126800940
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_quarter.jsonl",
+   "bytes": 177352827
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_this_month.jsonl",
+   "bytes": 121685136
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_this_week.jsonl",
+   "bytes": 32045636
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_this_year.jsonl",
+   "bytes": 237350655
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_week.jsonl",
+   "bytes": 59584461
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/daily_activity_year.jsonl",
+   "bytes": 190189049
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_all_time.jsonl",
+   "bytes": 222174794
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_half_yearly.jsonl",
+   "bytes": 74643355
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_month.jsonl",
+   "bytes": 279135183
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_quarter.jsonl",
+   "bytes": 1013402906
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_this_month.jsonl",
+   "bytes": 242720948
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_this_week.jsonl",
+   "bytes": 49898927
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_this_year.jsonl",
+   "bytes": 147508793
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_week.jsonl",
+   "bytes": 68808265
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/listening_activity_year.jsonl",
+   "bytes": 114345891
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_all_time.jsonl",
+   "bytes": 25267217903
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_half_yearly.jsonl",
+   "bytes": 12872929416
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_month.jsonl",
+   "bytes": 7610979808
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_quarter.jsonl",
+   "bytes": 10958844602
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_this_month.jsonl",
+   "bytes": 6804278494
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_this_week.jsonl",
+   "bytes": 1416092462
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_this_year.jsonl",
+   "bytes": 14814418427
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_week.jsonl",
+   "bytes": 2888568188
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/recordings_year.jsonl",
+   "bytes": 11954262683
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_all_time.jsonl",
+   "bytes": 17156306082
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_half_yearly.jsonl",
+   "bytes": 7634202827
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_month.jsonl",
+   "bytes": 3810596278
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_quarter.jsonl",
+   "bytes": 5915033581
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_this_month.jsonl",
+   "bytes": 3452093261
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_this_week.jsonl",
+   "bytes": 856112977
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_this_year.jsonl",
+   "bytes": 9013470589
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_week.jsonl",
+   "bytes": 1421383148
+  },
+  {
+   "name": "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/releases_year.jsonl",
+   "bytes": 7840736646
+  }
+ ],
+ "stats_artist_peeks": {
+  "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_all_time.jsonl": "{\"user_id\":1,\"data\":[{\"listen_count\":4298,\"artist_name\":\"Wax Tailor\",\"artist_mbid\":\"c24b47a1-2f52-44f3-a3c6-374dca844731\"},{\"listen_count\":4249,\"artist_name\":\"R\u00f6yksopp\",\"artist_mbid\":\"1c70a3fc-fa3c-4be1-8b55-c3192db8a884\"},{\"listen_count\":3809,\"artist_name\":\"Abakus\",\"artist_mbid\":\"a8b39181-6939-451e-9641-2db231b73706\"},{\"listen_count\":3536,\"artist_name\":\"Bonobo\",\"artist_mbid\":\"9a709693-b4f8-4da9-8cc1-038c911a61be\"},{\"listen_count\":3183,\"artist_name\":\"Pretty Lights\",\"artist_mbid\":\"3a07764c-7cc5-42e9-8205-3de7532f4771\"},{\"listen_count\":2955,\"artist_name\":\"Carbon Based Lifeforms\",\"artist_mbid\":\"8229a8f1-b315-4fae-af57-b3eb71efdaf4\"},{\"listen_count\":2732,\"artist_name\":\"Pink Floyd\",\"artist_mbid\":\"83d91898-7763-47d7-b03b-b92132375c47\"},{\"listen_count\":2643,\"artist_name\":\"Boards of Canada\",\"artist_mbid\":\"69158f97-4c07-4c4e-baf8-4e4ab1ed666e\"},{\"listen_count\":2593,\"artist_name\":\"Morcheeba\",\"artist_mbid\":\"067102ea-9519-4622-9077-57ca4164cfbb\"},{\"listen_count\":2563,\"artist_name\":\"New Order\",\"artist_mbid\":\"f1106b17-dcbb-45f6-b938-199ccfab50cc\"},{\"listen_count\":2480,\"artist_name\":\"Emancipator\",\"artist_mbid\":\"aa1d4315-5246-42b2-b62b-f997d046d8b2\"},{\"listen_count\":2165,\"artist_name\":\"Depeche Mode\",\"artist_mbid\":\"8538e728-ca0b-4321-b7e5-cff6565dd4c0\"},{\"listen_count\":2140,\"artist_name\":\"Tropo\",\"artist_mbid\":\"8f9d785a-022a-43eb-a2a0-22eb1966c599\"},{\"listen_count\":1735,\"artist_name\":\"Portishead\",\"artist_mbid\":\"8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11\"},{\"listen_count\":1733,\"artist_name\":\"Enigma\",\"artist_mbid\":\"f1d1df24-91af-4d27-83a4-9b4ad29b37eb\"},{\"listen_count\":1618,\"artist_name\":\"dZihan & Kamien\",\"artist_mbid\":\"d3fe567e-0681-48c8-9735-6cc9942629f4\"},{\"listen_count\":1580,\"artist_name\":\"Tycho\",\"artist_mbid\":\"cbef45a9-7acb-4325-94c9-70081ac8d1b8\"},{\"listen_count\":1579,\"artist_name\":\"M83\",\"artist_mbid\":\"6d7b7cd4-254b-4c25-83f6-dd20f98ceacd\"},{\"listen_count\":1546,\"artist_name\":\"Waldeck\",\"artist_mbid\":\"8f389bf5-a950-4a2f-a962-daf08151ee33\"},{\"listen_count\":1542,\"artist_name\":\"Santi & Tu\u011f\u00e7e\",\"artist_mbid\":\"4690076b-1446-43f4-8a84-cfec56dc3601\"},{\"listen_count\":1459,\"artist_name\":\"Gramatik\",\"artist_mbid\":\"9b62a8a3-fcd5-4b51-a970-0f08a440ed6d\"},{\"listen_count\":1458,\"artist_name\":\"Tosca\",\"artist_mbid\":\"3231d12a-c42d-4977-b2a4-a6e4d87978e1\"},{\"listen_count\":1418,\"artist_name\":\"Thievery Corporation\",\"artist_mbid\":\"a505bb48-ad65-4af4-ae47-29149715bff9\"},{\"listen_count\":1405,\"artist_name\":\"Daft Punk\",\"artist_mbid\":\"056e4f3e-d505-4dad-8ec1-d04f521cbb56\"},{\"listen_count\":1402,\"artist_name\":\"Synapson\",\"artist_mbid\":\"ccfcd925-f1b1-409f-93cb-ff91ecbe9a19\"},{\"listen_count\":1398,\"artist_name\":\"Goldfrapp\",\"artist_mbid\":\"7b885d42-3c41-4f43-9944-a5855ec5155e\"},{\"listen_count\":1380,\"artist_name\":\"Massive Attack\",\"artist_mbid\":\"10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8\"},{\"listen_count\":1305,\"artist_name\":\"Rodriguez Jr.\",\"artist_mbid\":\"e2cf5b7b-63fa-4975-8b2d-bcefcd698ceb\"},{\"listen_count\":1289,\"artist_name\":\"Ott\",\"artist_mbid\":\"1a40f886-0877-4bab-9ab1-761147dadb89\"},{\"listen_count\":1285,\"a",
+  "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_half_yearly.jsonl": "{\"user_id\":1,\"data\":[{\"listen_count\":109,\"artist_name\":\"R\u00f6yksopp\",\"artist_mbid\":\"1c70a3fc-fa3c-4be1-8b55-c3192db8a884\"},{\"listen_count\":69,\"artist_name\":\"Carbon Based Lifeforms\",\"artist_mbid\":\"8229a8f1-b315-4fae-af57-b3eb71efdaf4\"},{\"listen_count\":50,\"artist_name\":\"Christian L\u00f6ffler\",\"artist_mbid\":\"a0d91c38-f5dc-487b-9b30-b67de1e7489e\"},{\"listen_count\":28,\"artist_name\":\"Susanne Sundf\u00f8r\",\"artist_mbid\":\"f3f9e76a-0685-4a9a-97d1-6fa2b50f9fba\"},{\"listen_count\":25,\"artist_name\":\"Marconi Union\",\"artist_mbid\":\"3f9b5837-ed1c-413e-bfef-ca4f892dcc59\"},{\"listen_count\":21,\"artist_name\":\"Karin My\",\"artist_mbid\":\"4ef3cf79-e868-464e-b756-7400b9b5f724\"},{\"listen_count\":20,\"artist_name\":\"Cell\",\"artist_mbid\":\"3c2e2afb-b7e4-4b0f-8a0c-080808c935d3\"},{\"listen_count\":20,\"artist_name\":\"Adna\",\"artist_mbid\":\"69cc0c33-a4d9-4f48-bcd6-010eddee5fcb\"},{\"listen_count\":15,\"artist_name\":\"Enigma\",\"artist_mbid\":\"f1d1df24-91af-4d27-83a4-9b4ad29b37eb\"},{\"listen_count\":13,\"artist_name\":\"Pixx\",\"artist_mbid\":\"90165cd6-f56e-4b26-9efa-fc30a1d05141\"},{\"listen_count\":13,\"artist_name\":\"Astrid S\",\"artist_mbid\":\"be389638-e74f-46a9-83d2-91ee3ce1fb0c\"},{\"listen_count\":9,\"artist_name\":\"Ott\",\"artist_mbid\":\"1a40f886-0877-4bab-9ab1-761147dadb89\"},{\"listen_count\":8,\"artist_name\":\"Hugo Kant\",\"artist_mbid\":\"ae334666-4070-45bf-98b8-2c27c5499497\"},{\"listen_count\":8,\"artist_name\":\"Ester Nannmark\",\"artist_mbid\":\"27aec350-6d71-4be4-bd60-e6e83e92678f\"},{\"listen_count\":8,\"artist_name\":\"B-Tribe\",\"artist_mbid\":\"14e703ac-8364-41d5-b609-af2fd90343e9\"},{\"listen_count\":7,\"artist_name\":\"Morcheeba\",\"artist_mbid\":\"067102ea-9519-4622-9077-57ca4164cfbb\"},{\"listen_count\":7,\"artist_name\":\"Hermanos Guti\u00e9rrez\",\"artist_mbid\":\"82b922a4-410d-4b89-ac2e-c0d1f00136cd\"},{\"listen_count\":6,\"artist_name\":\"Karen Harding\",\"artist_mbid\":\"25441822-c48a-4c46-af6f-fb03339d03bb\"},{\"listen_count\":5,\"artist_name\":\"Sync24\",\"artist_mbid\":\"ad614ebb-c487-4695-93c8-7877455d58cf\"},{\"listen_count\":5,\"artist_name\":\"Jamie Irrepressible\",\"artist_mbid\":\"ba508a64-bb22-4689-8d06-ace0aac52f13\"},{\"listen_count\":4,\"artist_name\":\"Shallou\",\"artist_mbid\":\"b87bd286-3b5f-448e-9364-11d68823c1db\"},{\"listen_count\":3,\"artist_name\":\"Not Lars\",\"artist_mbid\":\"52b60dc2-cfd8-4354-a875-bf2d87a126a7\"},{\"listen_count\":3,\"artist_name\":\"Maurissa Rose\",\"artist_mbid\":\"18d41f3c-539a-4925-bf77-02e1e72cae32\"},{\"listen_count\":3,\"artist_name\":\"Loscil\",\"artist_mbid\":\"4f2c565b-ac40-4678-ba61-4fcf3b97edbc\"},{\"listen_count\":2,\"artist_name\":\"Four Tet\",\"artist_mbid\":\"3bcff06f-675a-451f-9075-99e8657047e8\"},{\"listen_count\":1,\"artist_name\":\"Tycho\",\"artist_mbid\":\"cbef45a9-7acb-4325-94c9-70081ac8d1b8\"},{\"listen_count\":1,\"artist_name\":\"Tosca\",\"artist_mbid\":\"3231d12a-c42d-4977-b2a4-a6e4d87978e1\"},{\"listen_count\":1,\"artist_name\":\"The xx\",\"artist_mbid\":\"c5c2ea1c-4bde-4f4d-bd0b-47b200bf99d6\"},{\"listen_count\":1,\"artist_name\":\"The White Stripes\",\"artist_mbid\":\"11ae9fbb-f3d7-4a47-936f-4c0a04d3b3b5\"},{\"listen_count\":1,\"artist_name\":\"Survivor\",\"artist_mbid\":\"55ef024a-6cc0-49ed-8ce2-2e12193c0f46\"},{\"l",
+  "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_month.jsonl": "{\"user_id\":10,\"data\":[{\"listen_count\":10,\"artist_name\":\"Grian\",\"artist_mbid\":null},{\"listen_count\":6,\"artist_name\":\"\u267e\ufe0f Infinity Nikki Version 2.11 Trailer\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"\ud83c\udf0d Open Food Facts\u2019 1st citizen science quest\",\"artist_mbid\":null},{\"listen_count\":1,\"artist_name\":\"itsIanWatson\",\"artist_mbid\":null}],\"count\":4,\"from_ts\":1790812800,\"to_ts\":1793491200,\"last_updated\":1795033983}\n{\"user_id\":100,\"data\":[{\"listen_count\":44,\"artist_name\":\"Combichrist\",\"artist_mbid\":\"c29f4522-f710-4bb5-a06b-d436fcc3b2fd\"},{\"listen_count\":20,\"artist_name\":\"DJ Nakadia\",\"artist_mbid\":null},{\"listen_count\":14,\"artist_name\":\"Perfecto Podcast: featuring Paul Oakenfold\",\"artist_mbid\":null},{\"listen_count\":12,\"artist_name\":\"Lilly Palmer\",\"artist_mbid\":\"b6c834af-59ed-499b-b287-22e2ff4dba13\"},{\"listen_count\":10,\"artist_name\":\"VII RADIO\",\"artist_mbid\":null},{\"listen_count\":10,\"artist_name\":\"One More Tune Radio\",\"artist_mbid\":null},{\"listen_count\":9,\"artist_name\":\"John 00 Fleming presents JOOF Radio\",\"artist_mbid\":null},{\"listen_count\":8,\"artist_name\":\"Shonci\",\"artist_mbid\":\"2272e052-17fc-4505-92a8-de72c0cccabd\"},{\"listen_count\":8,\"artist_name\":\"SEKIMANE\",\"artist_mbid\":\"4bfbb6ea-c498-464d-b7c4-dfdc84745b54\"},{\"listen_count\":8,\"artist_name\":\"Resonation Radio by Ferry Corsten\",\"artist_mbid\":null},{\"listen_count\":8,\"artist_name\":\"PHU-G\",\"artist_mbid\":null},{\"listen_count\":8,\"artist_name\":\"MC GW\",\"artist_mbid\":\"d2454c40-4823-4310-808c-bc876cb2429c\"},{\"listen_count\":8,\"artist_name\":\"Laurinha Costa, Dj Cabello, Dj Tchouzen, SoundMusic Original\",\"artist_mbid\":null},{\"listen_count\":8,\"artist_name\":\"Laurinha Costa\",\"artist_mbid\":null},{\"listen_count\":8,\"artist_name\":\"Gordinho Bolado, CACAU CHUU\",\"artist_mbid\":null},{\"listen_count\":8,\"artist_name\":\"Dj Tchouzen, Ygor Bueno, DJAY VMC\",\"artist_mbid\":null},{\"listen_count\":7,\"artist_name\":\"Cosmic Gate: WYM Radio\",\"artist_mbid\":null},{\"listen_count\":6,\"artist_name\":\"Epic Amour\",\"artist_mbid\":null},{\"listen_count\":6,\"artist_name\":\"Amelie Lens\",\"artist_mbid\":\"67db280d-c3e4-49d9-978e-4050f4e209ef\"},{\"listen_count\":4,\"artist_name\":\"indira paganotto, nina kraviz\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"bradeazy, HUMAN404\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Victims Radio\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Pharmacy Radio\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Indira Paganotto\",\"artist_mbid\":\"f42c4a7a-f582-4dd2-aa73-819e09f578a1\"},{\"listen_count\":4,\"artist_name\":\"Grendel\",\"artist_mbid\":\"7eb99a58-5ea9-4082-b176-bd990d406358\"},{\"listen_count\":4,\"artist_name\":\"Communion After Dark\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Charlotte de Witte\",\"artist_mbid\":\"1de4e373-e597-4087-bf3d-256ec597749e\"},{\"listen_count\":3,\"artist_name\":\"Podcast\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"\u9093\u5bd3\u541b(\u7b49\u4ec0\u4e48\u541b)\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"splatmusicofficial\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\"",
+  "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_quarter.jsonl": "{\"user_id\":10,\"data\":[{\"listen_count\":43,\"artist_name\":\"KPop Demon Hunters Cast\",\"artist_mbid\":\"7ba8efd8-9cef-49dd-8399-3e90dac43fa6\"},{\"listen_count\":42,\"artist_name\":\"VAMPIIA\",\"artist_mbid\":\"2188e3ff-1af3-44bb-a2a0-9d69510c5baa\"},{\"listen_count\":40,\"artist_name\":\"Sarina\",\"artist_mbid\":\"2a180944-83c0-4553-a141-a39977d97783\"},{\"listen_count\":15,\"artist_name\":\"Walk off the Earth\",\"artist_mbid\":\"e2a5eaeb-7de7-4ffe-a519-e18e427a5060\"},{\"listen_count\":13,\"artist_name\":\"The Dead South\",\"artist_mbid\":\"ffb316f0-0df3-4f9c-b0e0-945187b6e964\"},{\"listen_count\":13,\"artist_name\":\"EJAE\",\"artist_mbid\":\"0f0a0c02-0aa6-4fc0-aad0-bb2e9d5bcbbb\"},{\"listen_count\":9,\"artist_name\":\"Sarah Hyland\",\"artist_mbid\":\"7d015ab0-a822-4174-b446-3a9b1644099e\"},{\"listen_count\":9,\"artist_name\":\"Rob Apollo\",\"artist_mbid\":\"6a7260c0-33a3-4d03-8855-14c813c89d5e\"},{\"listen_count\":9,\"artist_name\":\"DAMAG3\",\"artist_mbid\":\"c65ece63-ddb1-47c1-b293-da8433b3aa46\"},{\"listen_count\":9,\"artist_name\":\"Boyce Avenue ft. Sarah Hyland\",\"artist_mbid\":null},{\"listen_count\":9,\"artist_name\":\"Boyce Avenue\",\"artist_mbid\":\"0e517f4b-6d89-48f0-8a11-16416bd0fdcb\"},{\"listen_count\":9,\"artist_name\":\"$leazy EZ\",\"artist_mbid\":\"344f8ac1-56b7-46d8-9eba-f41997100849\"},{\"listen_count\":8,\"artist_name\":\"JIHYO\",\"artist_mbid\":\"9fc92dfd-8367-4a7e-88f5-18b24baa1b70\"},{\"listen_count\":8,\"artist_name\":\"JEONGYEON\",\"artist_mbid\":\"03905a8e-5c66-442c-9ada-60a0f5a76783\"},{\"listen_count\":8,\"artist_name\":\"CHAEYOUNG\",\"artist_mbid\":\"b37cfe02-c667-4c78-9c8c-f96944d1dff7\"},{\"listen_count\":7,\"artist_name\":\"Walk off the Earth ft. Jocelyn Alice, KRNFX, Sexy Sax Man\",\"artist_mbid\":null},{\"listen_count\":7,\"artist_name\":\"Up and Atom\",\"artist_mbid\":null},{\"listen_count\":7,\"artist_name\":\"Selah Sue\",\"artist_mbid\":\"fefeb63b-9430-4fe8-a332-0c400351af50\"},{\"listen_count\":7,\"artist_name\":\"Sarina\",\"artist_mbid\":null},{\"listen_count\":7,\"artist_name\":\"Saja Boys\",\"artist_mbid\":\"62e4d845-5a9f-462f-a909-8e480dd3c1b8\"},{\"listen_count\":7,\"artist_name\":\"Rumi\",\"artist_mbid\":\"7d5ca377-aedc-4d9e-ad95-1f592e7af627\"},{\"listen_count\":7,\"artist_name\":\"JINU\",\"artist_mbid\":\"b774ed72-9208-4df6-b48c-1370e71e3d70\"},{\"listen_count\":7,\"artist_name\":\"Andrew Choi\",\"artist_mbid\":\"3bc0a256-bd32-46af-ba2d-5404dce176fe\"},{\"listen_count\":6,\"artist_name\":\"REI AMI\",\"artist_mbid\":\"59adde12-dd9d-40c6-9906-bd4357633915\"},{\"listen_count\":6,\"artist_name\":\"HUNTR/X\",\"artist_mbid\":\"dc7fd424-6ba4-45cc-b407-7716c7bb3605\"},{\"listen_count\":6,\"artist_name\":\"Closer\",\"artist_mbid\":null},{\"listen_count\":6,\"artist_name\":\"AUDREY NUNA\",\"artist_mbid\":\"7b54e5e4-82f7-4dfe-9cd8-fc8d9f6815e3\"},{\"listen_count\":2,\"artist_name\":\"Pride cast\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Lucy Dacus\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Chappell Roan\",\"artist_mbid\":\"56a55378-f155-48de-80a5-d80104221267\"},{\"listen_count\":1,\"artist_name\":\"\ud83c\udf1f\ud83c\udf7e 6 YEARS OF STREAMING! After\",\"artist_mbid\":null},{\"listen_count\":1,\"artist_name\":\"These Highland nameplates are MINE!\",\"artist_mbid\":null},{\"listen_co",
+  "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_this_month.jsonl": "{\"user_id\":10,\"data\":[{\"listen_count\":9,\"artist_name\":\"\ud83d\udd34[LIVE] THE BLOOD OF DAWNWALKER continues!\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"\ud83d\udd34[LIVE] VALHEIM 1.0 is here!\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"act 3 FINALLY in FIRE EMBLEM FORTUNE'S WEAVE\",\"artist_mbid\":null},{\"listen_count\":3,\"artist_name\":\"[HARD/CLASSIC] [FIRST PLAY] lmao there is so much free time in this game\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"ACT 2 FINALLY\",\"artist_mbid\":null},{\"listen_count\":1,\"artist_name\":\"Tree Fiddy\",\"artist_mbid\":null},{\"listen_count\":1,\"artist_name\":\"Shaun\",\"artist_mbid\":null}],\"count\":7,\"from_ts\":1793491200,\"to_ts\":1796083200,\"last_updated\":1795027305}\n{\"user_id\":100,\"data\":[{\"listen_count\":44,\"artist_name\":\"Combichrist\",\"artist_mbid\":\"c29f4522-f710-4bb5-a06b-d436fcc3b2fd\"},{\"listen_count\":22,\"artist_name\":\"Charlotte de Witte\",\"artist_mbid\":null},{\"listen_count\":20,\"artist_name\":\"Charlotte de Witte\",\"artist_mbid\":\"1de4e373-e597-4087-bf3d-256ec597749e\"},{\"listen_count\":16,\"artist_name\":\"Indira Paganotto\",\"artist_mbid\":\"f42c4a7a-f582-4dd2-aa73-819e09f578a1\"},{\"listen_count\":14,\"artist_name\":\"Perfecto Podcast: featuring Paul Oakenfold\",\"artist_mbid\":null},{\"listen_count\":11,\"artist_name\":\"CamelPhat\",\"artist_mbid\":\"61314ff2-7b52-4296-a0b8-af61dc08bdd1\"},{\"listen_count\":10,\"artist_name\":\"Amelie Lens\",\"artist_mbid\":\"67db280d-c3e4-49d9-978e-4050f4e209ef\"},{\"listen_count\":8,\"artist_name\":\"One More Tune Radio\",\"artist_mbid\":null},{\"listen_count\":8,\"artist_name\":\"Lilly Palmer\",\"artist_mbid\":\"b6c834af-59ed-499b-b287-22e2ff4dba13\"},{\"listen_count\":8,\"artist_name\":\"Cosmic Gate: WYM Radio\",\"artist_mbid\":null},{\"listen_count\":7,\"artist_name\":\"John 00 Fleming presents JOOF Radio\",\"artist_mbid\":null},{\"listen_count\":6,\"artist_name\":\"Victims Radio\",\"artist_mbid\":null},{\"listen_count\":6,\"artist_name\":\"Max Styler\",\"artist_mbid\":\"d7d6d740-ac1d-49be-bcb7-047db7943acc\"},{\"listen_count\":6,\"artist_name\":\"Boris Brejcha\",\"artist_mbid\":null},{\"listen_count\":5,\"artist_name\":\"Elderbrook\",\"artist_mbid\":\"25835693-a126-478a-944e-1303ae7a2551\"},{\"listen_count\":5,\"artist_name\":\"Communion After Dark\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"\u0e1a\u0e32\u0e2a\u0e42\u0e25\u0e1b\u0e44\u0e1c\u0e48\u0e40\u0e02\u0e35\u0e22\u0e27 \u0e04\u0e23\u0e39\u0e41\u0e1b\u0e4b\u0e27\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"VII RADIO\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Sie Halues\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Resonation Radio by Ferry Corsten\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Rammstein\",\"artist_mbid\":\"b2d122f9-eadb-4930-a196-8f221eeb0c66\"},{\"listen_count\":4,\"artist_name\":\"Pharmacy Radio\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Nina Kraviz\",\"artist_mbid\":\"5dd3cf5b-474d-465a-a539-456d7e125ebc\"},{\"listen_count\":4,\"artist_name\":\"Michael Leathers\",\"artist_mbid\":null},{\"listen_count\":4,\"artist_name\":\"Marilyn Manson\",\"artist_mbid\":\"5dfdca28-9ddc-4853-933c-8bc97d87beec\"},{\"listen_count\":4,\"artist_name\":\"Josh Gigante\",\"artist_mb",
+  "listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_this_week.jsonl": "{\"user_id\":10,\"data\":[{\"listen_count\":3,\"artist_name\":\"\ud83d\udd34[LIVE] THE BLOOD OF DAWNWALKER continues!\",\"artist_mbid\":null}],\"count\":1,\"from_ts\":1794787200,\"to_ts\":1795392000,\"last_updated\":1795019441}\n{\"user_id\":100,\"data\":[{\"listen_count\":6,\"artist_name\":\"CamelPhat\",\"artist_mbid\":\"61314ff2-7b52-4296-a0b8-af61dc08bdd1\"},{\"listen_count\":4,\"artist_name\":\"Indira Paganotto\",\"artist_mbid\":\"f42c4a7a-f582-4dd2-aa73-819e09f578a1\"},{\"listen_count\":3,\"artist_name\":\"John 00 Fleming presents JOOF Radio\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"zero pill\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"sabaton\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Victims Radio\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Ultra Nat\u00e9\",\"artist_mbid\":\"0004537a-4b12-43eb-a023-04009e738d2e\"},{\"listen_count\":2,\"artist_name\":\"Rob Zombie\",\"artist_mbid\":\"c995a379-60b9-404b-bd97-a7e2de0751d3\"},{\"listen_count\":2,\"artist_name\":\"Resonation Radio by Ferry Corsten\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Rammstein\",\"artist_mbid\":\"b2d122f9-eadb-4930-a196-8f221eeb0c66\"},{\"listen_count\":2,\"artist_name\":\"Peyton Parrish\",\"artist_mbid\":\"a4dd991a-0405-4139-b8f3-5f2300dd9eb5\"},{\"listen_count\":2,\"artist_name\":\"Perfecto Podcast: featuring Paul Oakenfold\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"One More Tune Radio\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Nightwish\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Moreno Suarez\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Max Styler\",\"artist_mbid\":\"d7d6d740-ac1d-49be-bcb7-047db7943acc\"},{\"listen_count\":2,\"artist_name\":\"Matteo Cole\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Marilyn Manson\",\"artist_mbid\":\"5dfdca28-9ddc-4853-933c-8bc97d87beec\"},{\"listen_count\":2,\"artist_name\":\"Malive\",\"artist_mbid\":\"2cc36bf8-5f41-4ac2-bd79-9928ce0cdbf8\"},{\"listen_count\":2,\"artist_name\":\"Lilly Palmer\",\"artist_mbid\":\"b6c834af-59ed-499b-b287-22e2ff4dba13\"},{\"listen_count\":2,\"artist_name\":\"Killer Klowns\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Josh Gigante\",\"artist_mbid\":\"887cad73-3f23-434b-b3cf-0275c4ed6dcb\"},{\"listen_count\":2,\"artist_name\":\"Jonas Blue\",\"artist_mbid\":\"17678771-5799-4017-851a-319f25b6948d\"},{\"listen_count\":2,\"artist_name\":\"John Gold\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"Imael Angel\",\"artist_mbid\":\"a3c9387a-6e60-4f49-8405-6056998e01d7\"},{\"listen_count\":2,\"artist_name\":\"HUGEL\",\"artist_mbid\":\"eead7215-59da-45f5-b719-62f349ef4133\"},{\"listen_count\":2,\"artist_name\":\"HOSH, CamelPhat\",\"artist_mbid\":null},{\"listen_count\":2,\"artist_name\":\"GENESI\",\"artist_mbid\":\"92b50146-bfa8-4cde-903e-7419fe412f2a\"},{\"listen_count\":2,\"artist_name\":\"Franksy\",\"artist_mbid\":\"670ed4e9-c233-4772-bc2e-662a5fc1fd0b\"},{\"listen_count\":2,\"artist_name\":\"Feuerschwanz\",\"artist_mbid\":\"107fe9d9-903d-4bdc-ba88-d1df3c2fa32c\"},{\"listen_count\":2,\"artist_name\":\"Essentia\",\"artist_mbid\":\"b6feb78d-4e5c-488c-b3d0-f7d033fb33c3\"},{\"listen_count\":2,\"artist_name\":\"Elderbrook, Camel"
+ }
+}

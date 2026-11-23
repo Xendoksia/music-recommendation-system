@@ -1,0 +1,370 @@
+<title>Kendi Benzerlik Modelimiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F4F6F4; --surface:#FFFFFF; --ink:#18201D; --ink2:#46524D; --muted:#6B7772; --line:#D8DED9; --soft:#E9EEEA;
+  --accent:#1D6F62; --accent-soft:#D5EAE5; --warn:#A85A14; --warn-soft:#F6E5D4; --done:#2E7D4F; --done-soft:#DCEFE3;
+  --neutral-bar:#A9B4AF;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111614; --surface:#181F1C; --ink:#E5ECE8; --ink2:#B9C5BF; --muted:#8E9C96; --line:#2B3531; --soft:#1F2724;
+    --accent:#5BBFAC; --accent-soft:#1C3631; --warn:#E3A162; --warn-soft:#3A2A1B; --done:#6CC48F; --done-soft:#1C3325;
+    --neutral-bar:#56625D; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111614; --surface:#181F1C; --ink:#E5ECE8; --ink2:#B9C5BF; --muted:#8E9C96; --line:#2B3531; --soft:#1F2724;
+  --accent:#5BBFAC; --accent-soft:#1C3631; --warn:#E3A162; --warn-soft:#3A2A1B; --done:#6CC48F; --done-soft:#1C3325;
+  --neutral-bar:#56625D; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--body);padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:700}
+h3{font-size:16px;font-weight:700}
+p{margin:0;max-width:68ch}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lede{font-size:17px;color:var(--ink2)}
+section{display:flex;flex-direction:column;gap:18px}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.sec-head p{color:var(--ink2)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:16px}
+.now{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:7px;flex:none;box-shadow:0 0 0 0 var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 50%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.why div{border-top:2px solid var(--ink);padding-top:10px;display:flex;flex-direction:column;gap:4px}
+.why b{font-family:var(--display);font-size:16px}
+.why span{color:var(--ink2);font-size:14px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:1fr auto 1.35fr auto 1fr;gap:10px;align-items:stretch}
+.zone{border:1.5px dashed var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.zone-label{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.zone.cloud{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:color-mix(in srgb,var(--accent-soft) 40%,transparent)}
+.zone.cloud .zone-label{color:var(--accent)}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.node b{font-size:14px}
+.node span{font-size:13px;color:var(--ink2)}
+.node .num{font-size:12px;color:var(--muted)}
+.node.private{border-color:var(--warn);background:var(--warn-soft)}
+.arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font:500 20px/1 var(--mono)}
+.inner{display:flex;flex-direction:column;gap:8px}
+.inner .down{text-align:center;color:var(--muted);font:500 14px/1 var(--mono)}
+@media (max-width:760px){
+  .pipe{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);height:24px}
+}
+
+/* parts */
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.part{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.part .idx{font:500 12px/1 var(--mono);color:var(--muted)}
+.part b{font-size:14px;line-height:1.3}
+.part small{font-size:12.5px;color:var(--ink2);line-height:1.4}
+.pill{align-self:flex-start;font:500 11px/1 var(--mono);letter-spacing:.04em;padding:4px 7px;border-radius:99px;background:var(--soft);color:var(--muted)}
+.part.done .pill{background:var(--done-soft);color:var(--done)}
+.part.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.part.active .pill{background:var(--accent-soft);color:var(--accent)}
+
+/* model ladder */
+.ladder{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.rung{display:grid;grid-template-columns:120px 1fr 1.3fr;gap:16px;padding:14px 16px;border-top:1px solid var(--line);align-items:start}
+.rung:first-child{border-top:0}
+.rung .role{font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.rung b{font-family:var(--display);font-size:17px}
+.rung .data{font:400 12px/1.3 var(--mono);color:var(--muted);margin-top:4px}
+.rung p{font-size:14px;color:var(--ink2)}
+.rung.target{background:var(--soft)}
+.rung.base .role{color:var(--accent)}
+@media (max-width:640px){.rung{grid-template-columns:1fr;gap:6px}}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.note{border-left:2px solid var(--line);padding:2px 0 2px 12px;font-size:14px;color:var(--ink2)}
+.note b{color:var(--ink);display:block;font-size:14px}
+
+/* charts */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.chart-scroll{overflow-x:auto}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--ink2)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+svg text{font-family:var(--body);fill:var(--ink2)}
+svg .lbl{font-size:13px;fill:var(--ink)}
+svg .val{font-family:var(--mono);font-size:12px;fill:var(--ink)}
+svg .tick{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .thr{stroke:var(--ink2);stroke-width:1;stroke-dasharray:3 3}
+svg .hit{fill:transparent;cursor:default}
+svg .hit:hover + .bar, svg g.row:hover .bar{filter:brightness(1.08)}
+g.row:hover .lbl{font-weight:600}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:500 13px/1 var(--body);padding:8px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink2);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.filters button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;line-height:1.45;padding:8px 10px;border-radius:6px;max-width:260px;z-index:10}
+.tip b{font-size:13px}
+.tip .num{color:inherit}
+.callout{display:flex;gap:12px;background:var(--warn-soft);border-radius:10px;padding:14px 16px;font-size:14.5px}
+.callout .mark{font:700 15px/1.4 var(--mono);color:var(--warn);flex:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.stat{display:flex;flex-direction:column;gap:2px;padding:12px 0;border-top:1px solid var(--line)}
+.stat .big{font:500 26px/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--ink2)}
+.next{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none;counter-reset:n}
+.next li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;font-size:14.5px}
+.next li::before{counter-increment:n;content:counter(n);font:500 12px/24px var(--mono);text-align:center;border:1px solid var(--line);border-radius:50%;width:24px;height:24px;color:var(--ink2)}
+footer{font-size:12.5px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">Playlist Tracker · "Senin için" önerileri</span>
+  <h1>Kendi benzerlik modelimiz</h1>
+  <p class="lede">"Senin için" önerileri şu an Deezer'ın benzer sanatçı listesine dayanıyor. Kendi modelimizi eğitip Deezer'la aynı sınava sokacağız. Hangisi daha iyi çıkarsa uygulamaya o girecek: Deezer, bizim model ya da ikisinin karışımı.</p>
+  <div class="now" role="status">
+    <span class="pulse" aria-hidden="true"></span>
+    <div><b>Parça 2 bitti, sırada Parça 3 var: modellerin eğitimi.</b> Eğitim matrisi hazır: 85.183 kullanıcı × 276.112 sanatçı ve 37,2 milyon dinleme çifti. Kullanıcıların %10'u ayar, %10'u test için ayrıldı. item2vec için 966 bin dinleme oturumu çıkarıldı.</div>
+  </div>
+  <div class="why">
+    <div><b>Tek platforma bağlı kalmamak</b><span>Deezer API'yi kapatır ya da değiştirirse öneriler durmaz.</span></div>
+    <div><b>İnternetsiz çalışmak</b><span>Model uygulamanın içine gömülür ve öneri için ağa gerek kalmaz.</span></div>
+    <div><b>Kontrol</b><span>Türk sanatçıların ağırlığı, çeşitlilik ve popülerlik dengesi ayarlanabilir.</span></div>
+    <div><b>Ölçerek karar vermek</b><span>Karar, senin gerçek dinlemelerinle yapılan sınava göre verilir.</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Akış</span>
+    <h2>Veri nereden gelir, model nerede eğitilir?</h2>
+    <p>Ağır işler Kaggle'da yapılıyor, çünkü bağlantın yaklaşık 3 MB/sn hız veriyor ve 29 GB'ı indirmek 3 saat sürerdi. Senin dinleme verin bilgisayarından hiç çıkmıyor.</p>
+  </div>
+  <div class="pipe">
+    <div class="zone">
+      <span class="zone-label">Kaynak</span>
+      <div class="node"><b>ListenBrainz</b><span>Açık lisanslı (CC0) dinleme kayıtları</span><span class="num">~100 bin kullanıcı</span></div>
+    </div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="zone cloud">
+      <span class="zone-label">Kaggle (bulut)</span>
+      <div class="inner">
+        <div class="node"><b>Hazırlık</b><span>İstatistik ve 15 günlük döküm küçük tablolara indirgendi</span><span class="num">23 GB → 2–3 GB</span></div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="node"><b>Eğitim ve ayar</b><span>4 yöntem eğitilir, test kullanıcılarıyla puanlanır</span><span class="num">Recall@20 · NDCG@20</span></div>
+      </div>
+    </div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="zone">
+      <span class="zone-label">Senin bilgisayarın</span>
+      <div class="inner">
+        <div class="node"><b>Model dosyası</b><span>Sanatçı vektörleri ve adları</span><span class="num">&lt; 20 MB</span></div>
+        <div class="node private"><b>Deezer'la sınav</b><span><code>listening.db</code> burada okunur, buluta çıkmaz</span></div>
+        <div class="node"><b>Uygulama</b><span>Kazanan "Senin için" listesini üretir</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Yol haritası</span>
+    <h2>Parçalar</h2>
+  </div>
+  <ol class="parts">
+    <li class="part done"><span class="idx">Parça 0</span><b>Hazırlık</b><small>Klasörler, ortam, veri okuma kodu</small><span class="pill">Bitti</span></li>
+    <li class="part done"><span class="idx">Parça 1</span><b>Kapsam ölçümü</b><small>ListenBrainz seçildi, Last.fm yedekte</small><span class="pill">Bitti</span></li>
+    <li class="part done"><span class="idx">Parça 2</span><b>Veri hazırlama</b><small>85 bin kullanıcı × 276 bin sanatçı</small><span class="pill">Bitti</span></li>
+    <li class="part active"><span class="idx">Parça 3</span><b>Modeller</b><small>Kaggle'da eğitim ve ayar</small><span class="pill">Sırada</span></li>
+    <li class="part"><span class="idx">Parça 4</span><b>Deezer karşılaştırması</b><small>Bilgisayarında, senin verinle</small><span class="pill">Sırada</span></li>
+    <li class="part"><span class="idx">Parça 5</span><b>Uygulamaya taşıma</b><small>RECOMMEND_SOURCE ayarı</small><span class="pill">Sonra</span></li>
+    <li class="part"><span class="idx">Parça 6</span><b>Uygulama içinde ölçüm</b><small>Önerilenler dinlendi mi?</small><span class="pill">Sonra</span></li>
+  </ol>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Modeller</span>
+    <h2>Basitten karmaşığa dört yöntem ve bir hedef</h2>
+    <p>Hepsinin işi aynı: bir sanatçı verilince ona en çok benzeyenleri sıralamak. Temel fikir, aynı kişilerin dinlediği sanatçıların birbirine benzediği. Model türe ya da sese bakmıyor, yalnızca dinleme davranışından öğreniyor.</p>
+  </div>
+  <div class="ladder">
+    <div class="rung"><span class="role">Alt sınır</span><div><b>Popülerlik</b><div class="data">tüm zaman istatistiği</div></div><p>Herkese en çok dinlenenleri önerir ve hiçbir şey öğrenmez. Bunu geçemeyen model işe yaramıyor demektir.</p></div>
+    <div class="rung base"><span class="role">Asıl taban</span><div><b>Birlikte dinlenme</b><div class="data">kosinüs benzerliği</div></div><p>İki sanatçının dinleyici kümeleri ne kadar örtüşüyor, ona bakar. Ayarı neredeyse yok ve genelde çok güçlü. Diğerleri ancak bunu geçerse değer.</p></div>
+    <div class="rung"><span class="role">Aday</span><div><b>ALS</b><div class="data">matris ayrıştırma · 64–128 boyut</div></div><p>Her sanatçıya bir sayı vektörü verir ve benzer sanatçıların vektörleri birbirine yakın düşer. Az dinlenen sanatçılarda daha iyi genelleyebilir.</p></div>
+    <div class="rung"><span class="role">Aday</span><div><b>item2vec</b><div class="data">15 günlük sıralı dinlemeler</div></div><p>word2vec'in müzik sürümü. Aynı oturumda art arda dinlenen sanatçıları, cümlede yan yana geçen kelimeler gibi ele alır.</p></div>
+    <div class="rung target"><span class="role">Hedef</span><div><b>Deezer</b><div class="data">uygulamada şu an çalışan</div></div><p>Bizim model ya da karma çözüm bunu geçmeli. Geçemezse Deezer'da kalınır.</p></div>
+  </div>
+  <div class="notes">
+    <div class="note"><b>İnce ayar yok</b>Hazır bir modelin üstüne kurmuyoruz. Hepsi sıfırdan ve dakikalar içinde eğitiliyor, dondurulacak katman da yok.</div>
+    <div class="note"><b>Ayar = hiperparametre seçimi</b>Model farklı ayarlarla birkaç kez baştan eğitilir ve en iyi puanı veren seçilir.</div>
+    <div class="note"><b>Birleştirme çıktıda olur</b>Deezer'ın listesiyle ağırlıklı toplam ya da sıra birleştirme (RRF) yapılır. Model sanatçıyı tanımıyorsa Deezer'a düşülür.</div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Parça 1 ve 2 · Kapsam</span>
+    <h2>Senin dinlemelerinin ne kadarını bu veriler tanıyor?</h2>
+    <p>Bir sanatçı, veride en az 50 dinleyicisi varsa "yeterli sinyal" sayıldı. Çubuklar, bu sanatçıların senin 763 sanatçı çalmandaki payını gösteriyor.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="big">101.313</span><span>kullanıcının tüm zaman istatistiği</span></div>
+    <div class="stat"><span class="big">126 milyon</span><span>dinleme (son 15 gün, sıralı)</span></div>
+    <div class="stat"><span class="big">%88</span><span>indirilen istatistikte kapsam (en az 50 dinleyici)</span></div>
+    <div class="stat"><span class="big">%99</span><span>aynı veride kapsam (en az 10 dinleyici)</span></div>
+  </div>
+  <div class="chart">
+    <div class="legend"><span><i style="background:var(--accent)"></i>Seçilen kaynak (ListenBrainz)</span><span><i style="background:var(--neutral-bar)"></i>Last.fm</span></div>
+    <div class="chart-scroll"><svg id="cov" role="img" aria-label="Veri setlerine göre kapsanan dinleme payı"></svg></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Sanatçı bazında</span>
+    <h2>Rock tarafı güçlü, Türk pop zayıf</h2>
+    <p>Her çubuk, sanatçının indirilen istatistikteki dinleyici sayısını gösteriyor (logaritmik eksen). Sıralama senin çalma sayına göre. Kesikli çizgiler 10 ve 50 dinleyici eşikleri.</p>
+  </div>
+  <div class="callout"><span class="mark">!</span><div>ListenBrainz API'si Burcu Güneş için 928 dinleyici gösteriyordu, indirilen istatistikte ise yalnızca 41 var. Fark muhtemelen istatistik dökümünün her kullanıcı için yalnızca en çok dinlediği sanatçıları tutmasından geliyor. Bu yüzden Türk pop sanatçıları için Deezer'a düşen karma çözüm büyük olasılıkla gerekli olacak.</div></div>
+  <div class="chart">
+    <div class="filters" role="group" aria-label="Sanatçı filtresi">
+      <button type="button" id="f-top" aria-pressed="true">En çok çaldıkların (30)</button>
+      <button type="button" id="f-tr" aria-pressed="false">Türk sanatçılar</button>
+      <button type="button" id="f-weak" aria-pressed="false">50'nin altında kalanlar</button>
+    </div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>En az 50 dinleyici</span><span><i style="background:var(--warn)"></i>50'nin altında, model zorlanır</span></div>
+    <div class="chart-scroll"><svg id="art" role="img" aria-label="Sanatçıların indirilen veride dinleyici sayısı"></svg></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Sıradaki</span>
+    <h2>Bundan sonra</h2>
+  </div>
+  <ol class="next">
+    <li><span>Popülerlik ve birlikte dinlenme modelleri kurulup doğrulama kullanıcılarıyla puanlanacak (Recall@20, NDCG@20).</span></li>
+    <li><span>ALS farklı boyut, düzenlileştirme ve ağırlıklandırma (log ya da BM25) ayarlarıyla eğitilecek.</span></li>
+    <li><span>item2vec 966 bin oturumdan eğitilecek.</span></li>
+    <li><span>En iyi ayarlar test kullanıcılarında bir kez ölçülecek ve kazananların dosyaları Parça 4 için indirilecek.</span></li>
+  </ol>
+</section>
+
+<footer>Kaynaklar: ListenBrainz istatistik dökümü (15 Kasım 2026), ListenBrainz günlük dökümleri (9–23 Kasım 2026), Last.fm 360K ve 1K (Zenodo), Playlist Tracker'ın dinleme kaydı (1–21 Kasım 2026, 752 çalma). Son güncelleme: 23 Kasım 2026.</footer>
+</div>
+
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const ARTISTS = [{"n": "Three Days Grace", "p": 71, "s": 11288, "r": 2560, "api": 169793, "tr": false}, {"n": "Motionless In White", "p": 66, "s": 4311, "r": 1114, "api": 22346, "tr": false}, {"n": "Linkin Park", "p": 47, "s": 28988, "r": 7116, "api": 353575, "tr": false}, {"n": "Slipknot", "p": 41, "s": 13303, "r": 2750, "api": 213485, "tr": false}, {"n": "Evanescence", "p": 40, "s": 14528, "r": 3120, "api": 246737, "tr": false}, {"n": "Göksel", "p": 29, "s": 208, "r": 33, "api": 3020, "tr": true}, {"n": "Thousand Foot Krutch", "p": 26, "s": 3587, "r": 657, "api": 53361, "tr": false}, {"n": "Burcu Güneş", "p": 26, "s": 41, "r": 11, "api": 928, "tr": true}, {"n": "STARSET", "p": 23, "s": 3346, "r": 810, "api": 6700, "tr": false}, {"n": "Asking Alexandria", "p": 22, "s": 3725, "r": 706, "api": 49881, "tr": false}, {"n": "Metallica", "p": 19, "s": 21333, "r": 3757, "api": 341352, "tr": false}, {"n": "Skillet", "p": 18, "s": 6934, "r": 1471, "api": 92953, "tr": false}, {"n": "Hilal Bilen", "p": 17, "s": 13, "r": 6, "api": 5, "tr": true}, {"n": "Bad Omens", "p": 17, "s": 5071, "r": 1380, "api": 8744, "tr": false}, {"n": "Pera", "p": 15, "s": 43, "r": 7, "api": 116, "tr": true}, {"n": "Breaking Benjamin", "p": 15, "s": 8237, "r": 1786, "api": 151190, "tr": false}, {"n": "Zero 9:36", "p": 14, "s": 1057, "r": 177, "api": 3021, "tr": false}, {"n": "Within Temptation", "p": 11, "s": 4989, "r": 825, "api": 132623, "tr": false}, {"n": "SELIN", "p": 10, "s": 41, "r": 6, "api": 176, "tr": true}, {"n": "Güneş", "p": 10, "s": 77, "r": 10, "api": 170, "tr": true}, {"n": "Architects", "p": 9, "s": 4568, "r": 1149, "api": 50732, "tr": false}, {"n": "Apocalyptica", "p": 8, "s": 5457, "r": 697, "api": 163928, "tr": false}, {"n": "emre aydın", "p": 7, "s": 126, "r": 35, "api": 2731, "tr": true}, {"n": "Ninth Key", "p": 7, "s": 72, "r": 68, "api": 148, "tr": false}, {"n": "My Darkest Days", "p": 7, "s": 1404, "r": 223, "api": 14756, "tr": false}, {"n": "Avenged Sevenfold", "p": 7, "s": 9559, "r": 1901, "api": 167531, "tr": false}, {"n": "Şanışer", "p": 7, "s": 67, "r": 10, "api": 147, "tr": true}, {"n": "Perdenin Ardındakiler", "p": 7, "s": 52, "r": 7, "api": 105, "tr": true}, {"n": "Pierce The Veil", "p": 6, "s": 5304, "r": 1487, "api": 43373, "tr": false}, {"n": "Zeynep Casalini", "p": 6, "s": 29, "r": 1, "api": 1128, "tr": true}, {"n": "Mark Eliyahu", "p": 6, "s": 86, "r": 10, "api": 538, "tr": false}, {"n": "Cem Adrian", "p": 6, "s": 121, "r": 17, "api": 1822, "tr": true}, {"n": "Bring Me The Horizon", "p": 5, "s": 12666, "r": 2834, "api": 102237, "tr": false}, {"n": "Five Finger Death Punch", "p": 5, "s": 6032, "r": 1070, "api": 76275, "tr": false}, {"n": "IVOXYGEN", "p": 5, "s": 873, "r": 214, "api": 2085, "tr": false}, {"n": "Sleep Theory", "p": 5, "s": 1347, "r": 364, "api": 2623, "tr": false}, {"n": "Rammstein", "p": 5, "s": 12968, "r": 2389, "api": 233586, "tr": false}, {"n": "Shinedown", "p": 5, "s": 5607, "r": 1163, "api": 104455, "tr": false}, {"n": "Hande Yener", "p": 5, "s": 183, "r": 39, "api": 3627, "tr": true}, {"n": "Zeynep Dizdar", "p": 5, "s": 28, "r": 5, "api": 714, "tr": true}, {"n": "Seether", "p": 4, "s": 6347, "r": 1354, "api": 131856, "tr": false}, {"n": "Cult To Follow", "p": 4, "s": 639, "r": 126, "api": 2845, "tr": false}, {"n": "NF", "p": 4, "s": 5865, "r": 1173, "api": 10334, "tr": false}, {"n": "Bullet For My Valentine", "p": 4, "s": 6566, "r": 1443, "api": 160247, "tr": false}, {"n": "Halsey", "p": 4, "s": 14930, "r": 2129, "api": 22141, "tr": false}, {"n": "Tarkan", "p": 4, "s": 578, "r": 141, "api": 18025, "tr": true}, {"n": "Ben Fero", "p": 4, "s": 84, "r": 14, "api": 155, "tr": true}, {"n": "Bengü", "p": 4, "s": 90, "r": 22, "api": 892, "tr": true}, {"n": "Visions of Atlantis", "p": 3, "s": 1052, "r": 205, "api": 20967, "tr": false}, {"n": "Our Lady Peace", "p": 3, "s": 1655, "r": 340, "api": 69171, "tr": false}, {"n": "Simge", "p": 3, "s": 139, "r": 25, "api": 322, "tr": true}, {"n": "Bohnes", "p": 2, "s": 1150, "r": 252, "api": 2762, "tr": false}, {"n": "Guns N' Roses", "p": 2, "s": 16790, "r": 2842, "api": 309644, "tr": false}, {"n": "Shotgun Parade", "p": 2, "s": 9, "r": 9, "api": 0, "tr": false}, {"n": "Sertab Erener", "p": 2, "s": 258, "r": 54, "api": 11052, "tr": true}, {"n": "The Neighbourhood", "p": 2, "s": 12037, "r": 2618, "api": 46307, "tr": false}, {"n": "maNga", "p": 2, "s": 335, "r": 63, "api": 9219, "tr": true}, {"n": "Anathema", "p": 2, "s": 2503, "r": 345, "api": 91284, "tr": false}, {"n": "Flyleaf", "p": 2, "s": 3783, "r": 745, "api": 109653, "tr": false}, {"n": "Red", "p": 2, "s": 1686, "r": 287, "api": 55610, "tr": false}, {"n": "M Lisa", "p": 2, "s": 63, "r": 16, "api": 53, "tr": false}, {"n": "Anıl Piyancı", "p": 2, "s": 74, "r": 7, "api": 143, "tr": true}, {"n": "Escape the Fate", "p": 1, "s": 3246, "r": 661, "api": 72131, "tr": false}, {"n": "Project Vela", "p": 1, "s": 125, "r": 30, "api": 453, "tr": false}, {"n": "Pastelle", "p": 1, "s": 55, "r": 16, "api": 281, "tr": false}, {"n": "LANDMVRKS", "p": 1, "s": 1353, "r": 337, "api": 2807, "tr": false}, {"n": "Pantera", "p": 1, "s": 7814, "r": 1355, "api": 167087, "tr": false}, {"n": "Pearl Jam", "p": 1, "s": 13928, "r": 2557, "api": 296938, "tr": false}, {"n": "Finger Eleven", "p": 1, "s": 3910, "r": 831, "api": 94301, "tr": false}, {"n": "Black Veil Brides", "p": 1, "s": 2729, "r": 534, "api": 34235, "tr": false}, {"n": "Arcane", "p": 1, "s": 1622, "r": 173, "api": 3430, "tr": false}, {"n": "Vega", "p": 1, "s": 149, "r": 26, "api": 3865, "tr": true}, {"n": "Pamela", "p": 1, "s": 92, "r": 16, "api": 864, "tr": true}, {"n": "Berk Baysal", "p": 1, "s": 10, "r": 1, "api": 34, "tr": true}, {"n": "Nomy", "p": 1, "s": 685, "r": 138, "api": 15533, "tr": false}, {"n": "Domina Noctis", "p": 1, "s": 122, "r": 17, "api": 2622, "tr": false}, {"n": "Cheriimoya", "p": 1, "s": 576, "r": 151, "api": 1498, "tr": false}, {"n": "Decyfer Down", "p": 1, "s": 295, "r": 44, "api": 12835, "tr": false}, {"n": "Arctic Monkeys", "p": 1, "s": 23483, "r": 4792, "api": 352930, "tr": false}, {"n": "Kolpa", "p": 1, "s": 72, "r": 9, "api": 155, "tr": true}, {"n": "Yıldız Tilbe", "p": 1, "s": 92, "r": 25, "api": 1012, "tr": true}, {"n": "Papa Roach", "p": 1, "s": 10560, "r": 2005, "api": 207896, "tr": false}, {"n": "Sezen Aksu", "p": 1, "s": 335, "r": 72, "api": 10280, "tr": true}, {"n": "mor ve ötesi", "p": 1, "s": 351, "r": 84, "api": 9021, "tr": true}, {"n": "Funda", "p": 1, "s": 5, "r": 5, "api": 5, "tr": true}, {"n": "TNK", "p": 1, "s": 39, "r": 5, "api": 1013, "tr": true}, {"n": "Atiye", "p": 1, "s": 16, "r": 3, "api": 0, "tr": true}, {"n": "Furkan Kızılay", "p": 1, "s": 5, "r": 1, "api": 0, "tr": true}, {"n": "Model", "p": 1, "s": 211, "r": 40, "api": 1637, "tr": true}, {"n": "Çağan Şengül", "p": 1, "s": 22, "r": 4, "api": 41, "tr": true}, {"n": "Şebnem Ferah", "p": 1, "s": 244, "r": 49, "api": 5205, "tr": true}, {"n": "Yüksek Sadakat", "p": 1, "s": 168, "r": 27, "api": 2701, "tr": true}, {"n": "Digital Daggers", "p": 1, "s": 425, "r": 79, "api": 5436, "tr": false}, {"n": "Cryoshell", "p": 1, "s": 573, "r": 88, "api": 2714, "tr": false}, {"n": "The Cranberries", "p": 1, "s": 14408, "r": 2588, "api": 271917, "tr": false}, {"n": "Chevelle", "p": 1, "s": 4931, "r": 1188, "api": 101267, "tr": false}, {"n": "Funda Arar", "p": 1, "s": 50, "r": 12, "api": 1546, "tr": true}, {"n": "Green Day", "p": 1, "s": 24045, "r": 4769, "api": 372230, "tr": false}, {"n": "Anıl Emre Daldal", "p": 1, "s": 170, "r": 53, "api": 394, "tr": true}, {"n": "Server Uraz", "p": 1, "s": 22, "r": 2, "api": 49, "tr": true}, {"n": "bülow", "p": 1, "s": 1228, "r": 193, "api": 4277, "tr": false}, {"n": "Norm Ender", "p": 1, "s": 56, "r": 11, "api": 119, "tr": true}];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = n => n.toLocaleString("tr-TR");
+const tip = document.getElementById("tip");
+function showTip(e, html){tip.innerHTML = html; tip.hidden = false; moveTip(e);}
+function moveTip(e){
+  const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if (x + w > innerWidth - 8) x = e.clientX - w - pad;
+  if (y + h > innerHeight - 8) y = e.clientY - h - pad;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip(){tip.hidden = true;}
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent){const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (parent) parent.appendChild(n); return n;}
+function barPath(x, y, w, h){const r = Math.min(4, w, h / 2); return `M${x},${y} H${x + w - r} Q${x + w},${y} ${x + w},${y + r} V${y + h - r} Q${x + w},${y + h} ${x + w - r},${y + h} H${x} Z`;}
+
+/* coverage chart */
+const COV = [
+  {l:"Last.fm 1K", d:"en az 5 dinleyici · 2009", v:57, lb:false},
+  {l:"Last.fm 360K", d:"en az 50 dinleyici · 2008", v:64, lb:false},
+  {l:"ListenBrainz API", d:"tüm zamanlar, en az 50", v:97, lb:true},
+  {l:"İndirilen istatistik", d:"en az 50 dinleyici", v:88, lb:true},
+  {l:"İndirilen istatistik", d:"en az 10 dinleyici", v:99, lb:true},
+  {l:"Son 15 gün", d:"en az 50 dinleyici", v:75, lb:true},
+];
+function drawCov(){
+  const svg = document.getElementById("cov"); svg.innerHTML = "";
+  const W = Math.max(520, svg.parentElement.clientWidth), labelW = 190, right = 48, rowH = 40, top = 8, H = top + COV.length * rowH + 26;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
+  const x = v => labelW + (W - labelW - right) * v / 100;
+  [0, 25, 50, 75, 100].forEach(t => {
+    el("line", {x1:x(t), x2:x(t), y1:top, y2:H - 22, class:"grid"}, svg);
+    el("text", {x:x(t), y:H - 6, "text-anchor":"middle", class:"tick"}, svg).textContent = "%" + t;
+  });
+  COV.forEach((c, i) => {
+    const y = top + i * rowH, g = el("g", {class:"row"}, svg);
+    el("text", {x:0, y:y + 16, class:"lbl"}, g).textContent = c.l;
+    el("text", {x:0, y:y + 31, class:"tick"}, g).textContent = c.d;
+    el("path", {d:barPath(x(0), y + 8, x(c.v) - x(0), 20), class:"bar", fill:c.lb ? css("--accent") : css("--neutral-bar")}, g);
+    el("text", {x:x(c.v) + 6, y:y + 23, class:"val"}, g).textContent = "%" + c.v;
+    const hit = el("rect", {x:0, y:y, width:W, height:rowH, class:"hit"}, g);
+    hit.addEventListener("mousemove", e => showTip(e, `<b>${c.l}</b><br>${c.d}<br>Kapsanan pay: <span class="num">%${c.v}</span>`));
+    hit.addEventListener("mouseleave", hideTip);
+  });
+}
+
+/* artist chart */
+let mode = "top";
+function rows(){
+  if (mode === "tr") return ARTISTS.filter(a => a.tr);
+  if (mode === "weak") return ARTISTS.filter(a => a.s < 50);
+  return ARTISTS.slice(0, 30);
+}
+function drawArt(){
+  const svg = document.getElementById("art"); svg.innerHTML = "";
+  const data = rows();
+  const W = Math.max(560, svg.parentElement.clientWidth), labelW = 205, right = 64, rowH = 24, top = 6, H = top + data.length * rowH + 26;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
+  const maxLog = Math.log10(50000), x = v => labelW + (W - labelW - right) * Math.log10(Math.max(1, v)) / maxLog;
+  [1, 10, 100, 1000, 10000].forEach(t => {
+    el("line", {x1:x(t), x2:x(t), y1:top, y2:H - 22, class:"grid"}, svg);
+    el("text", {x:x(t), y:H - 6, "text-anchor":"middle", class:"tick"}, svg).textContent = t >= 1000 ? fmt(t / 1000) + " bin" : t;
+  });
+  [10, 50].forEach(t => {
+    el("line", {x1:x(t), x2:x(t), y1:top, y2:H - 22, class:"thr"}, svg);
+  });
+  data.forEach((a, i) => {
+    const y = top + i * rowH, g = el("g", {class:"row"}, svg), weak = a.s < 50;
+    const name = a.n.length > 20 ? a.n.slice(0, 19) + "…" : a.n;
+    el("text", {x:0, y:y + 16, class:"lbl"}, g).textContent = name;
+    el("text", {x:labelW - 12, y:y + 16, "text-anchor":"end", class:"tick"}, g).textContent = a.p + "×";
+    const w = Math.max(2, x(a.s) - x(1));
+    el("path", {d:barPath(x(1), y + 5, w, 14), class:"bar", fill:weak ? css("--warn") : css("--accent")}, g);
+    el("text", {x:x(1) + w + 6, y:y + 16, class:"val"}, g).textContent = fmt(a.s);
+    const hit = el("rect", {x:0, y:y, width:W, height:rowH, class:"hit"}, g);
+    hit.addEventListener("mousemove", e => showTip(e,
+      `<b>${a.n}</b>${a.tr ? " · TR" : ""}<br>Senin çalman: <span class="num">${a.p}</span><br>` +
+      `İndirilen istatistikte dinleyici: <span class="num">${fmt(a.s)}</span><br>` +
+      `Son 15 günde dinleyici: <span class="num">${fmt(a.r)}</span><br>` +
+      `ListenBrainz API (tüm zamanlar): <span class="num">${a.api ? fmt(a.api) : "kayıt yok"}</span>` +
+      (weak ? `<br><b>50'nin altında</b>` : "")));
+    hit.addEventListener("mouseleave", hideTip);
+  });
+  const count = {tr:ARTISTS.filter(a => a.tr).length, weak:ARTISTS.filter(a => a.s < 50).length};
+  document.getElementById("f-tr").textContent = `Türk sanatçılar (${count.tr})`;
+  document.getElementById("f-weak").textContent = `50'nin altında kalanlar (${count.weak})`;
+}
+["top", "tr", "weak"].forEach(m => {
+  document.getElementById("f-" + m).addEventListener("click", () => {
+    mode = m;
+    document.querySelectorAll(".filters button").forEach(b => b.setAttribute("aria-pressed", String(b.id === "f-" + m)));
+    drawArt();
+  });
+});
+function drawAll(){drawCov(); drawArt();}
+drawAll();
+addEventListener("resize", () => {clearTimeout(window.__r); window.__r = setTimeout(drawAll, 120);});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawAll);
+new MutationObserver(drawAll).observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
+</script>

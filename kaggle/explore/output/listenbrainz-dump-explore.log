@@ -1,0 +1,198 @@
+[{"stream_name":"stdout","time":25.275431324,"data":"{\n"}
+,{"stream_name":"stdout","time":25.275493355,"data":" \"incremental_dirs\": 31,\n"}
+,{"stream_name":"stdout","time":25.275500543,"data":" \"incremental_first_last\": [\n"}
+,{"stream_name":"stdout","time":25.275504465,"data":"  \"../\",\n"}
+,{"stream_name":"stdout","time":25.275509265,"data":"  \"listenbrainz-dump-2805-20261123-000002-incremental/\"\n"}
+,{"stream_name":"stdout","time":25.275512898,"data":" ],\n"}
+,{"stream_name":"stdout","time":25.275516049,"data":" \"incremental_sample\": {\n"}
+,{"stream_name":"stdout","time":25.275519691,"data":"  \"folder\": \"listenbrainz-dump-2804-20261123-000003-incremental/\",\n"}
+,{"stream_name":"stdout","time":25.275523924,"data":"  \"file\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental.tar\",\n"}
+,{"stream_name":"stdout","time":25.275527794,"data":"  \"bytes\": 895498240,\n"}
+,{"stream_name":"stdout","time":25.275531634,"data":"  \"download_seconds\": 11.2\n"}
+,{"stream_name":"stdout","time":25.275535475,"data":" },\n"}
+,{"stream_name":"stdout","time":25.27553875,"data":" \"parquet\": {\n"}
+,{"stream_name":"stdout","time":25.275542555,"data":"  \"member\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/0.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275546495,"data":"  \"rows\": 2216740,\n"}
+,{"stream_name":"stdout","time":25.275551459,"data":"  \"schema\": \"listened_at: timestamp[ns] not null\\ncreated: timestamp[ns] not null\\nuser_id: int64 not null\\nrecording_msid: string not null\\nartist_name: string not null\\nartist_credit_id: int64\\nrelease_name: string\\nrelease_mbid: string\\nrecording_name: string not null\\nrecording_mbid: string\\nartist_credit_mbids: list\u003celement: string\u003e\\n  child 0, element: string\\n-- schema metadata --\\npandas: '{\\\"index_columns\\\": [], \\\"column_indexes\\\": [], \\\"columns\\\": [{\\\"name\\\":' + 1471\",\n"}
+,{"stream_name":"stdout","time":25.275560379,"data":"  \"sample\": [\n"}
+,{"stream_name":"stdout","time":25.275563696,"data":"   {\n"}
+,{"stream_name":"stdout","time":25.275566961,"data":"    \"listened_at\": \"2026-11-21 22:31:09\",\n"}
+,{"stream_name":"stdout","time":25.27557074,"data":"    \"created\": \"2026-11-22 00:00:02.985000\",\n"}
+,{"stream_name":"stdout","time":25.275574425,"data":"    \"user_id\": 171989,\n"}
+,{"stream_name":"stdout","time":25.275577654,"data":"    \"recording_msid\": \"ce02c52f-0f9d-4c53-ad06-1dde3db882e9\",\n"}
+,{"stream_name":"stdout","time":25.275581435,"data":"    \"artist_name\": \"GOT7\",\n"}
+,{"stream_name":"stdout","time":25.275585069999998,"data":"    \"artist_credit_id\": null,\n"}
+,{"stream_name":"stdout","time":25.275588874,"data":"    \"release_name\": \"Just Right\",\n"}
+,{"stream_name":"stdout","time":25.275592293,"data":"    \"release_mbid\": null,\n"}
+,{"stream_name":"stdout","time":25.275595823,"data":"    \"recording_name\": \"Just Right\",\n"}
+,{"stream_name":"stdout","time":25.275599805,"data":"    \"recording_mbid\": null,\n"}
+,{"stream_name":"stdout","time":25.275603264,"data":"    \"artist_credit_mbids\": null\n"}
+,{"stream_name":"stdout","time":25.275607,"data":"   },\n"}
+,{"stream_name":"stdout","time":25.275610247,"data":"   {\n"}
+,{"stream_name":"stdout","time":25.275613852,"data":"    \"listened_at\": \"2026-11-21 22:31:31\",\n"}
+,{"stream_name":"stdout","time":25.275617523,"data":"    \"created\": \"2026-11-22 00:00:03.201000\",\n"}
+,{"stream_name":"stdout","time":25.275621684,"data":"    \"user_id\": 138798,\n"}
+,{"stream_name":"stdout","time":25.27562514,"data":"    \"recording_msid\": \"a25ce4cd-154c-49fe-9fa8-95dde770cd8a\",\n"}
+,{"stream_name":"stdout","time":25.275629091,"data":"    \"artist_name\": \"Agust D\",\n"}
+,{"stream_name":"stdout","time":25.275641515,"data":"    \"artist_credit_id\": 3576100,\n"}
+,{"stream_name":"stdout","time":25.27564548,"data":"    \"release_name\": \"D\\u2010DAY\",\n"}
+,{"stream_name":"stdout","time":25.275649952,"data":"    \"release_mbid\": \"a44bdae7-959e-4f9f-820d-3358021793db\",\n"}
+,{"stream_name":"stdout","time":25.275653626,"data":"    \"recording_name\": \"\\ud574\\uae08\",\n"}
+,{"stream_name":"stdout","time":25.275658145,"data":"    \"recording_mbid\": \"079a54bb-1a59-4e40-8456-7695b644d059\",\n"}
+,{"stream_name":"stdout","time":25.275661825,"data":"    \"artist_credit_mbids\": [\n"}
+,{"stream_name":"stdout","time":25.27566584,"data":"     \"f09d2950-e3c6-47b2-b21c-2bad2cd3f616\"\n"}
+,{"stream_name":"stdout","time":25.275669429,"data":"    ]\n"}
+,{"stream_name":"stdout","time":25.275672676,"data":"   },\n"}
+,{"stream_name":"stdout","time":25.27567568,"data":"   {\n"}
+,{"stream_name":"stdout","time":25.275679351,"data":"    \"listened_at\": \"2026-11-21 22:31:55\",\n"}
+,{"stream_name":"stdout","time":25.275682847,"data":"    \"created\": \"2026-11-22 00:00:03.496000\",\n"}
+,{"stream_name":"stdout","time":25.275686699,"data":"    \"user_id\": 248444,\n"}
+,{"stream_name":"stdout","time":25.275692845000002,"data":"    \"recording_msid\": \"e00f5267-15fe-4b85-a849-bfafb756cf0e\",\n"}
+,{"stream_name":"stdout","time":25.275697117,"data":"    \"artist_name\": \"femtanyl\",\n"}
+,{"stream_name":"stdout","time":25.275701358,"data":"    \"artist_credit_id\": 3730860,\n"}
+,{"stream_name":"stdout","time":25.275704851,"data":"    \"release_name\": \"MAN BITES DOG\",\n"}
+,{"stream_name":"stdout","time":25.275708479,"data":"    \"release_mbid\": \"fc0b1591-4985-40df-94f4-e01f297bf2d7\",\n"}
+,{"stream_name":"stdout","time":25.275712459,"data":"    \"recording_name\": \"BODY THE PISTOL\",\n"}
+,{"stream_name":"stdout","time":25.275715954,"data":"    \"recording_mbid\": \"b8e14192-e347-47d5-8733-a6da28f2b6e5\",\n"}
+,{"stream_name":"stdout","time":25.275720226,"data":"    \"artist_credit_mbids\": [\n"}
+,{"stream_name":"stdout","time":25.275723839,"data":"     \"eb3c021d-e056-42d6-8fad-064205a90527\"\n"}
+,{"stream_name":"stdout","time":25.275727483,"data":"    ]\n"}
+,{"stream_name":"stdout","time":25.275731296,"data":"   }\n"}
+,{"stream_name":"stdout","time":25.2757351,"data":"  ]\n"}
+,{"stream_name":"stdout","time":25.275738637,"data":" },\n"}
+,{"stream_name":"stdout","time":25.275741989,"data":" \"incremental_members\": [\n"}
+,{"stream_name":"stdout","time":25.275745925,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275749543,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/SCHEMA_SEQUENCE\",\n"}
+,{"stream_name":"stdout","time":25.275753625,"data":"   \"bytes\": 1\n"}
+,{"stream_name":"stdout","time":25.275757029,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275760504,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275763604,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/START_TIMESTAMP\",\n"}
+,{"stream_name":"stdout","time":25.275767321,"data":"   \"bytes\": 32\n"}
+,{"stream_name":"stdout","time":25.275770699,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275773964,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275777366,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/END_TIMESTAMP\",\n"}
+,{"stream_name":"stdout","time":25.275781402,"data":"   \"bytes\": 32\n"}
+,{"stream_name":"stdout","time":25.275784817,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275793951,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.27579756,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/COPYING\",\n"}
+,{"stream_name":"stdout","time":25.275801505,"data":"   \"bytes\": 6390\n"}
+,{"stream_name":"stdout","time":25.275805035,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275808678,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275812212,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/0.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275816157,"data":"   \"bytes\": 98421078\n"}
+,{"stream_name":"stdout","time":25.275819645,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275823183,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275826415,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/1.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275830077,"data":"   \"bytes\": 88594798\n"}
+,{"stream_name":"stdout","time":25.275833691,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275837341,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.27584087,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/2.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275844924,"data":"   \"bytes\": 101232441\n"}
+,{"stream_name":"stdout","time":25.2758488,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275852191,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275855468,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/3.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275859291,"data":"   \"bytes\": 93402163\n"}
+,{"stream_name":"stdout","time":25.2758626,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275865931,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275869867,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/4.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275873635,"data":"   \"bytes\": 103477076\n"}
+,{"stream_name":"stdout","time":25.275877234,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.27588063,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275884004,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/5.parquet\",\n"}
+,{"stream_name":"stdout","time":25.27588782,"data":"   \"bytes\": 76868162\n"}
+,{"stream_name":"stdout","time":25.275891295,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275894724,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275898603999998,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/6.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275902755,"data":"   \"bytes\": 90017105\n"}
+,{"stream_name":"stdout","time":25.275906289,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275909567,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275912661,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/7.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275916697,"data":"   \"bytes\": 80550298\n"}
+,{"stream_name":"stdout","time":25.275920185,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.27592369,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275927167,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/8.parquet\",\n"}
+,{"stream_name":"stdout","time":25.27593146,"data":"   \"bytes\": 87352096\n"}
+,{"stream_name":"stdout","time":25.275934977,"data":"  },\n"}
+,{"stream_name":"stdout","time":25.275938131,"data":"  {\n"}
+,{"stream_name":"stdout","time":25.275941382,"data":"   \"name\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/9.parquet\",\n"}
+,{"stream_name":"stdout","time":25.275950304,"data":"   \"bytes\": 75548089\n"}
+,{"stream_name":"stdout","time":25.275954751,"data":"  }\n"}
+,{"stream_name":"stdout","time":25.275957882,"data":" ],\n"}
+,{"stream_name":"stdout","time":25.275961709,"data":" \"incremental_member_count\": 14\n"}
+,{"stream_name":"stdout","time":25.275965184,"data":"}\n"}
+,{"stream_name":"stdout","time":433.762411492,"data":"{\n"}
+,{"stream_name":"stdout","time":433.762645929,"data":" \"incremental_dirs\": 31,\n"}
+,{"stream_name":"stdout","time":433.762655061,"data":" \"incremental_first_last\": [\n"}
+,{"stream_name":"stdout","time":433.762660634,"data":"  \"../\",\n"}
+,{"stream_name":"stdout","time":433.762665908,"data":"  \"listenbrainz-dump-2805-20261123-000002-incremental/\"\n"}
+,{"stream_name":"stdout","time":433.762671263,"data":" ],\n"}
+,{"stream_name":"stdout","time":433.762676154,"data":" \"incremental_sample\": {\n"}
+,{"stream_name":"stdout","time":433.762681237,"data":"  \"folder\": \"listenbrainz-dump-2804-20261123-000003-incremental/\",\n"}
+,{"stream_name":"stdout","time":433.762686699,"data":"  \"file\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental.tar\",\n"}
+,{"stream_name":"stdout","time":433.76269183,"data":"  \"bytes\": 895498240,\n"}
+,{"stream_name":"stdout","time":433.762696857,"data":"  \"download_seconds\": 11.2\n"}
+,{"stream_name":"stdout","time":433.762701811,"data":" },\n"}
+,{"stream_name":"stdout","time":433.762706351,"data":" \"parquet\": {\n"}
+,{"stream_name":"stdout","time":433.762710688,"data":"  \"member\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental/0.parquet\",\n"}
+,{"stream_name":"stdout","time":433.762715741,"data":"  \"rows\": 2216740,\n"}
+,{"stream_name":"stdout","time":433.762722052,"data":"  \"schema\": \"listened_at: timestamp[ns] not null\\ncreated: timestamp[ns] not null\\nuser_id: int64 not null\\nrecording_msid: string not null\\nartist_name: string not null\\nartist_credit_id: int64\\nrelease_name: string\\nrelease_mbid: string\\nrecording_name: string not null\\nrecording_mbid: string\\nartist_credit_mbids: list\u003celement: string\u003e\\n  child 0, element: string\\n-- schema metadata --\\npandas: '{\\\"index_columns\\\": [], \\\"column_indexes\\\": [], \\\"columns\\\": [{\\\"name\\\":' + 1471\",\n"}
+,{"stream_name":"stdout","time":433.762739468,"data":"  \"sample\": [\n"}
+,{"stream_name":"stdout","time":433.762744459,"data":"   {\n"}
+,{"stream_name":"stdout","time":433.762749197,"data":"    \"listened_at\": \"2026-11-21 22:31:09\",\n"}
+,{"stream_name":"stdout","time":433.762754161,"data":"    \"created\": \"2026-11-22 00:00:02.985000\",\n"}
+,{"stream_name":"stdout","time":433.762759189,"data":"    \"user_id\": 171989,\n"}
+,{"stream_name":"stdout","time":433.762764002,"data":"    \"recording_msid\": \"ce02c52f-0f9d-4c53-ad06-1dde3db882e9\",\n"}
+,{"stream_name":"stdout","time":433.762769188,"data":"    \"artist_name\": \"GOT7\",\n"}
+,{"stream_name":"stdout","time":433.762774126,"data":"    \"artist_credit_id\": null,\n"}
+,{"stream_name":"stdout","time":433.762779061,"data":"    \"release_name\": \"Just Right\",\n"}
+,{"stream_name":"stdout","time":433.762784108,"data":"    \"release_mbid\": null,\n"}
+,{"stream_name":"stdout","time":433.762789594,"data":"    \"recording_name\": \"Just Right\",\n"}
+,{"stream_name":"stdout","time":433.7627946,"data":"    \"recording_mbid\": null,\n"}
+,{"stream_name":"stdout","time":433.762799146,"data":"    \"artist_credit_mbids\": null\n"}
+,{"stream_name":"stdout","time":433.76280273,"data":"   },\n"}
+,{"stream_name":"stdout","time":433.762807452,"data":"   {\n"}
+,{"stream_name":"stdout","time":433.762826137,"data":"    \"listened_at\": \"2026-11-21 22:31:31\",\n"}
+,{"stream_name":"stdout","time":433.762831369,"data":"    \"created\": \"2026-11-22 00:00:03.201000\",\n"}
+,{"stream_name":"stdout","time":433.762835499,"data":"    \"user_id\": 138798,\n"}
+,{"stream_name":"stdout","time":433.76283941,"data":"    \"recording_msid\": \"a25ce4cd-154c-49fe-9fa8-95dde770cd8a\",\n"}
+,{"stream_name":"stdout","time":433.762843478,"data":"    \"artist_name\": \"Agust D\",\n"}
+,{"stream_name":"stdout","time":433.762847514,"data":"    \"artist_credit_id\": 3576100,\n"}
+,{"stream_name":"stdout","time":433.762851412,"data":"    \"release_name\": \"D\\u2010DAY\",\n"}
+,{"stream_name":"stdout","time":433.762855634,"data":"    \"release_mbid\": \"a44bdae7-959e-4f9f-820d-3358021793db\",\n"}
+,{"stream_name":"stdout","time":433.762859757,"data":"    \"recording_name\": \"\\ud574\\uae08\",\n"}
+,{"stream_name":"stdout","time":433.762864197,"data":"    \"recording_mbid\": \"079a54bb-1a59-4e40-8456-7695b644d059\",\n"}
+,{"stream_name":"stdout","time":433.762868412,"data":"    \"artist_credit_mbids\": [\n"}
+,{"stream_name":"stdout","time":433.76287277,"data":"     \"f09d2950-e3c6-47b2-b21c-2bad2cd3f616\"\n"}
+,{"stream_name":"stdout","time":433.762876929,"data":"    ]\n"}
+,{"stream_name":"stdout","time":433.76288062,"data":"   },\n"}
+,{"stream_name":"stdout","time":433.762884174,"data":"   {\n"}
+,{"stream_name":"stdout","time":433.762888,"data":"    \"listened_at\": \"2026-11-21 22:31:55\",\n"}
+,{"stream_name":"stdout","time":433.762891097,"data":"    \"created\": \"2026-11-22 00:00:03.496000\",\n"}
+,{"stream_name":"stdout","time":433.762893876,"data":"    \"user_id\": 248444,\n"}
+,{"stream_name":"stdout","time":433.762900795,"data":"    \"recording_msid\": \"e00f5267-15fe-4b85-a849-bfafb756cf0e\",\n"}
+,{"stream_name":"stdout","time":433.762905037,"data":"    \"artist_name\": \"femtanyl\",\n"}
+,{"stream_name":"stdout","time":433.762908963,"data":"    \"artist_credit_id\": 3730860,\n"}
+,{"stream_name":"stdout","time":433.762913042,"data":"    \"release_name\": \"MAN BITES DOG\",\n"}
+,{"stream_name":"stdout","time":433.762917159,"data":"    \"release_mbid\": \"fc0b1591-4985-40df-94f4-e01f297bf2d7\",\n"}
+,{"stream_name":"stdout","time":433.762921536,"data":"    \"recording_name\": \"BODY THE PISTOL\",\n"}
+,{"stream_name":"stdout","time":433.762925658,"data":"    \"recording_mbid\": \"b8e14192-e347-47d5-8733-a6da28f2b6e5\",\n"}
+,{"stream_name":"stdout","time":433.762929994,"data":"    \"artist_credit_mbids\": [\n"}
+,{"stream_name":"stdout","time":433.762934055,"data":"     \"eb3c021d-e056-42d6-8fad-064205a90527\"\n"}
+,{"stream_name":"stdout","time":433.762938239,"data":"    ]\n"}
+,{"stream_name":"stdout","time":433.762941851,"data":"   }\n"}
+,{"stream_name":"stdout","time":433.762945525,"data":"  ]\n"}
+,{"stream_name":"stdout","time":433.762949043,"data":" },\n"}
+,{"stream_name":"stdout","time":433.76295274,"data":" \"incremental_member_count\": 14,\n"}
+,{"stream_name":"stdout","time":433.762956329,"data":" \"stats_file\": \"listenbrainz-dump-2789-20261115-000003-full/listenbrainz-statistics-dump-20261115-000003.tar.zst\",\n"}
+,{"stream_name":"stdout","time":433.762960735,"data":" \"stats_seconds\": 407.4,\n"}
+,{"stream_name":"stdout","time":433.762964925,"data":" \"stats_member_count\": 50,\n"}
+,{"stream_name":"stdout","time":433.762968378,"data":" \"stats_artist_peeks\": {\n"}
+,{"stream_name":"stdout","time":433.762976921,"data":"  \"listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_all_time.jsonl\": \"{\\\"user_id\\\":1,\\\"data\\\":[{\\\"listen_count\\\":4298,\\\"artist_name\\\":\\\"Wax Tailor\\\",\\\"artist_mbid\\\":\\\"c24b47a1-2f52-44f3-a3c6-374dca844731\\\"},{\\\"listen_count\\\":4249,\\\"artist_name\\\":\\\"R\\u00f6yksopp\\\",\\\"artist_mbid\\\":\\\"1c70a3fc-fa3c-4be1-8b55-c3192db8a884\\\"},{\\\"listen_count\\\":3809,\\\"artist_name\\\":\\\"Abakus\\\",\\\"artist_mbid\\\":\\\"a8b39181-6939-451e-9641-2db231b73706\\\"},{\\\"listen_count\\\":3536,\\\"artist_name\\\":\\\"Bonobo\\\",\\\"artist_mbid\\\":\\\"9a709693-b4f8-4da9-8cc1-038c911a61be\\\"},{\\\"listen_count\\\":3183,\\\"artist_name\\\":\\\"Pretty Lights\\\",\\\"artist_mbid\\\":\\\"3a07764c-7cc5-42e9-8205-3de7532f4771\\\"},{\\\"listen_count\\\":2955,\\\"artist_name\\\":\\\"Carbon Based Lifeforms\\\",\\\"artist_mbid\\\":\\\"8229a8f1-b315-4fae-af57-b3eb71efdaf4\\\"},{\\\"listen_count\\\":2732,\\\"artist_name\\\":\\\"Pink Floyd\\\",\\\"artist_mbid\\\":\\\"83d91898-7763-47d7-b03b-b92132375c47\\\"},{\\\"listen_count\\\":2643,\\\"artist_name\\\":\\\"Boards of Canada\\\",\\\"artist_mbid\\\":\\\"69158f97-4c07-4c4e-baf8-4e4ab1ed666e\\\"},{\\\"listen_count\\\":2593,\\\"artist_name\\\":\\\"Morcheeba\\\",\\\"artist_mbid\\\":\\\"067102ea-9519-4622-9077-57ca4164cfbb\\\"},{\\\"listen_count\\\":2563,\\\"artist_name\\\":\\\"New Order\\\",\\\"artist_mbid\\\":\\\"f1106b17-dcbb-45f6-b938-199ccfab50cc\\\"},{\\\"listen_count\\\":2480,\\\"artist_name\\\":\\\"Emancipator\\\",\\\"artist_mbid\\\":\\\"aa1d4315-5246-42b2-b62b-f997d046d8b2\\\"},{\\\"listen_count\\\":2165,\\\"artist_name\\\":\\\"Depeche Mode\\\",\\\"artist_mbid\\\":\\\"8538e728-ca0b-4321-b7e5-cff6565dd4c0\\\"},{\\\"listen_count\\\":2140,\\\"artist_name\\\":\\\"Tropo\\\",\\\"artist_mbid\\\":\\\"8f9d785a-022a-43eb-a2a0-22eb1966c599\\\"},{\\\"listen_count\\\":1735,\\\"artist_name\\\":\\\"Portishead\\\",\\\"artist_mbid\\\":\\\"8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11\\\"},{\\\"listen_count\\\":1733,\\\"artist_name\\\":\\\"Enigma\\\",\\\"artist_mbid\\\":\\\"f1d1df24-91af-4d27-83a4-9b4ad29b37eb\\\"},{\\\"listen_count\\\":1618,\\\"artist_name\\\":\\\"dZihan \u0026 Kamien\\\",\\\"artist_mbid\\\":\\\"d3fe567e-0681-48c8-9735-6cc9942629f4\\\"},{\\\"listen_count\\\":1580,\\\"artist_name\\\":\\\"Tycho\\\",\\\"artist_mbid\\\":\\\"cbef45a9-7acb-4325-94c9-70081ac8d1b8\\\"},{\\\"listen_count\\\":1579,\\\"artist_name\\\":\\\"M83\\\",\\\"artist_mbid\\\":\\\"6d7b7cd4-254b-4c25-83f6-dd20f98ceacd\\\"},{\\\"listen_count\\\":1546,\\\"artist_name\\\":\\\"Waldeck\\\",\\\"artist_mbid\\\":\\\"8f389bf5-a950-4a2f-a962-daf08151ee33\\\"},{\\\"listen_count\\\":1542,\\\"artist_name\\\":\\\"Santi \u0026 Tu\\u011f\\u00e7e\\\",\\\"artist_mbid\\\":\\\"4690076b-1446-43f4-8a84-cfec56dc3601\\\"},{\\\"listen_count\\\":1459,\\\"artist_name\\\":\\\"Gramatik\\\",\\\"artist_mbid\\\":\\\"9b62a8a3-fcd5-4b51-a970-0f08a440ed6d\\\"},{\\\"listen_count\\\":1458,\\\"artist_name\\\":\\\"Tosca\\\",\\\"artist_mbid\\\":\\\"3231d12a-c42d-4977-b2a4-a6e4d87978e1\\\"},{\\\"listen_count\\\":1418,\\\"artist_name\\\":\\\"Thievery Corporation\\\",\\\"artist_mbid\\\":\\\"a505bb48-ad65-4af4-ae47-29149715bff9\\\"},{\\\"listen_count\\\":1405,\\\"artist_name\\\":\\\"Daft Punk\\\",\\\"artist_mbid\\\":\\\"056e4f3e-d505-4dad-8ec1-d04f521cbb56\\\"},{\\\"listen_count\\\":1402,\\\"artist_name\\\":\\\"Synapson\\\",\\\"artist_mbid\\\":\\\"ccfcd925-f1b1-409f-93cb-ff91ecbe9a19\\\"},{\\\"listen_count\\\":1398,\\\"artist_name\\\":\\\"Goldfrapp\\\",\\\"artist_mbid\\\":\\\"7b885d42-3c41-4f43-9944-a5855ec5155e\\\"},{\\\"listen_count\\\":1380,\\\"artist_name\\\":\\\"Massive Attack\\\",\\\"artist_mbid\\\":\\\"10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8\\\"},{\\\"listen_count\\\":1305,\\\"artist_name\\\":\\\"Rodriguez Jr.\\\",\\\"artist_mbid\\\":\\\"e2cf5b7b-63fa-4975-8b2d-bcefcd698ceb\\\"},{\\\"listen_count\\\":1289,\\\"artist_name\\\":\\\"Ott\\\",\\\"artist_mbid\\\":\\\"1a40f886-0877-4bab-9ab1-761147dadb89\\\"},{\\\"listen_count\\\":1285,\\\"a\",\n"}
+,{"stream_name":"stdout","time":433.763020374,"data":"  \"listenbrainz-statistics-dump-20261115-000003/lbdump/statistics/artists_half_yearly.jsonl\": \"{\\\"user_id\\\":1,\\\"data\\\":[{\\\"listen_count\\\":109,\\\"artist_name\\\":\\\"R\\u00f6yksopp\\\",\\\"artist_mbid\\\":\\\"1c70a3fc-fa3c-4be1-8b55-c3192db8a884\\\"},{\\\"listen_count\\\":69,\\\"artist_name\\\":\\\"Carbon Based Lifeforms\\\",\\\"artist_mbid\\\":\\\"8229a8f1-b315-4fae-af57-b3eb71efdaf4\\\"},{\\\"listen_count\\\":50,\\\"artist_name\\\":\\\"Christian L\\u00f6ffler\\\",\\\"artist_mbid\\\":\\\"a0d91c38-f5dc-487b-9b30-b67de1e7489e\\\"},{\\\"listen_count\\\":28,\\\"artist_name\\\":\\\"Susanne Sundf\\u00f8r\\\",\\\"artist_mbid\\\":\\\"f3f9e76a-0685-4a9a-97d1-6fa2b50f9fba\\\"},{\\\"listen_count\\\":25,\\\"artist_name\\\":\\\"Marconi Union\\\",\\\"artist_mbid\\\":\\\"3f9b5837-ed1c-413e-bfef-ca4f892dcc59\\\"},{\\\"listen_count\\\":21,\\\"artist_name\\\":\\\"Karin My\\\",\\\"artist_mbid\\\":\\\"4ef3cf79-e868-464e-b756-7400b9b5f724\\\"},{\\\"listen_count\\\":20,\\\"artist_name\\\":\\\"Cell\\\",\\\"artist_mbid\\\":\\\"3c2e2afb-b7e4-4b0f-8a0c-080808c935d3\\\"},{\\\"listen_count\\\":20,\\\"artist_name\\\":\\\"Adna\\\",\\\"artist_mbid\\\":\\\"69cc0c33-a4d9-4f48-bcd6-010eddee5fcb\\\"},{\\\"listen_count\\\":15,\\\"artist_name\\\":\\\"Enigma\\\",\\\"artist_mbid\\\":\\\"f1d1df24-91af-4d27-83a4-9b4ad29b37eb\\\"},{\\\"listen_count\\\":13,\\\"artist_name\\\":\\\"Pixx\\\",\\\"artist_mbid\\\":\\\"90165cd6-f56e-4b26-9efa-fc30a1d05141\\\"},{\\\"listen_count\\\":13,\\\"artist_name\\\":\\\"Astrid S\\\",\\\"artist_mbid\\\":\\\"be389638-e74f-46a9-83d2-91ee3ce1fb0c\\\"},{\\\"listen_count\\\":9,\\\"artist_name\\\":\\\"Ott\\\",\\\"artist_mbid\\\":\\\"1a40f886-0877-4bab-9ab1-761147dadb89\\\"},{\\\"listen_count\\\":8,\\\"artist_name\\\":\\\"Hugo Kant\\\",\\\"artist_mbid\\\":\\\"ae334666-4070-45bf-98b8-2c27c5499497\\\"},{\\\"listen_count\\\":8,\\\"artist_name\\\":\\\"Ester Nannmark\\\",\\\"artist_mbid\\\":\\\"27aec350-6d71-4be4-bd60-e6e83e92678f\\\"},{\\\"listen_count\\\":8,\\\"artist_name\\\":\\\"B-Tribe\\\",\\\"artist_mbid\\\":\\\"14e703ac-8364-41d5-b609-af2fd90343e9\\\"},{\\\"listen_count\\\":7,\\\"artist_name\\\":\\\"Morcheeba\\\",\\\"artist_mbid\\\":\\\"067102ea-9519-4622-9077-57ca4164cfbb\\\"},{\\\"listen_count\\\":7,\\\"artist_name\\\":\\\"Hermanos Guti\\u00e9rrez\\\",\\\"artist_mbid\\\":\\\"82\n"}
+,{"stream_name":"stderr","time":436.931991669,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":436.932030522,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":437.298109938,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":437.298142754,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":438.462208697,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":439.907944151,"data":"[NbConvertApp] Writing 296955 bytes to __results__.html\n"}
+]

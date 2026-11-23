@@ -1,0 +1,12 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Downloaded datasets and lookups (large, rebuilt by src/ and kaggle/)
+data/
+
+# Model outputs from Kaggle (large, downloaded with `kaggle kernels output`)
+*.npz
+*.npy
+*.parquet

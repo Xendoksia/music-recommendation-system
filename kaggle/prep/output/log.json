@@ -1,0 +1,31 @@
+[{"stream_name":"stdout","time":246.078168183,"data":"14:55:52 statistics read: 44,427,751 rows in 237s\n"}
+,{"stream_name":"stdout","time":283.220632723,"data":"14:56:29 {\"rows\": 44418613, \"users\": 101313, \"artists\": 3630513, \"listens\": 2788970855, \"seconds\": 274}\n"}
+,{"stream_name":"stderr","time":299.854766538,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":299.855774788,"data":"  File \"/kaggle/src/script.py\", line 144, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":299.855823327,"data":"    table = pq.read_table(archive.extractfile(member),\n"}
+,{"stream_name":"stderr","time":299.855831114,"data":"                          columns=[\"listened_at\", \"user_id\", \"recording_msid\", \"artist_name\",\n"}
+,{"stream_name":"stderr","time":299.855836644,"data":"                                   \"artist_credit_mbids\"])\n"}
+,{"stream_name":"stderr","time":299.85584168,"data":"  File \"/usr/local/lib/python3.13/dist-packages/pyarrow/parquet/core.py\", line 1858, in read_table\n"}
+,{"stream_name":"stderr","time":299.855846729,"data":"    dataset = ParquetDataset(\n"}
+,{"stream_name":"stderr","time":299.855851644,"data":"        source,\n"}
+,{"stream_name":"stderr","time":299.85585637,"data":"    ...\u003c16 lines\u003e...\n"}
+,{"stream_name":"stderr","time":299.85586192,"data":"        arrow_extensions_enabled=arrow_extensions_enabled,\n"}
+,{"stream_name":"stderr","time":299.855866986,"data":"    )\n"}
+,{"stream_name":"stderr","time":299.855872071,"data":"  File \"/usr/local/lib/python3.13/dist-packages/pyarrow/parquet/core.py\", line 1427, in __init__\n"}
+,{"stream_name":"stderr","time":299.855877793,"data":"    [fragment], schema=schema or fragment.physical_schema,\n"}
+,{"stream_name":"stderr","time":299.855882689,"data":"                                 ^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":299.85588812,"data":"  File \"pyarrow/_dataset.pyx\", line 1477, in pyarrow._dataset.Fragment.physical_schema.__get__\n"}
+,{"stream_name":"stderr","time":299.855893833,"data":"  File \"pyarrow/error.pxi\", line 155, in pyarrow.lib.pyarrow_internal_check_status\n"}
+,{"stream_name":"stderr","time":299.855899369,"data":"  File \"pyarrow/error.pxi\", line 89, in pyarrow.lib.check_status\n"}
+,{"stream_name":"stderr","time":299.8559051,"data":"    RestorePyError(status)\n"}
+,{"stream_name":"stderr","time":299.855909972,"data":"  File \"/usr/lib/python3.13/tarfile.py\", line 678, in seekable\n"}
+,{"stream_name":"stderr","time":299.85591497,"data":"    return self.fileobj.seekable()\n"}
+,{"stream_name":"stderr","time":299.855920323,"data":"           ^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":299.855925273,"data":"AttributeError: '_Stream' object has no attribute 'seekable'\n"}
+,{"stream_name":"stderr","time":303.371517794,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":303.37155824,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":303.708336479,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":303.708376026,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":304.881832199,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":306.300523075,"data":"[NbConvertApp] Writing 317945 bytes to __results__.html\n"}
+]

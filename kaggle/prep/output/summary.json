@@ -1,0 +1,207 @@
+{
+ "started": "2026-11-23 14:58:46",
+ "stats_dump": "listenbrainz-dump-2789-20261115-000003-full/listenbrainz-statistics-dump-20261115-000003.tar.zst",
+ "user_artists": {
+  "rows": 44418613,
+  "users": 101313,
+  "artists": 3630513,
+  "listens": 2788970855,
+  "seconds": 206
+ },
+ "incremental": [
+  {
+   "dump": "listenbrainz-spark-dump-2774-20261109-000002-incremental",
+   "rows": 5053051,
+   "users": 26480,
+   "first": 1108338722,
+   "last": 1794183281,
+   "seconds": 34
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2775-20261109-000003-incremental",
+   "rows": 4,
+   "users": 4,
+   "first": 1794178806,
+   "last": 1794182402,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2776-20261110-000002-incremental",
+   "rows": 4406887,
+   "users": 27922,
+   "first": 1100000000,
+   "last": 1794271482,
+   "seconds": 31
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2778-20261111-000002-incremental",
+   "rows": 4942786,
+   "users": 28434,
+   "first": 1108336417,
+   "last": 1794356514,
+   "seconds": 35
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2779-20261111-000003-incremental",
+   "rows": 54,
+   "users": 5,
+   "first": 1794351783,
+   "last": 1794355204,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2780-20261112-000002-incremental",
+   "rows": 3811389,
+   "users": 26416,
+   "first": 1108339182,
+   "last": 1794428383,
+   "seconds": 26
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2781-20261112-000002-incremental",
+   "rows": 3,
+   "users": 3,
+   "first": 1794425713,
+   "last": 1794428119,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2782-20261113-000002-incremental",
+   "rows": 6345136,
+   "users": 33703,
+   "first": 1033430401,
+   "last": 1794529042,
+   "seconds": 42
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2783-20261113-000003-incremental",
+   "rows": 15,
+   "users": 10,
+   "first": 1794526086,
+   "last": 1794528002,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2784-20261114-000002-incremental",
+   "rows": 3939670,
+   "users": 28538,
+   "first": 1108336556,
+   "last": 1794617529,
+   "seconds": 28
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2785-20261114-000003-incremental",
+   "rows": 21,
+   "users": 9,
+   "first": 1794610927,
+   "last": 1794614402,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2786-20261115-000003-incremental",
+   "rows": 3995784,
+   "users": 27186,
+   "first": 1147101845,
+   "last": 1794704171,
+   "seconds": 26
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2790-20261116-000003-incremental",
+   "rows": 4530595,
+   "users": 26676,
+   "first": 1161368111,
+   "last": 1794787797,
+   "seconds": 29
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2791-20261116-000003-incremental",
+   "rows": 7,
+   "users": 2,
+   "first": 1794786318,
+   "last": 1794787093,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2792-20261117-000002-incremental",
+   "rows": 4832299,
+   "users": 28645,
+   "first": 1223754080,
+   "last": 1794877092,
+   "seconds": 32
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2793-20261117-000003-incremental",
+   "rows": 12,
+   "users": 6,
+   "first": 1794872096,
+   "last": 1794873599,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2794-20261118-000002-incremental",
+   "rows": 4220438,
+   "users": 29106,
+   "first": 1112980604,
+   "last": 1794962435,
+   "seconds": 30
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2795-20261118-000003-incremental",
+   "rows": 39,
+   "users": 10,
+   "first": 1794952669,
+   "last": 1794960002,
+   "seconds": 1
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2796-20261119-000002-incremental",
+   "rows": 8749675,
+   "users": 28752,
+   "first": 1108336683,
+   "last": 1795046461,
+   "seconds": 54
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2797-20261119-000003-incremental",
+   "rows": 211,
+   "users": 4,
+   "first": 1589304817,
+   "last": 1795045114,
+   "seconds": 2
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2798-20261120-000002-incremental",
+   "rows": 15738153,
+   "users": 28478,
+   "first": 1108290901,
+   "last": 1795135880,
+   "seconds": 96
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2800-20261121-000003-incremental",
+   "rows": 17153427,
+   "users": 30625,
+   "first": 1108329810,
+   "last": 1795229095,
+   "seconds": 126
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2802-20261122-000002-incremental",
+   "rows": 17033469,
+   "users": 28429,
+   "first": 1108320016,
+   "last": 1795386506,
+   "seconds": 110
+  },
+  {
+   "dump": "listenbrainz-spark-dump-2804-20261123-000003-incremental",
+   "rows": 21174484,
+   "users": 26887,
+   "first": 1108332972,
+   "last": 1795445460,
+   "seconds": 122
+  }
+ ],
+ "artists": 4444705,
+ "finished": "2026-11-23 15:16:38"
+}

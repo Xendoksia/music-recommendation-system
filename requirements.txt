@@ -1,0 +1,12 @@
+pandas
+numpy
+scipy
+implicit
+gensim
+scikit-learn
+matplotlib
+requests
+pyarrow
+truststore
+kaggle
+six

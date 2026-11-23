@@ -1,0 +1,40 @@
+[{"stream_name":"stdout","time":176.803850676,"data":"15:01:35 statistics read: 44,427,751 rows in 167s\n"}
+,{"stream_name":"stdout","time":215.851725561,"data":"15:02:14 {\"rows\": 44418613, \"users\": 101313, \"artists\": 3630513, \"listens\": 2788970855, \"seconds\": 206}\n"}
+,{"stream_name":"stdout","time":252.528297864,"data":"15:02:50 {\"dump\": \"listenbrainz-spark-dump-2774-20261109-000002-incremental\", \"rows\": 5053051, \"users\": 26480, \"first\": 1108338722, \"last\": 1794183281, \"seconds\": 34}\n"}
+,{"stream_name":"stdout","time":254.241011676,"data":"15:02:52 {\"dump\": \"listenbrainz-spark-dump-2775-20261109-000003-incremental\", \"rows\": 4, \"users\": 4, \"first\": 1794178806, \"last\": 1794182402, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":285.529919119,"data":"15:03:23 {\"dump\": \"listenbrainz-spark-dump-2776-20261110-000002-incremental\", \"rows\": 4406887, \"users\": 27922, \"first\": 1100000000, \"last\": 1794271482, \"seconds\": 31}\n"}
+,{"stream_name":"stdout","time":287.166469255,"data":"15:03:25 listenbrainz-spark-dump-2777-20261110-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":323.053180112,"data":"15:04:01 {\"dump\": \"listenbrainz-spark-dump-2778-20261111-000002-incremental\", \"rows\": 4942786, \"users\": 28434, \"first\": 1108336417, \"last\": 1794356514, \"seconds\": 35}\n"}
+,{"stream_name":"stdout","time":324.790842286,"data":"15:04:03 {\"dump\": \"listenbrainz-spark-dump-2779-20261111-000003-incremental\", \"rows\": 54, \"users\": 5, \"first\": 1794351783, \"last\": 1794355204, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":351.6545035,"data":"15:04:30 {\"dump\": \"listenbrainz-spark-dump-2780-20261112-000002-incremental\", \"rows\": 3811389, \"users\": 26416, \"first\": 1108339182, \"last\": 1794428383, \"seconds\": 26}\n"}
+,{"stream_name":"stdout","time":353.512638999,"data":"15:04:31 {\"dump\": \"listenbrainz-spark-dump-2781-20261112-000002-incremental\", \"rows\": 3, \"users\": 3, \"first\": 1794425713, \"last\": 1794428119, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":395.812101251,"data":"15:05:14 {\"dump\": \"listenbrainz-spark-dump-2782-20261113-000002-incremental\", \"rows\": 6345136, \"users\": 33703, \"first\": 1033430401, \"last\": 1794529042, \"seconds\": 42}\n"}
+,{"stream_name":"stdout","time":397.697959298,"data":"15:05:16 {\"dump\": \"listenbrainz-spark-dump-2783-20261113-000003-incremental\", \"rows\": 15, \"users\": 10, \"first\": 1794526086, \"last\": 1794528002, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":426.045834918,"data":"15:05:44 {\"dump\": \"listenbrainz-spark-dump-2784-20261114-000002-incremental\", \"rows\": 3939670, \"users\": 28538, \"first\": 1108336556, \"last\": 1794617529, \"seconds\": 28}\n"}
+,{"stream_name":"stdout","time":427.883941663,"data":"15:05:46 {\"dump\": \"listenbrainz-spark-dump-2785-20261114-000003-incremental\", \"rows\": 21, \"users\": 9, \"first\": 1794610927, \"last\": 1794614402, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":454.510942493,"data":"15:06:12 {\"dump\": \"listenbrainz-spark-dump-2786-20261115-000003-incremental\", \"rows\": 3995784, \"users\": 27186, \"first\": 1147101845, \"last\": 1794704171, \"seconds\": 26}\n"}
+,{"stream_name":"stdout","time":456.161566931,"data":"15:06:14 listenbrainz-spark-dump-2787-20261115-000003-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":486.041212987,"data":"15:06:44 {\"dump\": \"listenbrainz-spark-dump-2790-20261116-000003-incremental\", \"rows\": 4530595, \"users\": 26676, \"first\": 1161368111, \"last\": 1794787797, \"seconds\": 29}\n"}
+,{"stream_name":"stdout","time":487.745883753,"data":"15:06:46 {\"dump\": \"listenbrainz-spark-dump-2791-20261116-000003-incremental\", \"rows\": 7, \"users\": 2, \"first\": 1794786318, \"last\": 1794787093, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":520.307883937,"data":"15:07:18 {\"dump\": \"listenbrainz-spark-dump-2792-20261117-000002-incremental\", \"rows\": 4832299, \"users\": 28645, \"first\": 1223754080, \"last\": 1794877092, \"seconds\": 32}\n"}
+,{"stream_name":"stdout","time":522.131800427,"data":"15:07:20 {\"dump\": \"listenbrainz-spark-dump-2793-20261117-000003-incremental\", \"rows\": 12, \"users\": 6, \"first\": 1794872096, \"last\": 1794873599, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":552.506021387,"data":"15:07:50 {\"dump\": \"listenbrainz-spark-dump-2794-20261118-000002-incremental\", \"rows\": 4220438, \"users\": 29106, \"first\": 1112980604, \"last\": 1794962435, \"seconds\": 30}\n"}
+,{"stream_name":"stdout","time":554.382378786,"data":"15:07:52 {\"dump\": \"listenbrainz-spark-dump-2795-20261118-000003-incremental\", \"rows\": 39, \"users\": 10, \"first\": 1794952669, \"last\": 1794960002, \"seconds\": 1}\n"}
+,{"stream_name":"stdout","time":608.857856575,"data":"15:08:47 {\"dump\": \"listenbrainz-spark-dump-2796-20261119-000002-incremental\", \"rows\": 8749675, \"users\": 28752, \"first\": 1108336683, \"last\": 1795046461, \"seconds\": 54}\n"}
+,{"stream_name":"stdout","time":610.889162183,"data":"15:08:49 {\"dump\": \"listenbrainz-spark-dump-2797-20261119-000003-incremental\", \"rows\": 211, \"users\": 4, \"first\": 1589304817, \"last\": 1795045114, \"seconds\": 2}\n"}
+,{"stream_name":"stdout","time":706.881868591,"data":"15:10:25 {\"dump\": \"listenbrainz-spark-dump-2798-20261120-000002-incremental\", \"rows\": 15738153, \"users\": 28478, \"first\": 1108290901, \"last\": 1795135880, \"seconds\": 96}\n"}
+,{"stream_name":"stdout","time":708.529768436,"data":"15:10:26 listenbrainz-spark-dump-2799-20261120-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":835.585543862,"data":"15:12:34 {\"dump\": \"listenbrainz-spark-dump-2800-20261121-000003-incremental\", \"rows\": 17153427, \"users\": 30625, \"first\": 1108329810, \"last\": 1795229095, \"seconds\": 126}\n"}
+,{"stream_name":"stdout","time":837.273698544,"data":"15:12:35 listenbrainz-spark-dump-2801-20261121-000003-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":948.412027008,"data":"15:14:26 {\"dump\": \"listenbrainz-spark-dump-2802-20261122-000002-incremental\", \"rows\": 17033469, \"users\": 28429, \"first\": 1108320016, \"last\": 1795386506, \"seconds\": 110}\n"}
+,{"stream_name":"stdout","time":950.057843844,"data":"15:14:28 listenbrainz-spark-dump-2803-20261122-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":1073.255788226,"data":"15:16:31 {\"dump\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental\", \"rows\": 21174484, \"users\": 26887, \"first\": 1108332972, \"last\": 1795445460, \"seconds\": 122}\n"}
+,{"stream_name":"stdout","time":1074.897212815,"data":"15:16:33 listenbrainz-spark-dump-2805-20261123-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":1080.265327557,"data":"15:16:38 {\"started\": \"2026-11-23 14:58:46\", \"stats_dump\": \"listenbrainz-dump-2789-20261115-000003-full/listenbrainz-statistics-dump-20261115-000003.tar.zst\", \"user_artists\": {\"rows\": 44418613, \"users\": 101313, \"artists\": 3630513, \"listens\": 2788970855, \"seconds\": 206}, \"artists\": 4444705, \"finished\": \"2026-11-23 15:16:38\"}\n"}
+,{"stream_name":"stderr","time":1085.119940163,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1085.119989583,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1085.541910476,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1085.541951091,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1086.791251724,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1088.29431607,"data":"[NbConvertApp] Writing 320170 bytes to __results__.html\n"}
+]
