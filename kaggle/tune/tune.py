@@ -2,8 +2,9 @@
 Part 4b on Kaggle: tuning the chosen kNN model and the app's scoring settings, on kaggle/build's output.
 
 Similarity. The kNN of Part 3 is cosine on log weighted listens. Two changes are tried on top of it:
-- popularity penalty (BETA): sim(i, j) = dot(i, j) / (|i|^(1 − BETA) · |j|^BETA). BETA 0.5 is cosine, a higher BETA
-  pushes widely listened candidates j down, a lower one pulls them up.
+- popularity penalty (BETA): sim(i, j) = dot(i, j) / (|i|^(2(1 − BETA)) · |j|^(2 BETA)), the asymmetric cosine.
+  BETA 0.5 is cosine, a higher BETA pushes widely listened candidates j down, a lower one pulls them up. A check
+  after the pool is built stops the run if BETA 0.5 does not give back implicit's own cosine neighbours.
 - shrinkage (SHRINK): the denominator gets + SHRINK, so a similarity resting on very few shared listeners counts less.
 implicit has neither, so its cosine model gives every artist a pool of its POOL closest artists, and these are
 scored again: the cosine score times |i|·|j| is exactly dot(i, j). Only the pool itself is approximate.
@@ -46,8 +47,9 @@ EXPORT_N = 50
 SEED = 42
 CURRENT = {"beta": 0.5, "shrink": 0.0, "seeds": 10, "related": 20, "decay": 0.5}
 
-BETAS = (0.3, 0.4, 0.5, 0.6, 0.7, 0.85)
-SHRINKS = (0.0, 10.0, 50.0)
+BETAS = (0.4, 0.45, 0.5, 0.55, 0.6, 0.7, 0.8)
+# The denominator at BETA 0.5 is |i|·|j|: from about 30 for two rare artists to 10^5 for two popular ones
+SHRINKS = (0.0, 20.0, 100.0, 500.0)
 SEEDS_GRID = (5, 10, 15, 20, 30)
 RELATED_GRID = (10, 20, 30, 50)
 DECAY_GRID = (0.25, 0.5, 0.75)
@@ -59,7 +61,7 @@ INPUT = os.environ.get("TUNE_INPUT") or os.path.dirname(
 OUT = os.environ.get("TUNE_OUT") or "/kaggle/working"
 QUICK = bool(os.environ.get("TUNE_QUICK"))
 if QUICK:
-    BETAS, SHRINKS = (0.5, 0.7), (0.0, 10.0)
+    BETAS, SHRINKS = (0.5, 0.7), (0.0, 20.0)
     SEEDS_GRID, RELATED_GRID, DECAY_GRID = (5, 10), (10, 20), (0.5,)
     STAGE_C = 2
 os.makedirs(OUT, exist_ok=True)
@@ -102,7 +104,8 @@ def eval_users(split, limit):
         row = listens.getrow(u)
         if row.nnz == 0 or u not in hidden.index:
             continue
-        order = np.argsort(-row.data, kind="stable")[:max(SEEDS_GRID)]
+        # The same sort as kaggle/train/train.py, so equal listen counts pick the same seeds
+        order = np.argsort(-row.data)[:max(SEEDS_GRID)]
         out.append((row.indices[order], row.data[order], frozenset(row.indices.tolist()), hidden[u]))
     return out
 
@@ -129,7 +132,7 @@ def neighbours(beta, shrink, n=EXPORT_N):
     """Every artist's n most similar artists from its pool, best first, -1 where the pool runs out."""
     valid = pool_ids >= 0
     candidate_norms = norms[np.where(valid, pool_ids, 0)]
-    score = pool_dot / (norms[:, None] ** (1 - beta) * candidate_norms ** beta + shrink + 1e-9)
+    score = pool_dot / (norms[:, None] ** (2 * (1 - beta)) * candidate_norms ** (2 * beta) + shrink + 1e-9)
     score[~valid] = -np.inf
     n = min(n, POOL)
     top = np.argpartition(-score, n - 1, axis=1)[:, :n]
@@ -138,6 +141,15 @@ def neighbours(beta, shrink, n=EXPORT_N):
     out = np.take_along_axis(pool_ids, top, axis=1)
     out[~np.take_along_axis(valid, top, axis=1)] = -1
     return out
+
+
+# BETA 0.5 without shrinkage must be implicit's cosine: its first 20 neighbours, compared on a sample of artists
+_sample = np.random.default_rng(SEED).choice(n_artists, min(2000, n_artists), replace=False)
+_ours = neighbours(0.5, 0.0, 20)[_sample]
+_theirs = pool_ids[_sample, :20]
+_same = float(np.mean([set(a[a >= 0].tolist()) == set(b[b >= 0].tolist()) for a, b in zip(_ours, _theirs)]))
+log(f"check: beta 0.5 gives implicit's cosine neighbours for {_same:.1%} of the sample")
+assert _same > 0.98, "the rescoring does not reproduce cosine"
 
 
 def app_rank(seeds, weights, related, known, related_n, decay, k):
