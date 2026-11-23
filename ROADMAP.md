@@ -1,6 +1,6 @@
 # Müzik öneri modeli: yol haritası
 
-Son güncelleme: 2026-11-23 · Durum: **Parça 0–4 ve ayar taraması bitti, sırada şarkı önerisi, Parça 5 en sonda**
+Son güncelleme: 2026-11-23 · Durum: **Parça 0–4, ayar taraması ve şarkı modeli bitti, şarkı modeli için kullanıcının kararı bekleniyor, Parça 5 en sonda**
 
 ## Amaç
 Playlist Tracker uygulamasındaki "Senin için" önerileri şu an Deezer'ın benzer sanatçı listesine dayanıyor
@@ -248,4 +248,22 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
     %66'sı bulunuyor ve bunlar çalmaların %75'ini karşılıyor. En az 5 dinleyiciyle bu oranlar %74 ve %81. Eksik
     kalanlar çoğunlukla Türkçe şarkılar. Bu oranlar sanatçı düzeyindeki kapsama yakın, bu yüzden model eğitmeye
     değer.
-- **Sıradaki:** Şarkı önerisi 3. adım (Kaggle'da şarkı modelleri), kullanıcının onayını bekliyor.
+- 2026-11-24, **şarkı önerisi 3. adım bitti** (kullanıcı uyurken tek oturumda, onayıyla). Sonuçlar
+  `reports/sarki_modeli.md` dosyasında. Kullanıcı modelin genel kullanım için olduğunu, kendi verisinin ve Türkçe
+  şarkıların yalnızca test amaçlı olduğunu söyledi. Bu yüzden karar genel test kullanıcılarına göre veriliyor.
+  - `kaggle/song_stats` (Kaggle'da `xendoksia/listenbrainz-song-stats`): istatistik dökümünden
+    `recordings_all_time.jsonl` okundu. 101.313 kullanıcı ve 54 milyon çift çıktı, kullanıcı başına en çok 1.000
+    şarkı tutuluyor.
+  - `kaggle/song_train` (`xendoksia/listenbrainz-song-train`): iki kaynak birleştirildi. Eleme sonrasında 87.040
+    kullanıcı, 561.412 şarkı ve 29 milyon çift kaldı. 5.000 test kullanıcısında şarkı knn'i (cosine, shrinkage
+    100, 30/50/0,75) iki görevde de %20 ölçütünü geçti:
+    - Bütün şarkılarda recall@12 0,087 ile en iyi rakipten ("kendi sanatçılarının en popüler şarkıları", 0,050)
+      %75 iyi.
+    - Keşifte recall@12 0,036 ile uygulamanın şu anki yolundan (sanatçı knn'i ve en popüler şarkılar, 0,013)
+      2,7 kat iyi. Hit@12 %35'e karşı %14.
+    - item2vec iki görevde de knn'in gerisinde kaldı.
+  - Kullanıcının verisiyle sağlama `src/song_compare.py` ile yapılıyor (`reports/sarki.md`). Burada "kendi
+    sanatçılarının en popülerleri" şarkı knn'inden iyi çıktı, ama bu karar ölçütü değil.
+  - Model uygulamaya eklenmedi.
+- **Sıradaki:** Kullanıcı şarkı modeli hakkında karar verecek (rapordaki 1, 2 ya da 3. seçenek). Ardından
+  Parça 5 gelecek.

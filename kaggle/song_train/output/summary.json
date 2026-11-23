@@ -1,0 +1,261 @@
+{
+ "started": "2026-11-23 21:51:58",
+ "pairs_before_filter": 80537641,
+ "users_before_filter": 108427,
+ "data": {
+  "users": 87040,
+  "songs": 561412,
+  "pairs": 28955603,
+  "artists": 88218,
+  "seconds": 118
+ },
+ "artists_matched_to_artist_model": 0.7805,
+ "knn_pool_seconds": 226,
+ "best_knn": {
+  "all": {
+   "beta": 0.5,
+   "shrink": 100.0,
+   "scoring": [
+    30,
+    50,
+    0.75
+   ]
+  },
+  "discovery": {
+   "beta": 0.5,
+   "shrink": 100.0,
+   "scoring": [
+    30,
+    50,
+    0.75
+   ]
+  }
+ },
+ "item2vec_sessions": {
+  "sessions": 4652920,
+  "tokens": 59963076,
+  "tokens_before_sampling": 68727923
+ },
+ "item2vec_seconds": 3087,
+ "test": {
+  "all": {
+   "rows": [
+    {
+     "model": "song knn",
+     "params": {
+      "beta": 0.5,
+      "shrink": 100.0,
+      "scoring": [
+       30,
+       50,
+       0.75
+      ]
+     },
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.087,
+     "hit@12": 0.8468,
+     "ndcg@12": 0.3519,
+     "recall@20": 0.1127,
+     "hit@20": 0.886,
+     "ndcg@20": 0.3148,
+     "users": 5000,
+     "eval_seconds": 55
+    },
+    {
+     "model": "song item2vec",
+     "params": {
+      "scoring": [
+       30,
+       50,
+       0.75
+      ]
+     },
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.055,
+     "hit@12": 0.7106,
+     "ndcg@12": 0.215,
+     "recall@20": 0.0713,
+     "hit@20": 0.777,
+     "ndcg@20": 0.1938,
+     "users": 5000,
+     "eval_seconds": 56
+    },
+    {
+     "model": "popularity",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0037,
+     "hit@12": 0.1852,
+     "ndcg@12": 0.0235,
+     "recall@20": 0.0055,
+     "hit@20": 0.2434,
+     "ndcg@20": 0.0217,
+     "users": 5000,
+     "eval_seconds": 2
+    },
+    {
+     "model": "app today: artist knn + top songs",
+     "params": {
+      "per_artist": 3
+     },
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0037,
+     "hit@12": 0.1322,
+     "ndcg@12": 0.0149,
+     "recall@20": 0.0057,
+     "hit@20": 0.1998,
+     "ndcg@20": 0.0148,
+     "users": 5000,
+     "eval_seconds": 31
+    },
+    {
+     "model": "app today: artist knn + top songs",
+     "params": {
+      "per_artist": 1
+     },
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0047,
+     "hit@12": 0.1786,
+     "ndcg@12": 0.0198,
+     "recall@20": 0.007,
+     "hit@20": 0.248,
+     "ndcg@20": 0.0191,
+     "users": 5000,
+     "eval_seconds": 31
+    },
+    {
+     "model": "own artists' top songs",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0498,
+     "hit@12": 0.8044,
+     "ndcg@12": 0.2481,
+     "recall@20": 0.0688,
+     "hit@20": 0.8526,
+     "ndcg@20": 0.2185,
+     "users": 5000,
+     "eval_seconds": 2
+    }
+   ],
+   "best_model": "song knn",
+   "best_baseline": "own artists' top songs",
+   "gain_recall@12": 0.747,
+   "passes": true
+  },
+  "discovery": {
+   "rows": [
+    {
+     "model": "song knn",
+     "params": {
+      "beta": 0.5,
+      "shrink": 100.0,
+      "scoring": [
+       30,
+       50,
+       0.75
+      ]
+     },
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0355,
+     "hit@12": 0.3481,
+     "ndcg@12": 0.0644,
+     "recall@20": 0.0465,
+     "hit@20": 0.4124,
+     "ndcg@20": 0.0603,
+     "users": 4760,
+     "eval_seconds": 46
+    },
+    {
+     "model": "song item2vec",
+     "params": {
+      "scoring": [
+       30,
+       50,
+       0.75
+      ]
+     },
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0148,
+     "hit@12": 0.1697,
+     "ndcg@12": 0.0247,
+     "recall@20": 0.0209,
+     "hit@20": 0.221,
+     "ndcg@20": 0.024,
+     "users": 4760,
+     "eval_seconds": 49
+    },
+    {
+     "model": "popularity",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0049,
+     "hit@12": 0.0855,
+     "ndcg@12": 0.0097,
+     "recall@20": 0.0078,
+     "hit@20": 0.1252,
+     "ndcg@20": 0.0099,
+     "users": 4760,
+     "eval_seconds": 2
+    },
+    {
+     "model": "app today: artist knn + top songs",
+     "params": {
+      "per_artist": 3
+     },
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0108,
+     "hit@12": 0.1389,
+     "ndcg@12": 0.0172,
+     "recall@20": 0.0164,
+     "hit@20": 0.2099,
+     "ndcg@20": 0.0182,
+     "users": 4760,
+     "eval_seconds": 31
+    },
+    {
+     "model": "app today: artist knn + top songs",
+     "params": {
+      "per_artist": 1
+     },
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0131,
+     "hit@12": 0.1876,
+     "ndcg@12": 0.0222,
+     "recall@20": 0.0198,
+     "hit@20": 0.2605,
+     "ndcg@20": 0.0229,
+     "users": 4760,
+     "eval_seconds": 31
+    }
+   ],
+   "best_model": "song knn",
+   "best_baseline": "app today: artist knn + top songs",
+   "gain_recall@12": 1.7099,
+   "passes": true
+  }
+ },
+ "exported": {
+  "knn": {
+   "beta": 0.5,
+   "shrink": 100.0,
+   "scoring": [
+    30,
+    50,
+    0.75
+   ]
+  },
+  "songs": 561412
+ },
+ "finished": "2026-11-23 23:11:49"
+}
