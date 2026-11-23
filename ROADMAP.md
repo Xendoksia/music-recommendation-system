@@ -236,4 +236,8 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
     anlamlı değil (11'e 5, p = 0,21). Yeni puanlama ayarları kullanıcının verisinde ek kazanç vermedi, zamana göre
     ölçümde biraz kötüleştirdi ve önerilerin ortanca dinleyici sayısını 3.456'dan 8.725'e çıkardı (Nirvana, Foo
     Fighters gibi çok bilinen adlar geliyor).
-- **Sıradaki:** Hangi ayarın kullanılacağına kullanıcı karar verecek. Ardından şarkı önerisi gelecek.
+- 2026-11-23, **karar: B (hepsi ayarlı).** Kullanıcı genel testte en iyi olan ayarı seçti: β = 0,4, shrinkage
+  100, 30 başlangıç, 50 benzer, SEED_DECAY 0,75 (`kaggle/tune/output/neighbours_knn_tuned.npz`). Parça 5'te
+  uygulamanın `SEEDS`, `RELATED` ve `SEED_DECAY` değerleri model kaynağı için bunlara çekilecek. Popülerlik
+  kayması Parça 6'da izlenecek.
+- **Sıradaki:** Şarkı önerisi, 1. adım (Kaggle'da şarkı verisi ve kapsam ölçümü).
