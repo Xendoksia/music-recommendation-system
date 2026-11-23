@@ -240,4 +240,12 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
   100, 30 başlangıç, 50 benzer, SEED_DECAY 0,75 (`kaggle/tune/output/neighbours_knn_tuned.npz`). Parça 5'te
   uygulamanın `SEEDS`, `RELATED` ve `SEED_DECAY` değerleri model kaynağı için bunlara çekilecek. Popülerlik
   kayması Parça 6'da izlenecek.
-- **Sıradaki:** Şarkı önerisi, 1. adım (Kaggle'da şarkı verisi ve kapsam ölçümü).
+- 2026-11-24, **şarkı önerisi 1. ve 2. adım bitti.** `kaggle/songs/songs.py` (Kaggle'da `xendoksia/listenbrainz-songs`)
+  günlük dökümleri şarkıyla okudu: 125,9 milyon dinleme, 47.493 kullanıcı, 8,2 milyon şarkı ve 29,2 milyon
+  kullanıcı–şarkı çifti. En az 10 dinleyicisi olan 475 bin şarkı var. Şarkı anahtarı "ilk sanatçı | sade şarkı
+  adı" ve uygulamanın kurallarıyla kuruluyor.
+  - Kapsam (`src/song_coverage.py`, `reports/kapsam_sarki.md`): kullanıcının 259 şarkısının en az 10 dinleyiciyle
+    %66'sı bulunuyor ve bunlar çalmaların %75'ini karşılıyor. En az 5 dinleyiciyle bu oranlar %74 ve %81. Eksik
+    kalanlar çoğunlukla Türkçe şarkılar. Bu oranlar sanatçı düzeyindeki kapsama yakın, bu yüzden model eğitmeye
+    değer.
+- **Sıradaki:** Şarkı önerisi 3. adım (Kaggle'da şarkı modelleri), kullanıcının onayını bekliyor.

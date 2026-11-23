@@ -45,6 +45,10 @@ def user_songs() -> tuple[Counter, dict[str, str]]:
     return counts, names
 
 
+def dotted(n: int) -> str:
+    return f"{n:,}".replace(",", ".")
+
+
 def main() -> None:
     counts, names = user_songs()
     listeners = pd.read_parquet(COUNTS).set_index("key")["listeners"]
@@ -54,9 +58,9 @@ def main() -> None:
     lines = [
         "# Şarkı kapsamı",
         "",
-        f"ListenBrainz günlük dökümlerinde {summary.get('listens', 0):,} dinleme, {summary.get('users', 0):,} "
-        f"kullanıcı ve {summary.get('songs', 0):,} şarkı var. Kullanıcının {len(counts)} şarkısı ({total} çalma) "
-        "aynı anahtarla (ilk sanatçı | sade şarkı adı) arandı.".replace(",", "."),
+        f"ListenBrainz günlük dökümlerinde {dotted(summary.get('listens', 0))} dinleme, "
+        f"{dotted(summary.get('users', 0))} kullanıcı ve {dotted(summary.get('songs', 0))} şarkı var. Kullanıcının "
+        f"{len(counts)} şarkısı ({total} çalma) aynı anahtarla (ilk sanatçı | sade şarkı adı) arandı.",
         "",
         "| En az dinleyici | Şarkı | Şarkı payı | Çalma payı |\n|---:|---:|---:|---:|",
     ]

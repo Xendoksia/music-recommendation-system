@@ -1,0 +1,39 @@
+[{"stream_name":"stdout","time":69.422755855,"data":"20:58:41 {\"dump\": \"listenbrainz-spark-dump-2774-20261109-000002-incremental\", \"listens\": 5053051, \"users\": 26480, \"songs_so_far\": 942401, \"seconds\": 47}\n"}
+,{"stream_name":"stdout","time":70.979198007,"data":"20:58:42 {\"dump\": \"listenbrainz-spark-dump-2775-20261109-000003-incremental\", \"listens\": 4, \"users\": 4, \"songs_so_far\": 942402, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":122.146394588,"data":"20:59:34 {\"dump\": \"listenbrainz-spark-dump-2776-20261110-000002-incremental\", \"listens\": 4406887, \"users\": 27922, \"songs_so_far\": 1518936, \"seconds\": 40}\n"}
+,{"stream_name":"stdout","time":123.661903824,"data":"20:59:35 listenbrainz-spark-dump-2777-20261110-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":187.706396591,"data":"21:00:39 {\"dump\": \"listenbrainz-spark-dump-2778-20261111-000002-incremental\", \"listens\": 4942786, \"users\": 28434, \"songs_so_far\": 2040648, \"seconds\": 46}\n"}
+,{"stream_name":"stdout","time":189.269104802,"data":"21:00:41 {\"dump\": \"listenbrainz-spark-dump-2779-20261111-000003-incremental\", \"listens\": 54, \"users\": 5, \"songs_so_far\": 2040648, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":239.080736477,"data":"21:01:30 {\"dump\": \"listenbrainz-spark-dump-2780-20261112-000002-incremental\", \"listens\": 3811389, \"users\": 26416, \"songs_so_far\": 2410680, \"seconds\": 39}\n"}
+,{"stream_name":"stdout","time":240.758241937,"data":"21:01:32 {\"dump\": \"listenbrainz-spark-dump-2781-20261112-000002-incremental\", \"listens\": 3, \"users\": 3, \"songs_so_far\": 2410681, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":314.205471929,"data":"21:02:46 {\"dump\": \"listenbrainz-spark-dump-2782-20261113-000002-incremental\", \"listens\": 6345136, \"users\": 33703, \"songs_so_far\": 2904361, \"seconds\": 58}\n"}
+,{"stream_name":"stdout","time":315.855893699,"data":"21:02:47 {\"dump\": \"listenbrainz-spark-dump-2783-20261113-000003-incremental\", \"listens\": 15, \"users\": 10, \"songs_so_far\": 2904364, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":363.782483701,"data":"21:03:35 {\"dump\": \"listenbrainz-spark-dump-2784-20261114-000002-incremental\", \"listens\": 3939670, \"users\": 28538, \"songs_so_far\": 3227014, \"seconds\": 37}\n"}
+,{"stream_name":"stdout","time":365.413042885,"data":"21:03:37 {\"dump\": \"listenbrainz-spark-dump-2785-20261114-000003-incremental\", \"listens\": 21, \"users\": 9, \"songs_so_far\": 3227023, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":409.383228241,"data":"21:04:21 {\"dump\": \"listenbrainz-spark-dump-2786-20261115-000003-incremental\", \"listens\": 3995784, \"users\": 27186, \"songs_so_far\": 3495027, \"seconds\": 34}\n"}
+,{"stream_name":"stdout","time":410.890763276,"data":"21:04:22 listenbrainz-spark-dump-2787-20261115-000003-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":460.678122341,"data":"21:05:12 {\"dump\": \"listenbrainz-spark-dump-2790-20261116-000003-incremental\", \"listens\": 4530595, \"users\": 26676, \"songs_so_far\": 3767785, \"seconds\": 39}\n"}
+,{"stream_name":"stdout","time":462.19436159,"data":"21:05:14 {\"dump\": \"listenbrainz-spark-dump-2791-20261116-000003-incremental\", \"listens\": 7, \"users\": 2, \"songs_so_far\": 3767787, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":512.250183903,"data":"21:06:04 {\"dump\": \"listenbrainz-spark-dump-2792-20261117-000002-incremental\", \"listens\": 4832299, \"users\": 28645, \"songs_so_far\": 4008913, \"seconds\": 39}\n"}
+,{"stream_name":"stdout","time":513.783655641,"data":"21:06:05 {\"dump\": \"listenbrainz-spark-dump-2793-20261117-000003-incremental\", \"listens\": 12, \"users\": 6, \"songs_so_far\": 4008914, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":563.875693477,"data":"21:06:55 {\"dump\": \"listenbrainz-spark-dump-2794-20261118-000002-incremental\", \"listens\": 4220438, \"users\": 29106, \"songs_so_far\": 4325335, \"seconds\": 39}\n"}
+,{"stream_name":"stdout","time":565.55779893,"data":"21:06:57 {\"dump\": \"listenbrainz-spark-dump-2795-20261118-000003-incremental\", \"listens\": 39, \"users\": 10, \"songs_so_far\": 4325336, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":653.394845321,"data":"21:08:25 {\"dump\": \"listenbrainz-spark-dump-2796-20261119-000002-incremental\", \"listens\": 8749675, \"users\": 28752, \"songs_so_far\": 4830106, \"seconds\": 71}\n"}
+,{"stream_name":"stdout","time":655.147383592,"data":"21:08:27 {\"dump\": \"listenbrainz-spark-dump-2797-20261119-000003-incremental\", \"listens\": 211, \"users\": 4, \"songs_so_far\": 4830108, \"seconds\": 0}\n"}
+,{"stream_name":"stdout","time":807.286580698,"data":"21:10:59 {\"dump\": \"listenbrainz-spark-dump-2798-20261120-000002-incremental\", \"listens\": 15738153, \"users\": 28478, \"songs_so_far\": 5679055, \"seconds\": 125}\n"}
+,{"stream_name":"stdout","time":808.832033231,"data":"21:11:00 listenbrainz-spark-dump-2799-20261120-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":970.877389634,"data":"21:13:42 {\"dump\": \"listenbrainz-spark-dump-2800-20261121-000003-incremental\", \"listens\": 17153427, \"users\": 30625, \"songs_so_far\": 6331252, \"seconds\": 132}\n"}
+,{"stream_name":"stdout","time":972.420872237,"data":"21:13:44 listenbrainz-spark-dump-2801-20261121-000003-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":1138.223283829,"data":"21:16:30 {\"dump\": \"listenbrainz-spark-dump-2802-20261122-000002-incremental\", \"listens\": 17033469, \"users\": 28429, \"songs_so_far\": 7213154, \"seconds\": 135}\n"}
+,{"stream_name":"stdout","time":1139.760209872,"data":"21:16:31 listenbrainz-spark-dump-2803-20261122-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":1338.287881653,"data":"21:19:50 {\"dump\": \"listenbrainz-spark-dump-2804-20261123-000003-incremental\", \"listens\": 21174484, \"users\": 26887, \"songs_so_far\": 8167472, \"seconds\": 163}\n"}
+,{"stream_name":"stdout","time":1339.839825683,"data":"21:19:51 listenbrainz-spark-dump-2805-20261123-000002-incremental.tar: no listens\n"}
+,{"stream_name":"stdout","time":1362.571353381,"data":"21:20:14 {\"listens\": 125927609, \"users\": 47493, \"songs\": 8167472, \"songs_with_3_listeners\": 1772578, \"songs_with_5_listeners\": 1016971, \"songs_with_10_listeners\": 475223, \"songs_with_20_listeners\": 210095, \"songs_with_50_listeners\": 63529, \"user_song_pairs\": 29186730, \"seconds\": 23}\n"}
+,{"stream_name":"stdout","time":1386.631334432,"data":"21:20:38 done\n"}
+,{"stream_name":"stderr","time":1394.116569719,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1394.116610894,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1394.579998654,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1394.580037706,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1396.101566727,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1397.713602164,"data":"[NbConvertApp] Writing 317875 bytes to __results__.html\n"}
+]
