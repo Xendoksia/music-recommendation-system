@@ -1,0 +1,20 @@
+{
+ "started": "2026-11-23 21:33:26",
+ "stats_dump": "listenbrainz-dump-2789-20261115-000003-full/listenbrainz-statistics-dump-20261115-000003.tar.zst",
+ "first_line": "{\"user_id\":1,\"data\":[{\"listen_count\":243,\"track_name\":\"Just for a Day (Sunday)\",\"recording_mbid\":\"586a6fc2-804e-4e60-a115-217d8ae9e90d\",\"artist_name\":\"TM Juke\",\"artist_mbids\":[\"3fa17b15-b8d1-46c4-a0e3-6e0f2a064a1d\"],\"release_name\":\"Maps From the Wilderness\",\"release_mbid\":\"d3654b5e-160f-4a96-bacf-aea5242a2df0\",\"artists\":[{\"artist_credit_name\":\"TM Juke\",\"join_phrase\":\"\",\"artist_mbid\":\"3fa17b15-b8d1-46c4-a0e3-6e0f2a064a1d\"}],\"caa_id\":3246868285,\"caa_release_mbid\":\"d3654b5e-160f-4a96-bacf-aea5242a2df0\"},{\"listen_count\":227,\"track_name\":\"Finally Moving\",\"recording_mbid\":\"3b3aaac8-64e5-4574-8290-3002d199fb9c\",\"artist_name\":\"Pretty Lights\",\"artist_mbids\":[\"3a07764c-7cc5-42e9-8205-3de7532f4771\"],\"release_name\":\"Taking Up Your Precious Time\",\"release_mbid\":\"d7548fbc-8cac-41e9-a59c-d286696ace9e\",\"artists\":[{\"artist_credit_name\":\"Pretty Lights\",\"join_phrase\":\"\",\"artist_mbid\":\"3a07764c-7cc5-42e9-8205-3de7532f4771\"}],\"caa_id\":42671306831,\"caa_release_mbid\":\"d7548fbc-8cac-41e9-a59c-d286696ace9e\"},{\"listen_count\":225,\"track_name\":\"You Wish\",\"recording_mbid\":\"6a3759fb-c92d-454a-9b92-5852146ca282\",\"artist_name\":\"Nightmares on Wax\",\"artist_mbids\":[\"b8c5cc4f-239f-4e02-b46f-b040b77c2030\"],\"release_name\":\"In a Space Outta Sound\",\"release_mbid\":\"571d64ae-e5a5-426b-9550-46015e5f213a\",\"artists\":[{\"artist_credit_name\":\"Nightmares on Wax\",\"join_phrase\":\"\",\"artist_mbid\":\"b8c5cc4f-239f-4e02-b46f-b040b77c2030\"}],\"caa_id\":45569098642,\"caa_release_mbid\":\"571d64ae-e5a5-426b-9550-46015e5f213a\"},{\"listen_count\":203,\"track_name\":\"Whisper\",\"recording_mbid\":\"06f5fe24-0db3-443b-aa79-27e81181136f\",\"artist_name\":\"Tropo\",\"artist_mbids\":[\"8f9d785a-022a-43eb-a2a0-22eb1966c599\"],\"release_name\":\"Blue Mountain\",\"release_mbid\":\"dbd1adf7-bb3a-47cd-83df-b3fc609b0e86\",\"artists\":[{\"artist_credit_name\":\"Tropo\",\"join_phrase\":\"\",\"artist_mbid\":\"8f9d785a-022a-43eb-a2a0-22eb1966c599\"}],\"caa_id\":22127030418,\"caa_release_mbid\":\"dbd1adf7-bb3a-47cd-83df-b3fc609b0e86\"},{\"listen_count\":200,\"track_name\":\"Start Shootin\u2019\",\"reco",
+ "title_field": "track_name",
+ "user_songs": {
+  "rows": 53981101,
+  "users": 101313,
+  "songs_listened": 9696494,
+  "new_songs": 5884184,
+  "per_user_max": 1000,
+  "per_user_median": 571.0,
+  "songs_with_5_listeners": 1358786,
+  "songs_with_10_listeners": 711739,
+  "songs_with_20_listeners": 366278,
+  "songs_with_50_listeners": 144351,
+  "seconds": 912
+ },
+ "finished": "2026-11-23 21:49:01"
+}
