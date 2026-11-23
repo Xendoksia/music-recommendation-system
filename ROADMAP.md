@@ -1,6 +1,6 @@
 # Müzik öneri modeli: yol haritası
 
-Son güncelleme: 2026-11-23 · Durum: **Parça 0–4 bitti, Parça 5 onay bekliyor**
+Son güncelleme: 2026-11-23 · Durum: **Parça 0–4 bitti, ayar taraması (4b) Kaggle'da sürüyor, ardından Parça 5**
 
 ## Amaç
 Playlist Tracker uygulamasındaki "Senin için" önerileri şu an Deezer'ın benzer sanatçı listesine dayanıyor
@@ -207,5 +207,17 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
   **Karar:** knn birincil kaynak olacak ve tanımadığı sanatçılarda Deezer'a düşülecek (`RECOMMEND_SOURCE =
   hybrid` varsayılan). Deezer fotoğraf ve en iyi şarkılar için kalıyor. Gerekçe `reports/karsilastirma.md`
   dosyasının Karar bölümünde.
-- **Sıradaki:** Parça 5 (uygulamaya taşıma). knn komşu listesi küçültülüp dışa aktarılacak ve `recommend.py`
-  içindeki `related()` için kaynak seçimi eklenecek.
+- 2026-11-23, **Parça 4b başladı (ayar taraması).** Kullanıcı önce ayarların yapılmasını, sonra Parça 5'e
+  geçilmesini istedi. Türk sanatçı kapsamı bir hedef değil, kararlar genel ölçütlerle veriliyor.
+  - `kaggle/tune/tune.py` (Kaggle'da `xendoksia/listenbrainz-tune`) knn'i iki yönden ayarlıyor. Popülerlik
+    cezasında benzerlik `dot / (|i|^(1−β) · |j|^β)` ile hesaplanıyor (β 0,3–0,85). Shrinkage'da paydaya 0, 10 ya
+    da 50 ekleniyor. implicit bunları sunmadığı için her sanatçının cosine'e göre en yakın 400 adayı yeniden
+    puanlanıyor.
+  - Uygulamanın ayarları da taranıyor: başlangıç sayısı (5–30), benzer sayısı (10–50) ve SEED_DECAY
+    (0,25–0,75). Önce benzerlik, sonra puanlama ayarları seçiliyor ve en iyi birkaç benzerlik yeniden
+    deneniyor. Ölçüt NDCG@12. Sonunda şu anki ayar ile en iyi ayar 8.518 test kullanıcısında karşılaştırılıyor.
+  - Senin verinde yapılan ön deneme: 20 başlangıç sanatçısıyla hit@12 0,127'den 0,167'ye çıktı. Benzer sayısını
+    50'ye çıkarmak sıralamayı bozdu.
+  - Yerel deneme `kaggle/tune/test_tune.py` ile yapılıyor.
+- **Sıradaki:** Tarama bitince en iyi ayarlarla Parça 4'ün karşılaştırması yeniden yapılacak, ardından Parça 5
+  (uygulamaya taşıma) gelecek.
