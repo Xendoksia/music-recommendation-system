@@ -1,6 +1,6 @@
 # Müzik öneri modeli: yol haritası
 
-Son güncelleme: 2026-11-23 · Durum: **Parça 0–4 bitti, ayar taraması (4b) Kaggle'da sürüyor, ardından Parça 5**
+Son güncelleme: 2026-11-23 · Durum: **Parça 0–4 bitti, ayar taraması (4b) Kaggle'da sürüyor, sırada şarkı önerisi, Parça 5 en sonda**
 
 ## Amaç
 Playlist Tracker uygulamasındaki "Senin için" önerileri şu an Deezer'ın benzer sanatçı listesine dayanıyor
@@ -219,5 +219,11 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
   - Senin verinde yapılan ön deneme: 20 başlangıç sanatçısıyla hit@12 0,127'den 0,167'ye çıktı. Benzer sayısını
     50'ye çıkarmak sıralamayı bozdu.
   - Yerel deneme `kaggle/tune/test_tune.py` ile yapılıyor.
-- **Sıradaki:** Tarama bitince en iyi ayarlarla Parça 4'ün karşılaştırması yeniden yapılacak, ardından Parça 5
-  (uygulamaya taşıma) gelecek.
+- 2026-11-23, **sıra değişti.** Kullanıcı uygulamaya taşımayı (Parça 5) en sona aldı: önce model tarafı tamamen
+  hazır olacak. Yeni sıra şöyle:
+  1. Ayar taraması (4b) bitecek ve en iyi ayarlarla Parça 4'ün karşılaştırması yeniden yapılacak.
+  2. **Şarkı önerisi** (Kaggle): günlük dökümler şarkı bilgisiyle (`recording_mbid`, `recording_name`) yeniden
+     okunacak. Ardından kullanıcının 270 şarkısının kapsamı ölçülecek (karar kapısı). Kapsam yeterliyse şarkı
+     knn'i ve item2vec eğitilip "önerilen sanatçının en popüler şarkıları" yöntemiyle karşılaştırılacak.
+  3. Parça 5 (uygulamaya taşıma): sanatçı ve, işe yararsa, şarkı modeli birlikte taşınacak.
+- **Sıradaki:** Ayar taramasının sonuçları.
