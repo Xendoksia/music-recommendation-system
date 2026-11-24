@@ -1,0 +1,13 @@
+{
+  "id": "xendoksia/listenbrainz-song-export",
+  "title": "ListenBrainz song export",
+  "code_file": "song_export.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": ["xendoksia/listenbrainz-songs", "xendoksia/listenbrainz-song-stats", "xendoksia/listenbrainz-tune"]
+}
