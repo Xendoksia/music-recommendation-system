@@ -1,0 +1,199 @@
+{
+ "started": "2026-11-24 17:14:37",
+ "seconds": {
+  "data": 130,
+  "knn": 706,
+  "rp3": 813,
+  "song fusion": 359,
+  "test": 976
+ },
+ "data": {
+  "users": 88134,
+  "songs": 1085656,
+  "pairs": 45261744,
+  "artists": 160170,
+  "min_song_users": 10,
+  "cap": 1000
+ },
+ "test": {
+  "all": [
+   {
+    "model": "knn reference (100 neighbours)",
+    "params": {},
+    "split": "test",
+    "mode": "all",
+    "recall@12": 0.0757,
+    "hit@12": 0.8476,
+    "ndcg@12": 0.3831,
+    "recall@20": 0.0973,
+    "hit@20": 0.884,
+    "ndcg@20": 0.3438,
+    "users": 5000,
+    "eval_seconds": 124
+   },
+   {
+    "model": "knn big pool",
+    "params": {},
+    "split": "test",
+    "mode": "all",
+    "recall@12": 0.0757,
+    "hit@12": 0.847,
+    "ndcg@12": 0.3832,
+    "recall@20": 0.0972,
+    "hit@20": 0.8838,
+    "ndcg@20": 0.3436,
+    "users": 5000,
+    "eval_seconds": 131
+   },
+   {
+    "model": "rp3beta best",
+    "params": {
+     "alpha": 0.5,
+     "beta": 0.6
+    },
+    "split": "test",
+    "mode": "all",
+    "recall@12": 0.0765,
+    "hit@12": 0.8444,
+    "ndcg@12": 0.3768,
+    "recall@20": 0.0983,
+    "hit@20": 0.8804,
+    "ndcg@20": 0.3375,
+    "users": 5000,
+    "eval_seconds": 122
+   },
+   {
+    "model": "user rrf",
+    "params": {
+     "parts": [
+      "knn big pool",
+      "rp3beta best"
+     ]
+    },
+    "split": "test",
+    "mode": "all",
+    "recall@12": 0.0811,
+    "hit@12": 0.856,
+    "ndcg@12": 0.4043,
+    "recall@20": 0.1032,
+    "hit@20": 0.8918,
+    "ndcg@20": 0.3631,
+    "users": 5000,
+    "eval_seconds": 0
+   },
+   {
+    "model": "song rrf",
+    "params": {
+     "neighbours": 200
+    },
+    "split": "test",
+    "mode": "all",
+    "recall@12": 0.0773,
+    "hit@12": 0.8516,
+    "ndcg@12": 0.3838,
+    "recall@20": 0.0996,
+    "hit@20": 0.8894,
+    "ndcg@20": 0.3458,
+    "users": 5000,
+    "eval_seconds": 122
+   }
+  ],
+  "discovery": [
+   {
+    "model": "knn reference (100 neighbours)",
+    "params": {},
+    "split": "test",
+    "mode": "discovery",
+    "recall@12": 0.0321,
+    "hit@12": 0.3547,
+    "ndcg@12": 0.0705,
+    "recall@20": 0.0415,
+    "hit@20": 0.4225,
+    "ndcg@20": 0.0643,
+    "users": 4765,
+    "eval_seconds": 93
+   },
+   {
+    "model": "knn big pool",
+    "params": {},
+    "split": "test",
+    "mode": "discovery",
+    "recall@12": 0.033,
+    "hit@12": 0.3522,
+    "ndcg@12": 0.0726,
+    "recall@20": 0.0436,
+    "hit@20": 0.4229,
+    "ndcg@20": 0.0666,
+    "users": 4765,
+    "eval_seconds": 137
+   },
+   {
+    "model": "rp3beta best",
+    "params": {
+     "alpha": 0.5,
+     "beta": 0.6
+    },
+    "split": "test",
+    "mode": "discovery",
+    "recall@12": 0.0336,
+    "hit@12": 0.3668,
+    "ndcg@12": 0.0726,
+    "recall@20": 0.0438,
+    "hit@20": 0.4344,
+    "ndcg@20": 0.0662,
+    "users": 4765,
+    "eval_seconds": 117
+   },
+   {
+    "model": "user rrf",
+    "params": {
+     "parts": [
+      "knn big pool",
+      "rp3beta best"
+     ]
+    },
+    "split": "test",
+    "mode": "discovery",
+    "recall@12": 0.0376,
+    "hit@12": 0.3882,
+    "ndcg@12": 0.0804,
+    "recall@20": 0.0497,
+    "hit@20": 0.4594,
+    "ndcg@20": 0.0736,
+    "users": 4765,
+    "eval_seconds": 0
+   },
+   {
+    "model": "song rrf",
+    "params": {
+     "neighbours": 200
+    },
+    "split": "test",
+    "mode": "discovery",
+    "recall@12": 0.0339,
+    "hit@12": 0.3681,
+    "ndcg@12": 0.0744,
+    "recall@20": 0.0442,
+    "hit@20": 0.4403,
+    "ndcg@20": 0.068,
+    "users": 4765,
+    "eval_seconds": 121
+   }
+  ]
+ },
+ "exported": {
+  "rp3": {
+   "alpha": 0.5,
+   "beta": 0.6
+  },
+  "neighbours": 200,
+  "songs": 1085656,
+  "scoring": [
+   30,
+   50,
+   0.75
+  ],
+  "rrf_k": 60
+ },
+ "finished": "2026-11-24 18:08:07"
+}

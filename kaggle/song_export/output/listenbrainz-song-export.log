@@ -1,0 +1,29 @@
+[{"stream_name":"stdout","time":145.634130522,"data":"17:16:33 {\"users\": 88134, \"songs\": 1085656, \"pairs\": 45261744, \"artists\": 160170, \"min_song_users\": 10, \"cap\": 1000}\n"}
+,{"stream_name":"stdout","time":159.598751845,"data":"17:16:47 data: 130s\n"}
+,{"stream_name":"stdout","time":165.131996581,"data":"17:16:53 validation users 2,000, test users 5,000\n"}
+,{"stream_name":"stderr","time":168.50134382,"data":"/usr/local/lib/python3.13/dist-packages/implicit/utils.py:164: ParameterWarning: Method expects CSR input, and was passed coo_matrix instead. Converting to CSR took 0.4354832172393799 seconds\n"}
+,{"stream_name":"stderr","time":168.501383237,"data":"  warnings.warn(\n"}
+,{"stream_name":"stdout","time":870.664826976,"data":"17:28:38 check: cosine rescoring gives implicit's neighbours for 100.0% of the sample\n"}
+,{"stream_name":"stdout","time":871.242071488,"data":"17:28:39 knn: 706s\n"}
+,{"stream_name":"stdout","time":1683.889845523,"data":"17:42:12 rp3: 813s\n"}
+,{"stream_name":"stdout","time":2043.266794748,"data":"17:48:11 check: song fusion matches the plain loop for 100.0% of the sample\n"}
+,{"stream_name":"stdout","time":2043.266848208,"data":"17:48:11 song fusion: 359s\n"}
+,{"stream_name":"stdout","time":2167.940486269,"data":"17:50:16 {\"model\": \"knn reference (100 neighbours)\", \"params\": {}, \"split\": \"test\", \"mode\": \"all\", \"recall@12\": 0.0757, \"hit@12\": 0.8476, \"ndcg@12\": 0.3831, \"recall@20\": 0.0973, \"hit@20\": 0.884, \"ndcg@20\": 0.3438, \"users\": 5000, \"eval_seconds\": 124}\n"}
+,{"stream_name":"stdout","time":2300.113201096,"data":"17:52:28 {\"model\": \"knn big pool\", \"params\": {}, \"split\": \"test\", \"mode\": \"all\", \"recall@12\": 0.0757, \"hit@12\": 0.847, \"ndcg@12\": 0.3832, \"recall@20\": 0.0972, \"hit@20\": 0.8838, \"ndcg@20\": 0.3436, \"users\": 5000, \"eval_seconds\": 131}\n"}
+,{"stream_name":"stdout","time":2422.499904253,"data":"17:54:30 {\"model\": \"rp3beta best\", \"params\": {\"alpha\": 0.5, \"beta\": 0.6}, \"split\": \"test\", \"mode\": \"all\", \"recall@12\": 0.0765, \"hit@12\": 0.8444, \"ndcg@12\": 0.3768, \"recall@20\": 0.0983, \"hit@20\": 0.8804, \"ndcg@20\": 0.3375, \"users\": 5000, \"eval_seconds\": 122}\n"}
+,{"stream_name":"stdout","time":2423.466109596,"data":"17:54:31 {\"model\": \"user rrf\", \"params\": {\"parts\": [\"knn big pool\", \"rp3beta best\"]}, \"split\": \"test\", \"mode\": \"all\", \"recall@12\": 0.0811, \"hit@12\": 0.856, \"ndcg@12\": 0.4043, \"recall@20\": 0.1032, \"hit@20\": 0.8918, \"ndcg@20\": 0.3631, \"users\": 5000, \"eval_seconds\": 0}\n"}
+,{"stream_name":"stdout","time":2546.107351775,"data":"17:56:34 {\"model\": \"song rrf\", \"params\": {\"neighbours\": 200}, \"split\": \"test\", \"mode\": \"all\", \"recall@12\": 0.0773, \"hit@12\": 0.8516, \"ndcg@12\": 0.3838, \"recall@20\": 0.0996, \"hit@20\": 0.8894, \"ndcg@20\": 0.3458, \"users\": 5000, \"eval_seconds\": 122}\n"}
+,{"stream_name":"stdout","time":2640.442448035,"data":"17:58:08 {\"model\": \"knn reference (100 neighbours)\", \"params\": {}, \"split\": \"test\", \"mode\": \"discovery\", \"recall@12\": 0.0321, \"hit@12\": 0.3547, \"ndcg@12\": 0.0705, \"recall@20\": 0.0415, \"hit@20\": 0.4225, \"ndcg@20\": 0.0643, \"users\": 4765, \"eval_seconds\": 93}\n"}
+,{"stream_name":"stdout","time":2778.105700798,"data":"18:00:26 {\"model\": \"knn big pool\", \"params\": {}, \"split\": \"test\", \"mode\": \"discovery\", \"recall@12\": 0.033, \"hit@12\": 0.3522, \"ndcg@12\": 0.0726, \"recall@20\": 0.0436, \"hit@20\": 0.4229, \"ndcg@20\": 0.0666, \"users\": 4765, \"eval_seconds\": 137}\n"}
+,{"stream_name":"stdout","time":2896.35956578,"data":"18:02:24 {\"model\": \"rp3beta best\", \"params\": {\"alpha\": 0.5, \"beta\": 0.6}, \"split\": \"test\", \"mode\": \"discovery\", \"recall@12\": 0.0336, \"hit@12\": 0.3668, \"ndcg@12\": 0.0726, \"recall@20\": 0.0438, \"hit@20\": 0.4344, \"ndcg@20\": 0.0662, \"users\": 4765, \"eval_seconds\": 117}\n"}
+,{"stream_name":"stdout","time":2897.706758848,"data":"18:02:25 {\"model\": \"user rrf\", \"params\": {\"parts\": [\"knn big pool\", \"rp3beta best\"]}, \"split\": \"test\", \"mode\": \"discovery\", \"recall@12\": 0.0376, \"hit@12\": 0.3882, \"ndcg@12\": 0.0804, \"recall@20\": 0.0497, \"hit@20\": 0.4594, \"ndcg@20\": 0.0736, \"users\": 4765, \"eval_seconds\": 0}\n"}
+,{"stream_name":"stdout","time":3019.500953125,"data":"18:04:27 {\"model\": \"song rrf\", \"params\": {\"neighbours\": 200}, \"split\": \"test\", \"mode\": \"discovery\", \"recall@12\": 0.0339, \"hit@12\": 0.3681, \"ndcg@12\": 0.0744, \"recall@20\": 0.0442, \"hit@20\": 0.4403, \"ndcg@20\": 0.068, \"users\": 4765, \"eval_seconds\": 121}\n"}
+,{"stream_name":"stdout","time":3019.502120001,"data":"18:04:27 test: 976s\n"}
+,{"stream_name":"stdout","time":3238.855742538,"data":"18:08:07 done\n"}
+,{"stream_name":"stderr","time":3245.532769026,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":3245.532809005,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":3245.89529619,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":3245.895329946,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":3246.995719472,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":3248.055310427,"data":"[NbConvertApp] Writing 409856 bytes to __results__.html\n"}
+]

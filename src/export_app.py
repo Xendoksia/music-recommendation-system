@@ -3,13 +3,15 @@ Exports the chosen models for Playlist Tracker in a form the app reads with the 
 array): no numpy, pandas or parquet needed.
 
 - artists.json.gz, artist_neighbours.i32.gz: the tuned artist kNN (kaggle/tune, B settings)
-- songs.json.gz, song_neighbours.i32.gz: the song kNN (kaggle/song_train)
+- songs.json.gz, song_neighbours.i32.gz: the song model (kaggle/song_export, option C: knn + RP3beta). With
+  --fused the file holds each song's knn and RP3beta lists fused once. With --two it holds the knn list and
+  song_neighbours_rp3.i32.gz the RP3beta one, for the app to score both and fuse the ranked lists.
 - manifest.json: shapes, settings, sources and test scores
 
 Only artists and songs with at least MIN_USERS listeners are kept, and every neighbour list is filtered to the kept
 ones, so a list can be shorter than NEIGHBOURS: the rest of a row is -1.
 
-    python -m src.export_app <out folder>
+    python -m src.export_app <out folder> --fused | --two
 """
 
 from __future__ import annotations
@@ -28,7 +30,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 TUNE = ROOT / "kaggle" / "tune" / "output"
-SONGS = ROOT / "kaggle" / "song_train" / "output"
+SONGS = ROOT / "kaggle" / "song_export" / "output"
 MIN_USERS = 50
 NEIGHBOURS = 50
 
@@ -70,7 +72,7 @@ def label(row: dict) -> str:
     return f"{row['model']}, {per_artist} per artist" if per_artist else row["model"]
 
 
-def main(out: Path) -> None:
+def main(out: Path, fused: bool) -> None:
     out.mkdir(parents=True, exist_ok=True)
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], capture_output=True, text=True,
                             cwd=ROOT).stdout.strip()
@@ -85,13 +87,21 @@ def main(out: Path) -> None:
     artist_shape = table.shape
 
     songs = pd.read_parquet(SONGS / "songs_model.parquet")
-    keep, table = kept_table(np.load(SONGS / "neighbours_song_knn.npz")["ids"], songs["users"].to_numpy())
+    first = "neighbours_song_fused.npz" if fused else "neighbours_song_knn_big.npz"
+    keep, table = kept_table(np.load(SONGS / first)["ids"], songs["users"].to_numpy())
     rows = songs.iloc[keep]
     write_json(out / "songs.json.gz", [
         {"artist": a, "title": t, "key": k, "mbid": m or "", "listeners": int(u)}
         for a, t, k, m, u in zip(rows["artist"], rows["title"], rows["key"], rows["mbid"].fillna(""), rows["users"])])
     write_ids(out / "song_neighbours.i32.gz", table)
     song_shape = table.shape
+    song_files = ["songs.json.gz", "song_neighbours.i32.gz"]
+    if not fused:
+        write_ids(out / "song_neighbours_rp3.i32.gz",
+                  kept_table(np.load(SONGS / "neighbours_song_rp3.npz")["ids"], songs["users"].to_numpy())[1])
+        song_files.append("song_neighbours_rp3.i32.gz")
+    else:
+        (out / "song_neighbours_rp3.i32.gz").unlink(missing_ok=True)
 
     tune = json.loads((TUNE / "summary.json").read_text())
     song = json.loads((SONGS / "summary.json").read_text())
@@ -106,13 +116,15 @@ def main(out: Path) -> None:
                     "scoring": {"SEEDS": tune["best"]["seeds"], "RELATED": tune["best"]["related"],
                                 "SEED_DECAY": tune["best"]["decay"]},
                     "test": {k: tune["test_best"][k] for k in ("recall@12", "hit@12", "ndcg@12")}},
-        "songs": {"count": song_shape[0], "neighbours": song_shape[1],
-                  "files": ["songs.json.gz", "song_neighbours.i32.gz"],
-                  "model": "item-item kNN, cosine with shrinkage on log listens, version 1",
-                  "similarity": {k: song["exported"]["knn"][k] for k in ("beta", "shrink")},
-                  "scoring": dict(zip(("SEEDS", "RELATED", "SEED_DECAY"), song["exported"]["knn"]["scoring"])),
+        "songs": {"count": song_shape[0], "neighbours": song_shape[1], "files": song_files,
+                  "model": ("knn and RP3beta neighbour lists fused per song by RRF, version 2" if fused else
+                            "knn (song_neighbours) and RP3beta (song_neighbours_rp3), each scored and the two ranked "
+                            "lists fused by RRF, version 2"),
+                  "similarity": {"knn": {"cosine shrink": 100, "weights": "log listens"},
+                                 "rp3beta": song["exported"]["rp3"], "rrf_k": song["exported"]["rrf_k"]},
+                  "scoring": dict(zip(("SEEDS", "RELATED", "SEED_DECAY"), song["exported"]["scoring"])),
                   "test": {mode: {label(r): {k: r[k] for k in ("recall@12", "hit@12", "ndcg@12")}
-                                  for r in block["rows"]} for mode, block in song["test"].items()}},
+                                  for r in rows} for mode, rows in song["test"].items()}},
     }
     (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
     for f in sorted(out.iterdir()):
@@ -120,4 +132,6 @@ def main(out: Path) -> None:
 
 
 if __name__ == "__main__":
-    main(Path(sys.argv[1]))
+    if len(sys.argv) != 3 or sys.argv[2] not in ("--fused", "--two"):
+        sys.exit(__doc__)
+    main(Path(sys.argv[1]), sys.argv[2] == "--fused")

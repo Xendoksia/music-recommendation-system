@@ -302,5 +302,10 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
   çalıştırıp listeleri birleştirmek. İkincisi, her şarkının iki komşu listesini önceden tek tabloda birleştirmek.
   İkinci yol yeterince iyi çıkarsa uygulamada kod değişmez, yalnızca dosyalar değişir. Çalışma 20:14'te başladı
   ve yaklaşık 1 saat sürmesi bekleniyor.
-- **Sıradaki:** Export çalışmasının sonucuna göre birleştirme yolu seçilecek. Ardından dosyalar `src/export_app.py` ile
-  uygulama biçimine çevrilecek ve uygulama projesinin ROADMAP'ine bağlama notu yazılacak.
+- 2026-11-24, **export bitti** (54 dakika). knn ve RP3beta skorları önceki çalışmayla birebir aynı çıktı.
+  Keşifte recall@12, kullanıcı başına birleştirmede (iki tablo puanlanıp listeler RRF ile birleşince) 0,0376, şarkı
+  başına önceden birleştirilmiş tek tabloda ise 0,0339 oldu (şu anki knn 0,0321). Bu yüzden kullanıcı başına
+  birleştirme seçildi. Uygulama dosyaları `python -m src.export_app data/app_models --two` ile
+  `data/app_models` altına yazıldı (159.008 şarkı, knn 17,1 MB, RP3beta 19,4 MB). Bağlama notu uygulama projesinin
+  ROADMAP'ine yazıldı ve bağlamayı kullanıcı orada kendisi yapacak.
+- **Sıradaki:** Model tarafı tamam. Parça 5 (uygulamaya bağlama) kullanıcıda.
