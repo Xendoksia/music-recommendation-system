@@ -295,6 +295,12 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
   knn ayarına göre keşifte recall@12 %17, bütün şarkılarda %7 daha yüksek. Kullanıcı başına 1.000 şarkı küçük bir
   kazanç getirdi. item2vec, EASE ve "sanatçı sonra şarkı" zayıf kaldı. RP3beta tablosu dışa aktarılmadı. Birleşim
   seçilirse onu üretmek için kısa bir Kaggle çalışması gerekiyor.
-- **Sıradaki:** Kullanıcı şarkı modeli hakkında karar verecek. Seçenekler: (A) uygulamadaki modeli olduğu gibi
-  bırakmak, (B) yeni ve daha büyük knn'e geçmek, (C) knn ve RP3beta birleşimine geçmek. C seçilirse önce RP3beta
-  tablosu dışa aktarılacak. Ardından Parça 5 gelecek.
+- 2026-11-24: Kullanıcı **C seçeneğini** seçti, yani şarkı modeli knn ve RP3beta birleşimi olacak. Uygulamaya
+  bağlama işini kullanıcı uygulama projesinde kendisi yapacak ve not oraya yazılacak.
+  `kaggle/song_export` (Kaggle'da `xendoksia/listenbrainz-song-export`) iki tabloyu aynı veriyle yeniden üretiyor.
+  Bu çalışma ayrıca iki birleştirme yolunu ölçüyor. Birincisi, uygulamanın puanlamasını iki tabloda ayrı ayrı
+  çalıştırıp listeleri birleştirmek. İkincisi, her şarkının iki komşu listesini önceden tek tabloda birleştirmek.
+  İkinci yol yeterince iyi çıkarsa uygulamada kod değişmez, yalnızca dosyalar değişir. Çalışma 20:14'te başladı
+  ve yaklaşık 1 saat sürmesi bekleniyor.
+- **Sıradaki:** Export çalışmasının sonucuna göre birleştirme yolu seçilecek. Ardından dosyalar `src/export_app.py` ile
+  uygulama biçimine çevrilecek ve uygulama projesinin ROADMAP'ine bağlama notu yazılacak.
