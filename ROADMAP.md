@@ -290,4 +290,11 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
     kod düzeltilir ve `kaggle/song_improve/test_song_improve.py` ile yerelde denenir. Ardından
     `kaggle kernels push -p kaggle/song_improve` ile yeniden gönderilir. Geçici bir hatada kullanıcı Kaggle
     sayfasından "Save Version" ile aynı kodu yeniden başlatabilir.
-- **Sıradaki:** Adım 4'ün sonuçları. Ardından kullanıcı şarkı modeli hakkında karar verecek ve Parça 5 gelecek.
+- 2026-11-24, **adım 4 bitti.** 4. sürüm 2 saat 56 dakikada tamamlandı ve sonuçlar `reports/sarki_iyilestirme.md`
+  dosyasında. En iyi yöntem knn (400 komşu) ile RP3beta'nın (α 0,5, β 0,6) RRF birleşimi oldu. Aynı veride şu anki
+  knn ayarına göre keşifte recall@12 %17, bütün şarkılarda %7 daha yüksek. Kullanıcı başına 1.000 şarkı küçük bir
+  kazanç getirdi. item2vec, EASE ve "sanatçı sonra şarkı" zayıf kaldı. RP3beta tablosu dışa aktarılmadı. Birleşim
+  seçilirse onu üretmek için kısa bir Kaggle çalışması gerekiyor.
+- **Sıradaki:** Kullanıcı şarkı modeli hakkında karar verecek. Seçenekler: (A) uygulamadaki modeli olduğu gibi
+  bırakmak, (B) yeni ve daha büyük knn'e geçmek, (C) knn ve RP3beta birleşimine geçmek. C seçilirse önce RP3beta
+  tablosu dışa aktarılacak. Ardından Parça 5 gelecek.

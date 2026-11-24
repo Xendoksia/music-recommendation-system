@@ -1,0 +1,1049 @@
+[
+ {
+  "model": "knn reference (100 neighbours)",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0743,
+  "hit@12": 0.8385,
+  "ndcg@12": 0.3668,
+  "recall@20": 0.0957,
+  "hit@20": 0.877,
+  "ndcg@20": 0.3281,
+  "users": 2000,
+  "eval_seconds": 51
+ },
+ {
+  "model": "knn big pool",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0744,
+  "hit@12": 0.8385,
+  "ndcg@12": 0.3671,
+  "recall@20": 0.0957,
+  "hit@20": 0.877,
+  "ndcg@20": 0.3283,
+  "users": 2000,
+  "eval_seconds": 55
+ },
+ {
+  "model": "knn, 500 songs per user",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0717,
+  "hit@12": 0.832,
+  "ndcg@12": 0.3576,
+  "recall@20": 0.0915,
+  "hit@20": 0.8645,
+  "ndcg@20": 0.318,
+  "users": 2000,
+  "eval_seconds": 54
+ },
+ {
+  "model": "ease",
+  "params": {
+   "songs": 15000,
+   "lambda": 400.0
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0351,
+  "hit@12": 0.656,
+  "ndcg@12": 0.2091,
+  "recall@20": 0.0434,
+  "hit@20": 0.699,
+  "ndcg@20": 0.1801,
+  "users": 2000,
+  "eval_seconds": 20
+ },
+ {
+  "model": "item2vec",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.045,
+  "hit@12": 0.703,
+  "ndcg@12": 0.2144,
+  "recall@20": 0.0582,
+  "hit@20": 0.7645,
+  "ndcg@20": 0.1915,
+  "users": 2000,
+  "eval_seconds": 54
+ },
+ {
+  "model": "popularity",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0028,
+  "hit@12": 0.1965,
+  "ndcg@12": 0.0279,
+  "recall@20": 0.0044,
+  "hit@20": 0.264,
+  "ndcg@20": 0.0265,
+  "users": 2000,
+  "eval_seconds": 1
+ },
+ {
+  "model": "app today, 3 per artist",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0029,
+  "hit@12": 0.1355,
+  "ndcg@12": 0.016,
+  "recall@20": 0.0044,
+  "hit@20": 0.201,
+  "ndcg@20": 0.0155,
+  "users": 2000,
+  "eval_seconds": 27
+ },
+ {
+  "model": "app today, 1 per artist",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0042,
+  "hit@12": 0.191,
+  "ndcg@12": 0.0222,
+  "recall@20": 0.0064,
+  "hit@20": 0.263,
+  "ndcg@20": 0.0215,
+  "users": 2000,
+  "eval_seconds": 27
+ },
+ {
+  "model": "artist then song",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0039,
+  "hit@12": 0.1875,
+  "ndcg@12": 0.0206,
+  "recall@20": 0.0062,
+  "hit@20": 0.2585,
+  "ndcg@20": 0.0203,
+  "users": 2000,
+  "eval_seconds": 46
+ },
+ {
+  "model": "knn reference (100 neighbours)",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0295,
+  "hit@12": 0.3483,
+  "ndcg@12": 0.0669,
+  "recall@20": 0.0383,
+  "hit@20": 0.4138,
+  "ndcg@20": 0.0608,
+  "users": 1909,
+  "eval_seconds": 40
+ },
+ {
+  "model": "knn big pool",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0301,
+  "hit@12": 0.3541,
+  "ndcg@12": 0.0698,
+  "recall@20": 0.0396,
+  "hit@20": 0.4196,
+  "ndcg@20": 0.0636,
+  "users": 1909,
+  "eval_seconds": 58
+ },
+ {
+  "model": "knn, 500 songs per user",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0283,
+  "hit@12": 0.3363,
+  "ndcg@12": 0.0645,
+  "recall@20": 0.0358,
+  "hit@20": 0.3908,
+  "ndcg@20": 0.0579,
+  "users": 1909,
+  "eval_seconds": 55
+ },
+ {
+  "model": "ease",
+  "params": {
+   "songs": 15000,
+   "lambda": 400.0
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0165,
+  "hit@12": 0.2703,
+  "ndcg@12": 0.0455,
+  "recall@20": 0.0219,
+  "hit@20": 0.3216,
+  "ndcg@20": 0.0408,
+  "users": 1909,
+  "eval_seconds": 21
+ },
+ {
+  "model": "item2vec",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0136,
+  "hit@12": 0.1797,
+  "ndcg@12": 0.0277,
+  "recall@20": 0.0172,
+  "hit@20": 0.2268,
+  "ndcg@20": 0.0258,
+  "users": 1909,
+  "eval_seconds": 53
+ },
+ {
+  "model": "popularity",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0047,
+  "hit@12": 0.1179,
+  "ndcg@12": 0.014,
+  "recall@20": 0.007,
+  "hit@20": 0.1613,
+  "ndcg@20": 0.0134,
+  "users": 1909,
+  "eval_seconds": 1
+ },
+ {
+  "model": "app today, 3 per artist",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0072,
+  "hit@12": 0.142,
+  "ndcg@12": 0.0173,
+  "recall@20": 0.0114,
+  "hit@20": 0.2106,
+  "ndcg@20": 0.0176,
+  "users": 1909,
+  "eval_seconds": 26
+ },
+ {
+  "model": "app today, 1 per artist",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0108,
+  "hit@12": 0.2001,
+  "ndcg@12": 0.0241,
+  "recall@20": 0.0169,
+  "hit@20": 0.2755,
+  "ndcg@20": 0.0245,
+  "users": 1909,
+  "eval_seconds": 27
+ },
+ {
+  "model": "artist then song",
+  "params": {},
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0107,
+  "hit@12": 0.1964,
+  "ndcg@12": 0.0226,
+  "recall@20": 0.0169,
+  "hit@20": 0.2708,
+  "ndcg@20": 0.0235,
+  "users": 1909,
+  "eval_seconds": 46
+ },
+ {
+  "model": "own artists' top songs",
+  "params": {},
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0416,
+  "hit@12": 0.797,
+  "ndcg@12": 0.2711,
+  "recall@20": 0.0586,
+  "hit@20": 0.8415,
+  "ndcg@20": 0.2411,
+  "users": 2000,
+  "eval_seconds": 1
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.0
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0451,
+  "hit@12": 0.736,
+  "ndcg@12": 0.2032,
+  "recall@20": 0.0635,
+  "hit@20": 0.8135,
+  "ndcg@20": 0.1932,
+  "users": 2000,
+  "eval_seconds": 42
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.0
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0205,
+  "hit@12": 0.3059,
+  "ndcg@12": 0.0487,
+  "recall@20": 0.0279,
+  "hit@20": 0.3782,
+  "ndcg@20": 0.0453,
+  "users": 1909,
+  "eval_seconds": 38
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.3
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0764,
+  "hit@12": 0.8515,
+  "ndcg@12": 0.3591,
+  "recall@20": 0.0987,
+  "hit@20": 0.89,
+  "ndcg@20": 0.3238,
+  "users": 2000,
+  "eval_seconds": 49
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.3
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0323,
+  "hit@12": 0.3735,
+  "ndcg@12": 0.0719,
+  "recall@20": 0.0421,
+  "hit@20": 0.4474,
+  "ndcg@20": 0.0663,
+  "users": 1909,
+  "eval_seconds": 47
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.6
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0754,
+  "hit@12": 0.835,
+  "ndcg@12": 0.3623,
+  "recall@20": 0.0972,
+  "hit@20": 0.875,
+  "ndcg@20": 0.3237,
+  "users": 2000,
+  "eval_seconds": 53
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.6
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0324,
+  "hit@12": 0.3609,
+  "ndcg@12": 0.0727,
+  "recall@20": 0.0417,
+  "hit@20": 0.4285,
+  "ndcg@20": 0.0663,
+  "users": 1909,
+  "eval_seconds": 50
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 1.0,
+   "beta": 0.0
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0507,
+  "hit@12": 0.762,
+  "ndcg@12": 0.2257,
+  "recall@20": 0.072,
+  "hit@20": 0.8375,
+  "ndcg@20": 0.2123,
+  "users": 2000,
+  "eval_seconds": 45
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 1.0,
+   "beta": 0.0
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0226,
+  "hit@12": 0.3064,
+  "ndcg@12": 0.0498,
+  "recall@20": 0.0308,
+  "hit@20": 0.3871,
+  "ndcg@20": 0.0467,
+  "users": 1909,
+  "eval_seconds": 43
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 1.0,
+   "beta": 0.3
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.077,
+  "hit@12": 0.843,
+  "ndcg@12": 0.3608,
+  "recall@20": 0.0973,
+  "hit@20": 0.8765,
+  "ndcg@20": 0.3218,
+  "users": 2000,
+  "eval_seconds": 54
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 1.0,
+   "beta": 0.3
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0306,
+  "hit@12": 0.3583,
+  "ndcg@12": 0.068,
+  "recall@20": 0.0399,
+  "hit@20": 0.4217,
+  "ndcg@20": 0.0615,
+  "users": 1909,
+  "eval_seconds": 53
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 1.0,
+   "beta": 0.6
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0709,
+  "hit@12": 0.814,
+  "ndcg@12": 0.3435,
+  "recall@20": 0.0906,
+  "hit@20": 0.853,
+  "ndcg@20": 0.3038,
+  "users": 2000,
+  "eval_seconds": 57
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 1.0,
+   "beta": 0.6
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0298,
+  "hit@12": 0.3421,
+  "ndcg@12": 0.0665,
+  "recall@20": 0.0381,
+  "hit@20": 0.3986,
+  "ndcg@20": 0.06,
+  "users": 1909,
+  "eval_seconds": 56
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "item2vec"
+   ]
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0691,
+  "hit@12": 0.8165,
+  "ndcg@12": 0.3414,
+  "recall@20": 0.0909,
+  "hit@20": 0.8585,
+  "ndcg@20": 0.3076,
+  "users": 2000,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best"
+   ]
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0806,
+  "hit@12": 0.845,
+  "ndcg@12": 0.3888,
+  "recall@20": 0.1031,
+  "hit@20": 0.888,
+  "ndcg@20": 0.348,
+  "users": 2000,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "ease"
+   ]
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0647,
+  "hit@12": 0.8225,
+  "ndcg@12": 0.31,
+  "recall@20": 0.0889,
+  "hit@20": 0.876,
+  "ndcg@20": 0.2872,
+  "users": 2000,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best",
+    "item2vec"
+   ]
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0789,
+  "hit@12": 0.8445,
+  "ndcg@12": 0.3751,
+  "recall@20": 0.1041,
+  "hit@20": 0.886,
+  "ndcg@20": 0.3429,
+  "users": 2000,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best",
+    "item2vec",
+    "ease"
+   ]
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.0768,
+  "hit@12": 0.8405,
+  "ndcg@12": 0.3646,
+  "recall@20": 0.1042,
+  "hit@20": 0.889,
+  "ndcg@20": 0.3356,
+  "users": 2000,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "own artists' top songs"
+   ]
+  },
+  "split": "val",
+  "mode": "all",
+  "recall@12": 0.065,
+  "hit@12": 0.855,
+  "ndcg@12": 0.3566,
+  "recall@20": 0.092,
+  "hit@20": 0.89,
+  "ndcg@20": 0.3291,
+  "users": 2000,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "item2vec"
+   ]
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0249,
+  "hit@12": 0.3138,
+  "ndcg@12": 0.0591,
+  "recall@20": 0.0348,
+  "hit@20": 0.3787,
+  "ndcg@20": 0.0549,
+  "users": 1909,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best"
+   ]
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0351,
+  "hit@12": 0.3814,
+  "ndcg@12": 0.0779,
+  "recall@20": 0.0453,
+  "hit@20": 0.4442,
+  "ndcg@20": 0.0709,
+  "users": 1909,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "ease"
+   ]
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0264,
+  "hit@12": 0.3457,
+  "ndcg@12": 0.0643,
+  "recall@20": 0.0388,
+  "hit@20": 0.4269,
+  "ndcg@20": 0.0608,
+  "users": 1909,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best",
+    "item2vec"
+   ]
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0331,
+  "hit@12": 0.3772,
+  "ndcg@12": 0.0748,
+  "recall@20": 0.0452,
+  "hit@20": 0.4447,
+  "ndcg@20": 0.0694,
+  "users": 1909,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "artist then song"
+   ]
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0245,
+  "hit@12": 0.329,
+  "ndcg@12": 0.051,
+  "recall@20": 0.0347,
+  "hit@20": 0.4018,
+  "ndcg@20": 0.0494,
+  "users": 1909,
+  "eval_seconds": 0
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best",
+    "artist then song"
+   ]
+  },
+  "split": "val",
+  "mode": "discovery",
+  "recall@12": 0.0335,
+  "hit@12": 0.3829,
+  "ndcg@12": 0.0685,
+  "recall@20": 0.0456,
+  "hit@20": 0.4515,
+  "ndcg@20": 0.0643,
+  "users": 1909,
+  "eval_seconds": 0
+ },
+ {
+  "model": "knn reference (100 neighbours)",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0757,
+  "hit@12": 0.8476,
+  "ndcg@12": 0.3831,
+  "recall@20": 0.0973,
+  "hit@20": 0.884,
+  "ndcg@20": 0.3438,
+  "users": 5000,
+  "eval_seconds": 127
+ },
+ {
+  "model": "knn big pool",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0757,
+  "hit@12": 0.847,
+  "ndcg@12": 0.3832,
+  "recall@20": 0.0972,
+  "hit@20": 0.8838,
+  "ndcg@20": 0.3436,
+  "users": 5000,
+  "eval_seconds": 138
+ },
+ {
+  "model": "knn, 500 songs per user",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0732,
+  "hit@12": 0.838,
+  "ndcg@12": 0.3747,
+  "recall@20": 0.0939,
+  "hit@20": 0.875,
+  "ndcg@20": 0.3349,
+  "users": 5000,
+  "eval_seconds": 138
+ },
+ {
+  "model": "ease",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0382,
+  "hit@12": 0.6686,
+  "ndcg@12": 0.2241,
+  "recall@20": 0.047,
+  "hit@20": 0.7132,
+  "ndcg@20": 0.1938,
+  "users": 5000,
+  "eval_seconds": 52
+ },
+ {
+  "model": "item2vec",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0462,
+  "hit@12": 0.7072,
+  "ndcg@12": 0.2296,
+  "recall@20": 0.0595,
+  "hit@20": 0.7712,
+  "ndcg@20": 0.2054,
+  "users": 5000,
+  "eval_seconds": 138
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.6
+  },
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0765,
+  "hit@12": 0.8444,
+  "ndcg@12": 0.3768,
+  "recall@20": 0.0983,
+  "hit@20": 0.8804,
+  "ndcg@20": 0.3375,
+  "users": 5000,
+  "eval_seconds": 129
+ },
+ {
+  "model": "artist then song",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0037,
+  "hit@12": 0.183,
+  "ndcg@12": 0.0209,
+  "recall@20": 0.0056,
+  "hit@20": 0.2566,
+  "ndcg@20": 0.0203,
+  "users": 5000,
+  "eval_seconds": 115
+ },
+ {
+  "model": "popularity",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0028,
+  "hit@12": 0.2064,
+  "ndcg@12": 0.0284,
+  "recall@20": 0.0042,
+  "hit@20": 0.273,
+  "ndcg@20": 0.0261,
+  "users": 5000,
+  "eval_seconds": 1
+ },
+ {
+  "model": "app today, 3 per artist",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0028,
+  "hit@12": 0.1338,
+  "ndcg@12": 0.015,
+  "recall@20": 0.0045,
+  "hit@20": 0.2054,
+  "ndcg@20": 0.0149,
+  "users": 5000,
+  "eval_seconds": 68
+ },
+ {
+  "model": "app today, 1 per artist",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0037,
+  "hit@12": 0.1902,
+  "ndcg@12": 0.0208,
+  "recall@20": 0.0057,
+  "hit@20": 0.2638,
+  "ndcg@20": 0.0202,
+  "users": 5000,
+  "eval_seconds": 67
+ },
+ {
+  "model": "own artists' top songs",
+  "params": {},
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0431,
+  "hit@12": 0.808,
+  "ndcg@12": 0.2849,
+  "recall@20": 0.0597,
+  "hit@20": 0.8488,
+  "ndcg@20": 0.2541,
+  "users": 5000,
+  "eval_seconds": 1
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best"
+   ]
+  },
+  "split": "test",
+  "mode": "all",
+  "recall@12": 0.0811,
+  "hit@12": 0.856,
+  "ndcg@12": 0.4043,
+  "recall@20": 0.1032,
+  "hit@20": 0.8918,
+  "ndcg@20": 0.3631,
+  "users": 5000,
+  "eval_seconds": 0
+ },
+ {
+  "model": "knn reference (100 neighbours)",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0321,
+  "hit@12": 0.3547,
+  "ndcg@12": 0.0705,
+  "recall@20": 0.0415,
+  "hit@20": 0.4225,
+  "ndcg@20": 0.0643,
+  "users": 4765,
+  "eval_seconds": 99
+ },
+ {
+  "model": "knn big pool",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.033,
+  "hit@12": 0.3522,
+  "ndcg@12": 0.0726,
+  "recall@20": 0.0436,
+  "hit@20": 0.4229,
+  "ndcg@20": 0.0666,
+  "users": 4765,
+  "eval_seconds": 149
+ },
+ {
+  "model": "knn, 500 songs per user",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0304,
+  "hit@12": 0.3339,
+  "ndcg@12": 0.067,
+  "recall@20": 0.0394,
+  "hit@20": 0.3935,
+  "ndcg@20": 0.0604,
+  "users": 4765,
+  "eval_seconds": 141
+ },
+ {
+  "model": "ease",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0182,
+  "hit@12": 0.2743,
+  "ndcg@12": 0.0468,
+  "recall@20": 0.0241,
+  "hit@20": 0.3289,
+  "ndcg@20": 0.0424,
+  "users": 4765,
+  "eval_seconds": 55
+ },
+ {
+  "model": "item2vec",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.015,
+  "hit@12": 0.1733,
+  "ndcg@12": 0.0279,
+  "recall@20": 0.0198,
+  "hit@20": 0.2262,
+  "ndcg@20": 0.0262,
+  "users": 4765,
+  "eval_seconds": 132
+ },
+ {
+  "model": "rp3beta",
+  "params": {
+   "alpha": 0.5,
+   "beta": 0.6
+  },
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0336,
+  "hit@12": 0.3668,
+  "ndcg@12": 0.0726,
+  "recall@20": 0.0438,
+  "hit@20": 0.4344,
+  "ndcg@20": 0.0662,
+  "users": 4765,
+  "eval_seconds": 121
+ },
+ {
+  "model": "artist then song",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0108,
+  "hit@12": 0.192,
+  "ndcg@12": 0.0231,
+  "recall@20": 0.0168,
+  "hit@20": 0.2693,
+  "ndcg@20": 0.0236,
+  "users": 4765,
+  "eval_seconds": 113
+ },
+ {
+  "model": "popularity",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0037,
+  "hit@12": 0.0986,
+  "ndcg@12": 0.0109,
+  "recall@20": 0.0055,
+  "hit@20": 0.1454,
+  "ndcg@20": 0.0108,
+  "users": 4765,
+  "eval_seconds": 1
+ },
+ {
+  "model": "app today, 3 per artist",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0084,
+  "hit@12": 0.1404,
+  "ndcg@12": 0.017,
+  "recall@20": 0.0129,
+  "hit@20": 0.2155,
+  "ndcg@20": 0.0177,
+  "users": 4765,
+  "eval_seconds": 66
+ },
+ {
+  "model": "app today, 1 per artist",
+  "params": {},
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0108,
+  "hit@12": 0.1996,
+  "ndcg@12": 0.0231,
+  "recall@20": 0.017,
+  "hit@20": 0.2768,
+  "ndcg@20": 0.0235,
+  "users": 4765,
+  "eval_seconds": 67
+ },
+ {
+  "model": "rrf",
+  "params": {
+   "parts": [
+    "knn big pool",
+    "rp3beta best"
+   ]
+  },
+  "split": "test",
+  "mode": "discovery",
+  "recall@12": 0.0376,
+  "hit@12": 0.3882,
+  "ndcg@12": 0.0804,
+  "recall@20": 0.0497,
+  "hit@20": 0.4594,
+  "ndcg@20": 0.0736,
+  "users": 4765,
+  "eval_seconds": 0
+ }
+]

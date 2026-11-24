@@ -1,0 +1,415 @@
+{
+ "started": "2026-11-24 13:44:55",
+ "seconds": {
+  "data": 137,
+  "item2vec": 3395,
+  "item2vec neighbours": 1422,
+  "ease": 281,
+  "knn old cap": 504,
+  "knn": 853,
+  "rp3 pool alpha 0.5": 802,
+  "rp3 pool alpha 1.0": 831,
+  "validation": 3086,
+  "test": 1944
+ },
+ "data": {
+  "users": 88134,
+  "songs": 1085656,
+  "pairs": 45261744,
+  "artists": 160170,
+  "min_song_users": 10,
+  "cap": 1000
+ },
+ "best_rp3": {
+  "all": {
+   "alpha": 0.5,
+   "beta": 0.6
+  },
+  "discovery": {
+   "alpha": 0.5,
+   "beta": 0.6
+  }
+ },
+ "test": {
+  "all": {
+   "rows": [
+    {
+     "model": "knn reference (100 neighbours)",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0757,
+     "hit@12": 0.8476,
+     "ndcg@12": 0.3831,
+     "recall@20": 0.0973,
+     "hit@20": 0.884,
+     "ndcg@20": 0.3438,
+     "users": 5000,
+     "eval_seconds": 127
+    },
+    {
+     "model": "knn big pool",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0757,
+     "hit@12": 0.847,
+     "ndcg@12": 0.3832,
+     "recall@20": 0.0972,
+     "hit@20": 0.8838,
+     "ndcg@20": 0.3436,
+     "users": 5000,
+     "eval_seconds": 138
+    },
+    {
+     "model": "knn, 500 songs per user",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0732,
+     "hit@12": 0.838,
+     "ndcg@12": 0.3747,
+     "recall@20": 0.0939,
+     "hit@20": 0.875,
+     "ndcg@20": 0.3349,
+     "users": 5000,
+     "eval_seconds": 138
+    },
+    {
+     "model": "ease",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0382,
+     "hit@12": 0.6686,
+     "ndcg@12": 0.2241,
+     "recall@20": 0.047,
+     "hit@20": 0.7132,
+     "ndcg@20": 0.1938,
+     "users": 5000,
+     "eval_seconds": 52
+    },
+    {
+     "model": "item2vec",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0462,
+     "hit@12": 0.7072,
+     "ndcg@12": 0.2296,
+     "recall@20": 0.0595,
+     "hit@20": 0.7712,
+     "ndcg@20": 0.2054,
+     "users": 5000,
+     "eval_seconds": 138
+    },
+    {
+     "model": "rp3beta",
+     "params": {
+      "alpha": 0.5,
+      "beta": 0.6
+     },
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0765,
+     "hit@12": 0.8444,
+     "ndcg@12": 0.3768,
+     "recall@20": 0.0983,
+     "hit@20": 0.8804,
+     "ndcg@20": 0.3375,
+     "users": 5000,
+     "eval_seconds": 129
+    },
+    {
+     "model": "artist then song",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0037,
+     "hit@12": 0.183,
+     "ndcg@12": 0.0209,
+     "recall@20": 0.0056,
+     "hit@20": 0.2566,
+     "ndcg@20": 0.0203,
+     "users": 5000,
+     "eval_seconds": 115
+    },
+    {
+     "model": "popularity",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0028,
+     "hit@12": 0.2064,
+     "ndcg@12": 0.0284,
+     "recall@20": 0.0042,
+     "hit@20": 0.273,
+     "ndcg@20": 0.0261,
+     "users": 5000,
+     "eval_seconds": 1
+    },
+    {
+     "model": "app today, 3 per artist",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0028,
+     "hit@12": 0.1338,
+     "ndcg@12": 0.015,
+     "recall@20": 0.0045,
+     "hit@20": 0.2054,
+     "ndcg@20": 0.0149,
+     "users": 5000,
+     "eval_seconds": 68
+    },
+    {
+     "model": "app today, 1 per artist",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0037,
+     "hit@12": 0.1902,
+     "ndcg@12": 0.0208,
+     "recall@20": 0.0057,
+     "hit@20": 0.2638,
+     "ndcg@20": 0.0202,
+     "users": 5000,
+     "eval_seconds": 67
+    },
+    {
+     "model": "own artists' top songs",
+     "params": {},
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0431,
+     "hit@12": 0.808,
+     "ndcg@12": 0.2849,
+     "recall@20": 0.0597,
+     "hit@20": 0.8488,
+     "ndcg@20": 0.2541,
+     "users": 5000,
+     "eval_seconds": 1
+    },
+    {
+     "model": "rrf",
+     "params": {
+      "parts": [
+       "knn big pool",
+       "rp3beta best"
+      ]
+     },
+     "split": "test",
+     "mode": "all",
+     "recall@12": 0.0811,
+     "hit@12": 0.856,
+     "ndcg@12": 0.4043,
+     "recall@20": 0.1032,
+     "hit@20": 0.8918,
+     "ndcg@20": 0.3631,
+     "users": 5000,
+     "eval_seconds": 0
+    }
+   ],
+   "best": {
+    "model": "rrf",
+    "params": {
+     "parts": [
+      "knn big pool",
+      "rp3beta best"
+     ]
+    }
+   },
+   "best_vs_reference": {
+    "recall@12": 0.0713,
+    "hit@12": 0.0099,
+    "ndcg@12": 0.0553
+   }
+  },
+  "discovery": {
+   "rows": [
+    {
+     "model": "knn reference (100 neighbours)",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0321,
+     "hit@12": 0.3547,
+     "ndcg@12": 0.0705,
+     "recall@20": 0.0415,
+     "hit@20": 0.4225,
+     "ndcg@20": 0.0643,
+     "users": 4765,
+     "eval_seconds": 99
+    },
+    {
+     "model": "knn big pool",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.033,
+     "hit@12": 0.3522,
+     "ndcg@12": 0.0726,
+     "recall@20": 0.0436,
+     "hit@20": 0.4229,
+     "ndcg@20": 0.0666,
+     "users": 4765,
+     "eval_seconds": 149
+    },
+    {
+     "model": "knn, 500 songs per user",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0304,
+     "hit@12": 0.3339,
+     "ndcg@12": 0.067,
+     "recall@20": 0.0394,
+     "hit@20": 0.3935,
+     "ndcg@20": 0.0604,
+     "users": 4765,
+     "eval_seconds": 141
+    },
+    {
+     "model": "ease",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0182,
+     "hit@12": 0.2743,
+     "ndcg@12": 0.0468,
+     "recall@20": 0.0241,
+     "hit@20": 0.3289,
+     "ndcg@20": 0.0424,
+     "users": 4765,
+     "eval_seconds": 55
+    },
+    {
+     "model": "item2vec",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.015,
+     "hit@12": 0.1733,
+     "ndcg@12": 0.0279,
+     "recall@20": 0.0198,
+     "hit@20": 0.2262,
+     "ndcg@20": 0.0262,
+     "users": 4765,
+     "eval_seconds": 132
+    },
+    {
+     "model": "rp3beta",
+     "params": {
+      "alpha": 0.5,
+      "beta": 0.6
+     },
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0336,
+     "hit@12": 0.3668,
+     "ndcg@12": 0.0726,
+     "recall@20": 0.0438,
+     "hit@20": 0.4344,
+     "ndcg@20": 0.0662,
+     "users": 4765,
+     "eval_seconds": 121
+    },
+    {
+     "model": "artist then song",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0108,
+     "hit@12": 0.192,
+     "ndcg@12": 0.0231,
+     "recall@20": 0.0168,
+     "hit@20": 0.2693,
+     "ndcg@20": 0.0236,
+     "users": 4765,
+     "eval_seconds": 113
+    },
+    {
+     "model": "popularity",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0037,
+     "hit@12": 0.0986,
+     "ndcg@12": 0.0109,
+     "recall@20": 0.0055,
+     "hit@20": 0.1454,
+     "ndcg@20": 0.0108,
+     "users": 4765,
+     "eval_seconds": 1
+    },
+    {
+     "model": "app today, 3 per artist",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0084,
+     "hit@12": 0.1404,
+     "ndcg@12": 0.017,
+     "recall@20": 0.0129,
+     "hit@20": 0.2155,
+     "ndcg@20": 0.0177,
+     "users": 4765,
+     "eval_seconds": 66
+    },
+    {
+     "model": "app today, 1 per artist",
+     "params": {},
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0108,
+     "hit@12": 0.1996,
+     "ndcg@12": 0.0231,
+     "recall@20": 0.017,
+     "hit@20": 0.2768,
+     "ndcg@20": 0.0235,
+     "users": 4765,
+     "eval_seconds": 67
+    },
+    {
+     "model": "rrf",
+     "params": {
+      "parts": [
+       "knn big pool",
+       "rp3beta best"
+      ]
+     },
+     "split": "test",
+     "mode": "discovery",
+     "recall@12": 0.0376,
+     "hit@12": 0.3882,
+     "ndcg@12": 0.0804,
+     "recall@20": 0.0497,
+     "hit@20": 0.4594,
+     "ndcg@20": 0.0736,
+     "users": 4765,
+     "eval_seconds": 0
+    }
+   ],
+   "best": {
+    "model": "rrf",
+    "params": {
+     "parts": [
+      "knn big pool",
+      "rp3beta best"
+     ]
+    }
+   },
+   "best_vs_reference": {
+    "recall@12": 0.1713,
+    "hit@12": 0.0944,
+    "ndcg@12": 0.1404
+   }
+  }
+ },
+ "exported": {
+  "best_single_all": "knn big pool",
+  "params": {},
+  "songs": 1085656
+ },
+ "finished": "2026-11-24 17:00:19"
+}
