@@ -53,6 +53,7 @@ TEST_USERS = 300 if QUICK else 5000
 HIDE_SHARE = 0.2
 POOL = 60 if QUICK else 400
 REFERENCE_N = 30 if QUICK else 100
+SMALL = 40 if QUICK else 200
 EASE_SONGS = 200 if QUICK else 30000
 EASE_LAMBDA = 400.0
 RP3_ALPHAS = (0.5, 1.0)
@@ -412,52 +413,10 @@ def knn_table(matrix, shrink=100.0):
     return table
 
 
+# Memory: the first run ran out of Kaggle's 30 GB with a million songs, so item2vec and EASE come first while the
+# memory is free, the daily listens are dropped as soon as the sessions are cut, every RP3beta pool is scored and
+# dropped at once, and only the main kNN keeps POOL neighbours: the other tables keep SMALL
 tables = {}
-start = time.time()
-tables["knn"] = knn_table(train)
-timed("knn", start)
-start = time.time()
-tables["knn, 500 songs per user"] = knn_table(train_old_cap)
-del train_old_cap
-timed("knn old cap", start)
-
-# RP3beta: P(u|i) = 1/d_i and P(j|u) = 1/d_u on the binary matrix, with the walk damped by alpha. Within a song's
-# row 1/d_i^alpha is the same for every candidate, so the ranking is sum_u x_ui x_uj d_u^-alpha / d_j^beta
-binary = train.copy()
-binary.data[:] = 1.0
-user_degree = np.asarray(binary.sum(axis=1)).ravel()
-rp3_pools = {}
-for alpha in RP3_ALPHAS:
-    start = time.time()
-    scaled = sp.diags(np.power(np.maximum(user_degree, 1), -alpha / 2).astype(np.float32)) @ binary
-    # implicit's plain item-item model wants float64
-    rp3_pools[alpha] = pool_from(ItemItemRecommender(K=POOL), scaled.astype(np.float64).tocsr())
-    timed(f"rp3 pool alpha {alpha}", start)
-song_degree = np.maximum(popularity, 1).astype(np.float32)
-
-# EASE on the most listened songs
-start = time.time()
-ease_songs = popular_order[:EASE_SONGS]
-x = binary[:, ease_songs].tocsc()
-with threadpool_limits(os.cpu_count()):
-    gram = (x.T @ x).toarray().astype(np.float32)
-    gram[np.diag_indices_from(gram)] += EASE_LAMBDA
-    inverse = np.linalg.inv(gram)
-del gram
-weights_b = inverse / -np.diag(inverse)[None, :]
-np.fill_diagonal(weights_b, -np.inf)
-del inverse
-n_ease = min(POOL, len(ease_songs) - 1)
-ease_table = np.full((n_songs, POOL), -1, dtype=np.int32)
-# In row blocks: an argpartition of the whole matrix would need an index array as large as the matrix
-for lo in range(0, len(ease_songs), 1000):
-    block = weights_b[lo:lo + 1000]
-    local = np.argpartition(-block, n_ease - 1, axis=1)[:, :n_ease]
-    local = np.take_along_axis(local, np.argsort(-np.take_along_axis(block, local, axis=1), axis=1), axis=1)
-    ease_table[ease_songs[lo:lo + 1000], :n_ease] = ease_songs[local]
-tables["ease"] = ease_table
-del weights_b, x, binary
-timed("ease", start)
 
 # item2vec over the daily sessions of training users
 start = time.time()
@@ -466,27 +425,31 @@ daily = daily[daily["user_id"].isin(set(user_ids[split == 0].tolist())) & daily[
 daily = daily.sort_values(["user_id", "ts"], kind="stable")
 items = song_index.loc[daily["song"].to_numpy()].to_numpy()
 user_col, ts = daily["user_id"].to_numpy(), daily["ts"].to_numpy()
+del daily
 breaks = np.flatnonzero((user_col[1:] != user_col[:-1]) | (ts[1:] - ts[:-1] > SESSION_GAP)) + 1
 sessions = []
 for chunk in np.split(items, breaks):
     chunk = chunk[np.concatenate([[True], chunk[1:] != chunk[:-1]])]
     if len(chunk) >= 2:
         sessions.append(chunk)
-del daily, items, user_col, ts
+del items, user_col, ts, breaks
 total = sum(len(s) for s in sessions)
 if total > MAX_TOKENS:
     keep_session = np.random.default_rng(SEED).random(len(sessions)) < MAX_TOKENS / total
     sessions = [s for s, k in zip(sessions, keep_session) if k]
-w2v = Word2Vec([s.astype(str).tolist() for s in sessions], vector_size=64, window=10, min_count=5, sg=1,
-               negative=10, ns_exponent=-0.5, sample=1e-4, epochs=5, workers=os.cpu_count(), seed=SEED)
+sentences = [s.astype(str).tolist() for s in sessions]
+del sessions
+w2v = Word2Vec(sentences, vector_size=64, window=10, min_count=5, sg=1, negative=10, ns_exponent=-0.5, sample=1e-4,
+               epochs=5, workers=os.cpu_count(), seed=SEED)
+del sentences
 vectors = np.zeros((n_songs, 64), dtype=np.float32)
 for token, index in w2v.wv.key_to_index.items():
     vectors[int(token)] = w2v.wv.vectors[index]
-del w2v, sessions
+del w2v
 timed("item2vec", start)
 
 
-def vector_table(vectors, ids, n=POOL, batch=128):
+def vector_table(vectors, ids, n=SMALL, batch=128):
     norms_v = np.linalg.norm(vectors, axis=1, keepdims=True)
     unit = (vectors / np.maximum(norms_v, 1e-9)).astype(np.float32)
     has = norms_v.ravel() > 0
@@ -510,6 +473,42 @@ seed_ids = np.unique(np.concatenate([u["seeds"] for u in val + test]))
 tables["item2vec"] = vector_table(vectors, seed_ids)
 del vectors
 timed("item2vec neighbours", start)
+
+# EASE on the most listened songs, the inverse worked out in place
+start = time.time()
+binary = train.copy()
+binary.data[:] = 1.0
+ease_songs = popular_order[:EASE_SONGS]
+x = binary[:, ease_songs].tocsc()
+with threadpool_limits(os.cpu_count()):
+    gram = (x.T @ x).toarray().astype(np.float32)
+    del x
+    gram[np.diag_indices_from(gram)] += EASE_LAMBDA
+    weights_b = np.linalg.inv(gram)
+del gram
+weights_b /= -np.diag(weights_b)[None, :]
+np.fill_diagonal(weights_b, -np.inf)
+n_ease = min(SMALL, len(ease_songs) - 1)
+ease_table = np.full((n_songs, SMALL), -1, dtype=np.int32)
+# In row blocks: an argpartition of the whole matrix would need an index array as large as the matrix
+for lo in range(0, len(ease_songs), 1000):
+    block = weights_b[lo:lo + 1000]
+    local = np.argpartition(-block, n_ease - 1, axis=1)[:, :n_ease]
+    local = np.take_along_axis(local, np.argsort(-np.take_along_axis(block, local, axis=1), axis=1), axis=1)
+    ease_table[ease_songs[lo:lo + 1000], :n_ease] = ease_songs[local]
+tables["ease"] = ease_table
+del weights_b, ease_table
+timed("ease", start)
+save()
+
+# kNN, and the same on 500 songs per user
+start = time.time()
+tables["knn"] = knn_table(train)
+timed("knn", start)
+start = time.time()
+tables["knn, 500 songs per user"] = knn_table(train_old_cap)[:, :SMALL].copy()
+del train_old_cap
+timed("knn old cap", start)
 save()
 
 # ---------------------------------------------------------------- validation
@@ -529,23 +528,33 @@ for mode in MODES:
     evaluate("artist then song", {}, artist_then_song_ranker, val, "val", mode, related=tables["knn"])
 evaluate("own artists' top songs", {}, own_artists_ranker, val, "val", "all")
 
+# RP3beta: P(u|i) = 1/d_i and P(j|u) = 1/d_u on the binary matrix, with the walk damped by alpha. Within a song's
+# row 1/d_i^alpha is the same for every candidate, so the ranking is sum_u x_ui x_uj d_u^-alpha / d_j^beta.
+# Each alpha's pool is scored on the validation users at once and only the best table per task is kept
+user_degree = np.asarray(binary.sum(axis=1)).ravel()
+song_degree = np.maximum(popularity, 1).astype(np.float32)
 best_rp3 = {}
 for alpha in RP3_ALPHAS:
-    ids, co = rp3_pools[alpha]
+    pool_start = time.time()
+    scaled = sp.diags(np.power(np.maximum(user_degree, 1), -alpha / 2).astype(np.float32)) @ binary
+    # implicit's plain item-item model wants float64
+    ids, co = pool_from(ItemItemRecommender(K=POOL), scaled.astype(np.float64).tocsr())
+    del scaled
+    timed(f"rp3 pool alpha {alpha}", pool_start)
     for beta in RP3_BETAS:
-        table = top_of(ids, co / song_degree[np.where(ids >= 0, ids, 0)] ** beta, POOL)
+        table = top_of(ids, co / song_degree[np.where(ids >= 0, ids, 0)] ** beta, SMALL)
         for mode in MODES:
             row = evaluate("rp3beta", {"alpha": alpha, "beta": beta}, song_model_ranker, val, "val", mode,
                            related=table)
             if row["ndcg@12"] > best_rp3.get(mode, (None, -1))[1]:
                 best_rp3[mode] = ((alpha, beta), row["ndcg@12"])
                 rankings[("rp3beta best", "val", mode)] = rankings[("rp3beta", "val", mode)]
-for mode in MODES:
-    alpha, beta = best_rp3[mode][0]
-    ids, co = rp3_pools[alpha]
-    tables[f"rp3beta {mode}"] = top_of(ids, co / song_degree[np.where(ids >= 0, ids, 0)] ** beta, POOL)
-del rp3_pools
+                tables[f"rp3beta {mode}"] = table
+        del table
+    del ids, co
+del binary
 summary["best_rp3"] = {mode: {"alpha": a, "beta": b} for mode, ((a, b), _) in best_rp3.items()}
+save()
 
 FUSIONS = {
     "all": [["knn big pool", "item2vec"], ["knn big pool", "rp3beta best"], ["knn big pool", "ease"],
