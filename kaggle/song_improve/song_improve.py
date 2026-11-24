@@ -54,7 +54,7 @@ HIDE_SHARE = 0.2
 POOL = 60 if QUICK else 400
 REFERENCE_N = 30 if QUICK else 100
 SMALL = 40 if QUICK else 200
-EASE_SONGS = 200 if QUICK else 30000
+EASE_SONGS = 200 if QUICK else 15000
 EASE_LAMBDA = 400.0
 RP3_ALPHAS = (0.5, 1.0)
 RP3_BETAS = (0.0, 0.3, 0.6)
@@ -479,10 +479,16 @@ start = time.time()
 binary = train.copy()
 binary.data[:] = 1.0
 ease_songs = popular_order[:EASE_SONGS]
-x = binary[:, ease_songs].tocsc()
+x = binary[:, ease_songs].tocsr()
+# Popular songs are heard together with nearly every other one, so x.T @ x as a sparse matrix is in fact full and,
+# with its indices, far larger than the dense matrix: it ran Kaggle out of memory twice. It is added up dense, a
+# block of users at a time
+gram = np.zeros((len(ease_songs), len(ease_songs)), dtype=np.float32)
 with threadpool_limits(os.cpu_count()):
-    gram = (x.T @ x).toarray().astype(np.float32)
-    del x
+    for lo in range(0, x.shape[0], 10000):
+        block = x[lo:lo + 10000].toarray()
+        gram += block.T @ block
+    del x, block
     gram[np.diag_indices_from(gram)] += EASE_LAMBDA
     weights_b = np.linalg.inv(gram)
 del gram
