@@ -274,6 +274,12 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
   - 1. ve 2. sürüm EASE adımında bellek yetmediği için çöktü (popüler şarkıların seyrek birlikte dinlenme matrisi
     aslında doluydu). 3. sürüm (commit bbaaebb) matrisi kullanıcı parçalarıyla dolu olarak topluyor. 11:00
     civarı başladı ve 4–5 saat sürmesi bekleniyor (item2vec tek başına yaklaşık 1 saat 50 dakika).
+  - 3. sürüm de yaklaşık 2 saat sonra bellek yetmediği için kapandı. item2vec, EASE ve ana knn bitmişti, ama
+    500 şarkılık knn sırasında süreç sonlandırıldı. Sebep, knn ve RP3beta puanlamasının bir milyon satırlık
+    tabloların tamamı üzerinde yapılmasıydı. Her geçici tablo 1,7 GB ya da daha büyüktü ve bunların bir düzinesi
+    aynı anda bellekte duruyordu. 4. sürümde puanlama 50 binlik satır bloklarıyla yapılıyor. `songs_all` ve büyük
+    dizin dizileri iş bitince bellekten siliniyor. 500 şarkılık knn yalnızca 200 sütun üretiyor ve ana knn'den önce
+    çalışıyor. Yerel deneme geçti ve 4. sürüm 24 Kasım 16:44'te yeniden başladı. Yine 4–5 saat sürmesi bekleniyor.
   - **Bittiğinde:** `.venv/Scripts/kaggle kernels status xendoksia/listenbrainz-song-improve` ile durum
     öğrenilir. COMPLETE ise `kaggle kernels output xendoksia/listenbrainz-song-improve -p kaggle/song_improve/output`
     ile çıktılar indirilir. `summary.json` içindeki `test` her görevde (all, discovery) en iyi yöntemi ve şu anki

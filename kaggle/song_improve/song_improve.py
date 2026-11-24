@@ -23,6 +23,7 @@ Two tasks as in kaggle/song_train: all (any hidden song) and discovery (hidden s
 played). Everything is chosen on VAL_USERS by NDCG@12 and scored once on TEST_USERS.
 """
 
+import gc
 import glob
 import json
 import multiprocessing
@@ -138,6 +139,7 @@ song_ids, s_of = np.unique(pairs["song"].to_numpy(), return_inverse=True)
 user_ids, u_of = np.unique(pairs["user_id"].to_numpy(), return_inverse=True)
 n_songs, n_users = len(song_ids), len(user_ids)
 meta = songs_all.set_index("song").loc[song_ids].reset_index()
+del songs_all
 artist_code, artist_keys = pd.factorize(meta["artist"].map(fold))
 artist_code = artist_code.astype(np.int32)
 summary["data"] = {"users": n_users, "songs": n_songs, "pairs": len(pairs), "artists": len(artist_keys),
@@ -161,7 +163,8 @@ old_keep = keep & (rank_in_user < OLD_CAP)
 train_old_cap = sp.csr_matrix((listens_v[old_keep], (u_of[old_keep], s_of[old_keep])), shape=(n_users, n_songs))
 hidden_by_user = pd.Series(s_of[hidden_mask]).groupby(u_of[hidden_mask]).apply(np.asarray)
 popularity = np.asarray((train > 0).sum(axis=0)).ravel()
-del pairs, rank_in_user
+del pairs, rank_in_user, listens_v, hidden_mask, keep, old_keep, u_of, s_of
+gc.collect()
 
 by_artist = pd.Series(np.arange(n_songs)).groupby(artist_code).apply(
     lambda s: s.to_numpy()[np.argsort(-popularity[s.to_numpy()], kind="stable")])
@@ -395,21 +398,38 @@ def top_of(pool_ids, score, n):
     return out
 
 
-def knn_table(matrix, shrink=100.0):
+def rescored(pool_ids, score_of, n, block=50000):
+    """top_of in row blocks: on a million songs every whole (songs, POOL) temporary is 1.7 GB or more, and a dozen
+    of them at once ran Kaggle out of memory in the third run"""
+    out = np.full((pool_ids.shape[0], min(n, pool_ids.shape[1])), -1, dtype=np.int32)
+    for lo in range(0, pool_ids.shape[0], block):
+        rows = np.arange(lo, min(lo + block, pool_ids.shape[0]))
+        out[rows] = top_of(pool_ids[rows], score_of(rows), n)
+    return out
+
+
+def knn_table(matrix, n=POOL, shrink=100.0):
     weighted = matrix.copy()
     weighted.data = np.log1p(weighted.data)
     norms = np.sqrt(np.asarray(weighted.multiply(weighted).sum(axis=0)).ravel()).astype(np.float32)
     ids, cos = pool_from(CosineRecommender(K=POOL), weighted)
-    candidate_norms = norms[np.where(ids >= 0, ids, 0)]
-    dot = cos * norms[:, None] * candidate_norms
-    table = top_of(ids, dot / (norms[:, None] * candidate_norms + shrink + 1e-9), POOL)
+    del weighted
+    gc.collect()
+
+    def score_of(rows, extra):
+        products = norms[rows, None] * norms[np.where(ids[rows] >= 0, ids[rows], 0)]
+        return cos[rows] * products / (products + extra + 1e-9)
+
+    table = rescored(ids, lambda rows: score_of(rows, shrink), n)
     # Check: without shrinkage the rescoring gives implicit's cosine order back
     sample = np.random.default_rng(SEED).choice(n_songs, min(2000, n_songs), replace=False)
-    plain = top_of(ids[sample], dot[sample] / (norms[sample, None] * candidate_norms[sample] + 1e-9), 20)
+    plain = top_of(ids[sample], score_of(sample, 0.0), 20)
     same = float(np.mean([set(a[a >= 0].tolist()) == set(b[b >= 0].tolist())
                           for a, b in zip(plain, ids[sample, :20])]))
     log(f"check: cosine rescoring gives implicit's neighbours for {same:.1%} of the sample")
     assert same > 0.98
+    del ids, cos
+    gc.collect()
     return table
 
 
@@ -507,14 +527,14 @@ del weights_b, ease_table
 timed("ease", start)
 save()
 
-# kNN, and the same on 500 songs per user
+# kNN on 500 songs per user first, as it keeps only SMALL neighbours, then the main kNN
+start = time.time()
+tables["knn, 500 songs per user"] = knn_table(train_old_cap, n=SMALL)
+del train_old_cap
+timed("knn old cap", start)
 start = time.time()
 tables["knn"] = knn_table(train)
 timed("knn", start)
-start = time.time()
-tables["knn, 500 songs per user"] = knn_table(train_old_cap)[:, :SMALL].copy()
-del train_old_cap
-timed("knn old cap", start)
 save()
 
 # ---------------------------------------------------------------- validation
@@ -548,7 +568,8 @@ for alpha in RP3_ALPHAS:
     del scaled
     timed(f"rp3 pool alpha {alpha}", pool_start)
     for beta in RP3_BETAS:
-        table = top_of(ids, co / song_degree[np.where(ids >= 0, ids, 0)] ** beta, SMALL)
+        table = rescored(ids, lambda rows: co[rows] / song_degree[np.where(ids[rows] >= 0, ids[rows], 0)] ** beta,
+                         SMALL)
         for mode in MODES:
             row = evaluate("rp3beta", {"alpha": alpha, "beta": beta}, song_model_ranker, val, "val", mode,
                            related=table)
@@ -558,6 +579,7 @@ for alpha in RP3_ALPHAS:
                 tables[f"rp3beta {mode}"] = table
         del table
     del ids, co
+    gc.collect()
 del binary
 summary["best_rp3"] = {mode: {"alpha": a, "beta": b} for mode, ((a, b), _) in best_rp3.items()}
 save()
