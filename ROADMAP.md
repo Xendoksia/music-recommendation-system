@@ -265,5 +265,23 @@ Deezer de bir "model" gibi aynı ölçütlerle değerlendirilir.
   - Kullanıcının verisiyle sağlama `src/song_compare.py` ile yapılıyor (`reports/sarki.md`). Burada "kendi
     sanatçılarının en popülerleri" şarkı knn'inden iyi çıktı, ama bu karar ölçütü değil.
   - Model uygulamaya eklenmedi.
-- **Sıradaki:** Kullanıcı şarkı modeli hakkında karar verecek (rapordaki 1, 2 ya da 3. seçenek). Ardından
-  Parça 5 gelecek.
+- 2026-11-24: Modeller ve bilgilendirici README uygulama reposuna eklendi (`models/`, commit 40685b1). Dışa aktarma
+  `src/export_app.py` ile yapılıyor. Uygulamaya henüz bağlanmadı.
+- 2026-11-24, **şarkı kalitesi denemesi (adım 4) sürüyor.** `kaggle/song_improve/song_improve.py` (Kaggle'da
+  `xendoksia/listenbrainz-song-improve`) şu anki şarkı knn'ini daha fazla veriyle (en az 10 dinleyici, kullanıcı
+  başına 1.000 şarkı, 1,09 milyon şarkı), büyük aday havuzuyla (400 komşu), RP3beta, EASE (15 bin şarkı),
+  item2vec, "sanatçı sonra şarkı" birleşimi ve RRF birleşimleriyle karşılaştırıyor.
+  - 1. ve 2. sürüm EASE adımında bellek yetmediği için çöktü (popüler şarkıların seyrek birlikte dinlenme matrisi
+    aslında doluydu). 3. sürüm (commit bbaaebb) matrisi kullanıcı parçalarıyla dolu olarak topluyor. 11:00
+    civarı başladı ve 4–5 saat sürmesi bekleniyor (item2vec tek başına yaklaşık 1 saat 50 dakika).
+  - **Bittiğinde:** `.venv/Scripts/kaggle kernels status xendoksia/listenbrainz-song-improve` ile durum
+    öğrenilir. COMPLETE ise `kaggle kernels output xendoksia/listenbrainz-song-improve -p kaggle/song_improve/output`
+    ile çıktılar indirilir. `summary.json` içindeki `test` her görevde (all, discovery) en iyi yöntemi ve şu anki
+    knn'e ("knn reference (100 neighbours)") göre farkı veriyor. Sonuçlar bir rapora (`reports/sarki_iyilestirme.md`)
+    yazılır ve kullanıcıya sunulur. Daha iyi bir model çıkarsa uygulamadaki `models/` klasörünü güncelleme kararı
+    kullanıcıya bırakılır.
+  - **Hata verirse:** Aynı komutla günlük indirilir (`listenbrainz-song-improve.log`). Hangi adımda çöktüğüne bakılır,
+    kod düzeltilir ve `kaggle/song_improve/test_song_improve.py` ile yerelde denenir. Ardından
+    `kaggle kernels push -p kaggle/song_improve` ile yeniden gönderilir. Geçici bir hatada kullanıcı Kaggle
+    sayfasından "Save Version" ile aynı kodu yeniden başlatabilir.
+- **Sıradaki:** Adım 4'ün sonuçları. Ardından kullanıcı şarkı modeli hakkında karar verecek ve Parça 5 gelecek.
